@@ -3,13 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Portfolio of Muhammad Harits Khairiansyah — Automation & IoT Engineer. Industrial IoT, ESP32, Grafana, Node-RED, Modbus RTU." />
-  <meta property="og:title" content="Muhammad Harits Khairiansyah | Automation & IoT Engineer" />
-  <meta property="og:description" content="D4 Automation Engineering student at ITS with experience in Industrial IoT, monitoring systems, and electrical automation." />
+  <meta name="description" content="Portfolio of Muhammad Harits Khairiansyah — Automation & Industrial IoT Engineer. D4 Automation Engineering at ITS." />
+  <meta property="og:title" content="Muhammad Harits Khairiansyah | Automation & Industrial IoT Engineer" />
+  <meta property="og:description" content="D4 Automation Engineering student at ITS with experience in Industrial IoT, ESP32 monitoring, Node-RED, Grafana, and Modbus RTU." />
   <meta property="og:type" content="website" />
-  <title>Muhammad Harits Khairiansyah | Automation & IoT Engineer</title>
+  <title>Muhammad Harits Khairiansyah | Automation & Industrial IoT Engineer</title>
   <link rel="icon" type="image/png" href="favicon.png" />
-  <link rel="shortcut icon" href="favicon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
@@ -17,19 +16,17 @@
 </head>
 <body>
 
-  <!-- ========== NAVBAR ========== -->
+  <!-- ========== 1. NAVBAR ========== -->
   <header class="navbar" id="navbar">
     <div class="nav-brand">
       <img src="assets/images/DRACO_transparent.png" class="nav-logo" alt="DRACO Logo" />
       <span class="nav-brand-text">MHK</span>
     </div>
     <nav class="nav-links" id="navLinks">
-      <a href="#about">About</a>
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About Me</a>
       <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#certificates">Certificates</a>
-      <a href="#contact">Contact</a>
+      <a href="#contact">Contact Me</a>
     </nav>
     <button class="nav-mobile-toggle" id="navToggle" aria-label="Toggle navigation">
       <span></span><span></span><span></span>
@@ -38,358 +35,696 @@
 
   <main>
 
-    <!-- ========== HERO ========== -->
-    <section class="hero" id="hero">
-      <div class="hero-content">
-        <div class="hero-text">
+    <!-- ========== 2. SECTION: HOME ========== -->
+    <section class="hero-section" id="home">
+      <div class="container hero-grid">
+        <div class="hero-text-col">
           <p class="hero-eyebrow">
-            <span class="eyebrow-icon">⚡</span>
-            Automation &amp; IoT Engineer
+            <span class="eyebrow-dot"></span>
+            Automation &amp; Industrial IoT Engineer
           </p>
           <h1 class="hero-title">
             Muhammad Harits
-            <span class="hero-title-accent">Khairiansyah</span>
+            <span class="title-gradient">Khairiansyah</span>
           </h1>
-          <p class="hero-subtitle">
-            D4 Automation Engineering student at <strong>Institut Teknologi Sepuluh Nopember</strong>
-            with hands-on experience in Industrial IoT, ESP32-based monitoring, 
-            Node-RED, Grafana dashboards, and industrial communication protocols.
+          <p class="hero-desc">
+            D4 Automation Engineering student at <strong>Institut Teknologi Sepuluh Nopember (ITS)</strong>. 
+            Passionate about Industrial IoT, real-time monitoring, ESP32 architecture, 
+            Modbus RTU / MQTT protocols, and Grafana telemetry dashboards.
           </p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#projects">
-              <span>View Projects</span>
+          <div class="hero-cta-group">
+            <a href="#experience" class="btn btn-primary">
+              <span>Explore Experience</span>
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
-            <a class="btn btn-secondary" href="assets/documents/CV%20Khairi_12-10-2026.pdf" target="_blank">
+            <a href="assets/documents/CV%20Khairi_12-10-2026.pdf" target="_blank" class="btn btn-secondary">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 2v8m0 0l3-3m-3 3L5 7M3 12v1a1 1 0 001 1h8a1 1 0 001-1v-1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               <span>Download CV</span>
             </a>
           </div>
-          <div class="hero-badges">
+          <div class="hero-tech-badges">
             <span class="badge">ESP32</span>
-            <span class="badge">Industrial IoT</span>
-            <span class="badge">Grafana</span>
             <span class="badge">Modbus RTU</span>
+            <span class="badge">MQTT</span>
+            <span class="badge">Grafana</span>
+            <span class="badge">PLC Mitsubishi</span>
           </div>
         </div>
-        <div class="hero-visual">
-          <div class="hero-stage">
-            <div class="draco-ambient-glow"></div>
-            <div class="draco-emblem-wrap">
-              <img src="assets/images/DRACO_transparent.png" alt="DRACO Dragon Gear Emblem" class="draco-emblem" />
-            </div>
-            <div class="energy-ring energy-ring-outer"></div>
-            <div class="energy-ring energy-ring-inner"></div>
-            <div class="character-wrap">
-              <img src="assets/images/khairi.png" alt="Muhammad Harits Khairiansyah" class="hero-character" />
-            </div>
-            <div class="telemetry-badge telemetry-top">
-              <span class="status-dot"></span>
-              <span class="telemetry-text">SYSTEM // ACTIVE</span>
-            </div>
-            <div class="telemetry-badge telemetry-bottom">
-              <span class="telemetry-code">ESP32 • MODBUS • GRAFANA</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- ========== ABOUT ========== -->
-    <section class="section" id="about">
-      <div class="section-header">
-        <span class="section-label">About</span>
-        <h2 class="section-title">Focused on automation, monitoring,<br/>and industrial system integration</h2>
-      </div>
-      <div class="about-grid">
-        <article class="about-card about-card-wide">
-          <p>
-            I am a D4 Automation Engineering student at Institut Teknologi Sepuluh Nopember 
-            with experience in Industrial IoT, Automation Systems, ESP32-based Monitoring, 
-            Node-RED, and Electrical Maintenance. I have developed monitoring dashboards using 
-            Grafana and implemented industrial communication systems through MQTT and Modbus RTU 
-            protocols. Passionate about Industrial Automation, IoT Systems, and Electrical 
-            Control Engineering.
-          </p>
-        </article>
-        <article class="about-card stat-card">
-          <span class="stat-number">3.26</span>
-          <span class="stat-label">GPA / 4.00</span>
-        </article>
-        <article class="about-card stat-card">
-          <span class="stat-number">2</span>
-          <span class="stat-label">Work Experiences</span>
-        </article>
-        <article class="about-card stat-card">
-          <span class="stat-number">4+</span>
-          <span class="stat-label">Projects Completed</span>
-        </article>
-      </div>
-    </section>
-
-    <!-- ========== EXPERIENCE ========== -->
-    <section class="section" id="experience">
-      <div class="section-header">
-        <span class="section-label">Experience</span>
-        <h2 class="section-title">Professional journey in industrial automation</h2>
-      </div>
-      <div class="timeline">
-        <article class="timeline-item timeline-orange">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="timeline-header">
-              <h3>PT. Sumber Graha Sejahtera (Sampoerna Kayoe)</h3>
-              <span class="timeline-location">Batang, Indonesia</span>
+        <div class="hero-visual-col">
+          <div class="industrial-card-wrap">
+            <div class="gear-backdrop">
+              <img src="assets/images/DRACO_transparent.png" alt="DRACO Gear Backdrop" class="gear-img" />
             </div>
-            <span class="timeline-period">September 2026 — February 2027</span>
-            <ul>
-              <li>Developing a Computerized Maintenance Management System (CMMS) to digitize emergency work order reporting, approval, and maintenance tracking.</li>
-              <li>Developing web applications using React, Python FastAPI, and PostgreSQL for equipment management and user access control.</li>
-              <li>Designing a maintenance KPI dashboard to monitor MTTR, MTBF, downtime, and EWO status.</li>
-              <li>Designing an MCDM-based approach to prioritize emergency work orders based on equipment criticality.</li>
-            </ul>
-          </div>
-        </article>
-        <article class="timeline-item timeline-blue">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="timeline-header">
-              <h3>PT. Indoprima Gemilang</h3>
-              <span class="timeline-location">Surabaya, Indonesia</span>
+            <div class="card-glow-ring"></div>
+            <div class="photo-industrial-card">
+              <img src="assets/images/FOTOku.jpg" alt="Muhammad Harits Khairiansyah" class="photo-img" />
+              <div class="photo-card-overlay">
+                <div class="card-status-badge">
+                  <span class="live-pulse"></span>
+                  <span>OPEN FOR INTERNSHIP &amp; PROJECTS</span>
+                </div>
+              </div>
             </div>
-            <span class="timeline-period">January 2026 — July 2026</span>
-            <ul>
-              <li>Developed Industrial IoT systems using ESP32, MQTT, Node-RED, and database integration.</li>
-              <li>Designed and implemented energy monitoring systems using PZEM sensors for three-phase electrical systems.</li>
-              <li>Performed maintenance and troubleshooting on industrial IoT devices and smart weighing systems.</li>
-              <li>Assisted PCB design and hardware integration for monitoring applications.</li>
-              <li>Conducted installation and commissioning of IoT-based monitoring systems on production equipment.</li>
-            </ul>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- ========== PROJECTS ========== -->
-    <section class="section" id="projects">
-      <div class="section-header">
-        <span class="section-label">Projects</span>
-        <h2 class="section-title">Highlighted projects in automation &amp; IoT</h2>
-      </div>
-      <div class="project-grid">
-
-        <article class="project-card">
-          <div class="project-img-wrap">
-            <img src="assets/images/pencacahsampah.jpg" alt="Plastic Waste Shredder Machine" />
-          </div>
-          <div class="project-body">
-            <span class="project-role">Project Manager — ITS</span>
-            <h3>Plastic Waste Shredder Automation & Monitoring System</h3>
-            <p>Developed an automated plastic bottle shredder equipped with a real-time monitoring and protection system using ESP32, Modbus RTU, and Grafana dashboard.</p>
-            <div class="project-tech">
-              <span>ESP32</span>
-              <span>Modbus RTU</span>
-              <span>MySQL</span>
-              <span>Grafana</span>
-              <span>Node-RED</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-img-wrap">
-            <img src="assets/images/Screenshot%202026-06-04%20092534.png" alt="IoT Packing Monitoring Dashboard" />
-          </div>
-          <div class="project-body">
-            <span class="project-role">Industrial Project — PT Indoprima Gemilang</span>
-            <h3>IoT-Based Packing Monitoring System</h3>
-            <p>Integrated MQTT, Node-RED, and SQL Server for real-time data transmission. Implemented OTA firmware updates to simplify maintenance and reduce deployment downtime.</p>
-            <div class="project-tech">
-              <span>ESP32</span>
-              <span>MQTT</span>
-              <span>Node-RED</span>
-              <span>SQL Server</span>
-              <span>OTA</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-img-wrap">
-            <img src="assets/images/3phasemonitoring.jpg" alt="Three-Phase Energy Monitoring System" />
-          </div>
-          <div class="project-body">
-            <span class="project-role">Industrial Project — PT Indoprima Gemilang</span>
-            <h3>Three-Phase Energy Monitoring System</h3>
-            <p>Developed electrical energy monitoring using ESP32 and PZEM sensors for three-phase power measurement with real-time data acquisition via Node-RED.</p>
-            <div class="project-tech">
-              <span>ESP32</span>
-              <span>PZEM</span>
-              <span>Node-RED</span>
-              <span>Database</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-img-wrap no-img">
-            <div class="project-placeholder">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-          </div>
-          <div class="project-body">
-            <span class="project-role">Industrial Project — PT Indoprima Gemilang</span>
-            <h3>IoT Access Security System & Automated Reporting</h3>
-            <p>Designed a database-driven digital verification access control system with hardware, MQTT, Node-RED integration, and non-blocking finite state machine firmware.</p>
-            <div class="project-tech">
-              <span>ESP32</span>
-              <span>MQTT</span>
-              <span>Node-RED</span>
-              <span>FSM</span>
-              <span>WiFi</span>
-            </div>
-          </div>
-        </article>
-
-      </div>
-    </section>
-
-    <!-- ========== SKILLS ========== -->
-    <section class="section" id="skills">
-      <div class="section-header">
-        <span class="section-label">Skills</span>
-        <h2 class="section-title">Technical skills used in real-world projects</h2>
-      </div>
-      <div class="skills-content">
-        <div class="skill-group">
-          <h3 class="skill-group-title">
-            <span class="skill-icon">⚙️</span>
-            Technical Skills
-          </h3>
-          <div class="skill-chips">
-            <span>ESP32</span>
-            <span>Modbus RTU</span>
-            <span>MQTT</span>
-            <span>Node-RED</span>
-            <span>Grafana</span>
-            <span>MySQL</span>
-            <span>SQL Server</span>
-            <span>Arduino IDE</span>
-            <span>React</span>
-            <span>Python FastAPI</span>
-            <span>PostgreSQL</span>
-            <span>GX Works</span>
-            <span>Electrical Wiring</span>
-            <span>Proteus</span>
-            <span>Eagle</span>
-            <span>SketchUp</span>
-            <span>Fusion 360</span>
-            <span>CoppeliaSim</span>
-          </div>
-        </div>
-        <div class="skill-group">
-          <h3 class="skill-group-title">
-            <span class="skill-icon">🧠</span>
-            Soft Skills
-          </h3>
-          <div class="skill-chips soft">
-            <span>Problem Solving</span>
-            <span>Time Management</span>
-            <span>Detail Oriented</span>
-            <span>Adaptability</span>
-            <span>Analytical Thinking</span>
-            <span>Teamwork</span>
-          </div>
-        </div>
-        <div class="skill-group">
-          <h3 class="skill-group-title">
-            <span class="skill-icon">🌐</span>
-            Languages
-          </h3>
-          <div class="skill-chips lang">
-            <span>Indonesian <em>(Native)</em></span>
-            <span>English <em>(Basic Working Proficiency)</em></span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ========== CERTIFICATES ========== -->
-    <section class="section" id="certificates">
-      <div class="section-header">
-        <span class="section-label">Certificates & Achievements</span>
-        <h2 class="section-title">Training, competitions, and certifications</h2>
-      </div>
-      <div class="cert-grid">
-        <figure class="cert-card has-image">
-          <img src="assets/images/Sertifikat%20JMP_page-0001.jpg" alt="Junior Mobile Programmer Certificate" />
-          <figcaption>
-            <strong>Junior Mobile Programmer</strong>
-            <span>Digital Talent Scholarship — BPSDMP Surabaya (2025)</span>
-          </figcaption>
-        </figure>
-        <figure class="cert-card has-image">
-          <img src="assets/images/Muhammad%20Harits%20Khairiansyah_IKMVI.png" alt="IKMVI Congress Certificate" />
-          <figcaption>
-            <strong>Kongres IKMVI</strong>
-            <span>Ikatan Keluarga Mahasiswa Vokasi Indonesia (2025)</span>
-          </figcaption>
-        </figure>
-        <article class="cert-card cert-text">
-          <div class="cert-icon">🏆</div>
-          <strong>National Participant — OLIVIA IX</strong>
-          <span>Olimpiade Vokasi Indonesia (2025)</span>
-        </article>
-        <article class="cert-card cert-text">
-          <div class="cert-icon">🔧</div>
-          <strong>PLC & Microcontroller Training</strong>
-          <span>Dept. Teknik Elektro Otomasi (2024)</span>
-        </article>
-        <article class="cert-card cert-text">
-          <div class="cert-icon">💻</div>
-          <strong>Responsive Web Design</strong>
-          <span>freeCodeCamp Certification</span>
-        </article>
+    <!-- ========== 3. SECTION: ABOUT ME ========== -->
+    <section class="section about-section" id="about">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">About Me</span>
+          <h2 class="section-heading">Focused on Automation, IoT &amp; Industrial Systems</h2>
+        </div>
+
+        <!-- Top: 3-Column Triptych Layout -->
+        <div class="about-triptych">
+          <!-- Col 1: Greeting & Identity -->
+          <div class="triptych-col triptych-intro">
+            <span class="intro-eyebrow">HELLO, I'M</span>
+            <h3 class="intro-name">
+              MUHAMMAD HARITS<br />
+              <span class="text-gradient">KHAIRIANSYAH</span>
+            </h3>
+            <p class="intro-role">D4 Automation Engineering<br />Institut Teknologi Sepuluh Nopember</p>
+            <div class="triptych-stats">
+              <div class="stat-box">
+                <span class="stat-val">3.26</span>
+                <span class="stat-lbl">GPA / 4.00</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-val">2</span>
+                <span class="stat-lbl">Industrial Internships</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-val">4+</span>
+                <span class="stat-lbl">Key Projects</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Col 2: Center Photo (khairi.png with glowing frame) -->
+          <div class="triptych-col triptych-photo">
+            <div class="center-photo-stage">
+              <div class="stage-aura"></div>
+              <div class="stage-ring"></div>
+              <div class="cutout-wrapper">
+                <img src="assets/images/khairi.png" alt="Muhammad Harits Khairiansyah Portrait" class="cutout-img" />
+              </div>
+              <div class="photo-floating-pill">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>Surabaya, Indonesia</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Col 3: Detailed Bio from CV -->
+          <div class="triptych-col triptych-desc">
+            <h4 class="desc-heading">Profile &amp; Technical Focus</h4>
+            <p>
+              I am a student in the D4 Automation Engineering programme at Institut Teknologi Sepuluh Nopember (ITS), 
+              equipped with practical hands-on experience in Industrial IoT, automation systems, 
+              ESP32-based monitoring, Node-RED, and PLC-based control.
+            </p>
+            <p>
+              Skilled in developing real-time monitoring dashboards using Grafana and implementing robust industrial 
+              communication protocols such as MQTT and Modbus RTU. Passionate about applying embedded technology 
+              to solve real industrial challenges in motor protection, energy efficiency, and predictive maintenance.
+            </p>
+            <div class="quick-spec-list">
+              <div class="spec-item">
+                <span class="spec-label">Specialization:</span>
+                <span class="spec-val">Industrial IoT &amp; Electrical Control</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Hardware Stack:</span>
+                <span class="spec-val">ESP32, PZEM, PLC Mitsubishi, RS485</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Software Stack:</span>
+                <span class="spec-val">Grafana, Node-RED, MySQL, FastAPI, React</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom: Education Experience (Horizontal Connected Stepper) -->
+        <div class="education-block">
+          <div class="sub-header">
+            <span class="sub-tag">Academic Journey</span>
+            <h3 class="sub-heading">Education Experience</h3>
+          </div>
+
+          <div class="education-stepper">
+            <div class="stepper-line"></div>
+
+            <!-- Step 1: SMP Al Uswah -->
+            <div class="step-card">
+              <div class="step-node">
+                <span class="node-number">01</span>
+              </div>
+              <div class="step-content">
+                <div class="school-logo-wrap">
+                  <img src="assets/images/aluswah.jpg" alt="Logo SMPIT Al Uswah Surabaya" class="school-logo" />
+                </div>
+                <span class="step-badge">Junior High School</span>
+                <h4 class="school-name">SMPIT Al Uswah Surabaya</h4>
+                <p class="school-desc">Foundation in science, mathematics, character building, and analytical problem-solving skills.</p>
+              </div>
+            </div>
+
+            <!-- Step 2: SMA MA Darul Fikri -->
+            <div class="step-card">
+              <div class="step-node">
+                <span class="node-number">02</span>
+              </div>
+              <div class="step-content">
+                <div class="school-logo-wrap">
+                  <img src="assets/images/Dafi.png" alt="Logo MA Darul Fikri Sidoarjo" class="school-logo" />
+                </div>
+                <span class="step-badge">Senior High • 2020 – 2023</span>
+                <h4 class="school-name">MA Darul Fikri Sidoarjo</h4>
+                <p class="school-major">Science &amp; Technology Programme</p>
+                <p class="school-desc">Deepened study in exact sciences, computer logic, and organizational leadership.</p>
+              </div>
+            </div>
+
+            <!-- Step 3: ITS -->
+            <div class="step-card step-highlight">
+              <div class="step-node">
+                <span class="node-number">03</span>
+              </div>
+              <div class="step-content">
+                <div class="school-logo-wrap">
+                  <img src="assets/images/ITS.png" alt="Logo Institut Teknologi Sepuluh Nopember" class="school-logo" />
+                </div>
+                <span class="step-badge badge-active">Higher Ed • 2023 – Present</span>
+                <h4 class="school-name">Institut Teknologi Sepuluh Nopember</h4>
+                <p class="school-major">Bachelor of Applied Science — Electrical Automation Engineering</p>
+                <div class="school-gpa">GPA: <strong>3.26</strong> / 4.00</div>
+                <p class="school-desc">Specialized in Industrial Automation, PLC programming, SCADA, Industrial IoT architecture, and electrical instrumentation.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <!-- ========== CONTACT ========== -->
-    <section class="section" id="contact">
-      <div class="contact-inner">
-        <div class="section-header">
-          <span class="section-label">Contact</span>
-          <h2 class="section-title">Let's work together</h2>
+    <!-- ========== 4. SECTION: EXPERIENCE (Interactive Tabs) ========== -->
+    <section class="section experience-section" id="experience">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Portfolio Showcase</span>
+          <h2 class="section-heading">Professional Experience &amp; Technical Work</h2>
         </div>
-        <p class="contact-desc">
-          Open to collaboration, internship opportunities, and industrial automation projects.
-          Feel free to reach out through any of the platforms below.
-        </p>
-        <div class="contact-links">
-          <a href="https://www.linkedin.com/in/harits-k-1a1717308/" target="_blank" rel="noreferrer" class="contact-btn">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-            <span>LinkedIn</span>
-          </a>
-          <a href="https://www.instagram.com/ritskhair" target="_blank" rel="noreferrer" class="contact-btn">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-            <span>Instagram</span>
-          </a>
-          <a href="https://github.com/ritskhair" target="_blank" rel="noreferrer" class="contact-btn">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-            <span>GitHub</span>
-          </a>
+
+        <!-- Tab Controls (ala alfari.my.id) -->
+        <div class="tab-nav-wrapper">
+          <div class="tab-nav" role="tablist">
+            <button class="tab-btn active" data-tab="tab-internship" role="tab" aria-selected="true">
+              <span class="tab-icon">🏢</span>
+              <span>Internship</span>
+            </button>
+            <button class="tab-btn" data-tab="tab-projects" role="tab" aria-selected="false">
+              <span class="tab-icon">🚀</span>
+              <span>Projects</span>
+            </button>
+            <button class="tab-btn" data-tab="tab-certificates" role="tab" aria-selected="false">
+              <span class="tab-icon">📜</span>
+              <span>Certificates &amp; Achievements</span>
+            </button>
+            <button class="tab-btn" data-tab="tab-skills" role="tab" aria-selected="false">
+              <span class="tab-icon">⚡</span>
+              <span>Skills</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Tab Panes Container -->
+        <div class="tab-content-container">
+
+          <!-- Pane 1: INTERNSHIP -->
+          <div class="tab-pane active" id="tab-internship" role="tabpanel">
+            <div class="timeline-container">
+
+              <!-- Internship 1: Indoprima -->
+              <div class="timeline-card">
+                <div class="card-timeline-marker marker-blue"></div>
+                <div class="timeline-card-header">
+                  <div>
+                    <span class="card-period">January 2026 — July 2026</span>
+                    <h3 class="card-company">PT. Indoprima Gemilang</h3>
+                    <p class="card-role">Industrial IoT &amp; Automation Engineering Intern</p>
+                  </div>
+                  <span class="card-location">Surabaya, Indonesia</span>
+                </div>
+                <ul class="card-bullet-list">
+                  <li>Developed Industrial IoT solutions using ESP32, MQTT, Node-RED, MySQL, and SQL Server for real-time production monitoring.</li>
+                  <li>Designed and tested three-phase electrical Energy Monitoring systems utilizing PZEM sensors, multiplexing logic, and custom Grafana dashboards.</li>
+                  <li>Conducted maintenance, electrical troubleshooting, and firmware improvements on IoT-enabled manufacturing devices (hot presses, weighing systems).</li>
+                  <li>Executed hardware assembly, PCB integration, panel wiring, and on-site field deployment for manufacturing equipment.</li>
+                  <li>Implemented Over-The-Air (OTA) firmware updating to ensure seamless remote maintenance with zero production halt.</li>
+                </ul>
+                <div class="card-tech-chips">
+                  <span>ESP32</span>
+                  <span>PZEM Sensors</span>
+                  <span>MQTT</span>
+                  <span>Node-RED</span>
+                  <span>MySQL</span>
+                  <span>PCB Design</span>
+                </div>
+              </div>
+
+              <!-- Internship 2: Sampoerna Kayoe -->
+              <div class="timeline-card">
+                <div class="card-timeline-marker marker-orange"></div>
+                <div class="timeline-card-header">
+                  <div>
+                    <span class="card-period">September 2026 — February 2027</span>
+                    <h3 class="card-company">PT. Sumber Graha Sejahtera (Sampoerna Kayoe)</h3>
+                    <p class="card-role">CMMS &amp; Maintenance Software Engineering Intern</p>
+                  </div>
+                  <span class="card-location">Batang, Indonesia</span>
+                </div>
+                <ul class="card-bullet-list">
+                  <li>Developing a Computerized Maintenance Management System (CMMS) to digitize Emergency Work Order (EWO) reporting, automated approval flow, and equipment maintenance history.</li>
+                  <li>Architected full-stack web applications utilizing React, Python FastAPI, and PostgreSQL for machine asset inventory and role-based access control.</li>
+                  <li>Designed real-time maintenance KPI dashboards to monitor MTTR (Mean Time to Repair), MTBF (Mean Time Between Failures), and line downtime.</li>
+                  <li>Engineered an MCDM-based decision support model to prioritize emergency work orders based on machine criticality and plant operations.</li>
+                </ul>
+                <div class="card-tech-chips">
+                  <span>React</span>
+                  <span>Python FastAPI</span>
+                  <span>PostgreSQL</span>
+                  <span>CMMS</span>
+                  <span>KPI Dashboards</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Pane 2: PROJECTS -->
+          <div class="tab-pane" id="tab-projects" role="tabpanel">
+            <div class="projects-grid">
+
+              <!-- Project 1: Shredder -->
+              <article class="project-box">
+                <div class="project-media-wrap lightbox-trigger" data-img="assets/images/pencacahsampah.jpg" data-title="Plastic Waste Shredder Automation & Monitoring System" data-desc="Automated plastic shredder with real-time motor protection, anti-jamming mechanism, and Grafana monitoring.">
+                  <img src="assets/images/pencacahsampah.jpg" alt="Plastic Waste Shredder Automation" class="project-thumb" />
+                  <div class="zoom-badge">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6m0-6L10 14M9 21H3v-6m0 6l11-11"/></svg>
+                  </div>
+                </div>
+                <div class="project-details">
+                  <span class="project-badge">Project 1 • Project Manager (ITS)</span>
+                  <h3 class="project-title">Plastic Waste Shredder Automation &amp; Monitoring System</h3>
+                  <p class="project-desc">
+                    Developed an automated plastic bottle shredder equipped with a real-time monitoring and electrical protection system. 
+                    Integrates ESP32 with Modbus RTU communication, sensor fusion (current, temperature, weight), and automated reverse rotation anti-jamming logic.
+                  </p>
+                  <div class="project-tags">
+                    <span>ESP32</span>
+                    <span>Modbus RTU</span>
+                    <span>MySQL</span>
+                    <span>Grafana</span>
+                    <span>Inverter VFD</span>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Project 2: Energy Monitoring -->
+              <article class="project-box">
+                <div class="project-media-wrap lightbox-trigger" data-img="assets/images/3phasemonitoring.jpg" data-title="Three-Phase Energy Monitoring System" data-desc="Industrial electrical distribution monitoring system measuring real-time 3-phase voltage, current, and energy consumption.">
+                  <img src="assets/images/3phasemonitoring.jpg" alt="Three-Phase Energy Monitoring System" class="project-thumb" />
+                  <div class="zoom-badge">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6m0-6L10 14M9 21H3v-6m0 6l11-11"/></svg>
+                  </div>
+                </div>
+                <div class="project-details">
+                  <span class="project-badge">Project 2 • Industrial Project (Indoprima)</span>
+                  <h3 class="project-title">Three-Phase Energy Monitoring System</h3>
+                  <p class="project-desc">
+                    Designed and deployed a 3-phase power monitoring panel utilizing PZEM-004T sensors and CD74HC4067 multiplexer. 
+                    Measures real-time voltage, current, power factor, frequency, and cumulative energy consumption with automated data logging via Node-RED to MySQL.
+                  </p>
+                  <div class="project-tags">
+                    <span>ESP32</span>
+                    <span>PZEM-004T</span>
+                    <span>Multiplexer</span>
+                    <span>Node-RED</span>
+                    <span>MySQL</span>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Project 3: IoT Access Security -->
+              <article class="project-box">
+                <div class="project-media-wrap placeholder-media lightbox-trigger" data-img="assets/images/DRACO_transparent.png" data-title="IoT Access Security System & Automated Reporting" data-desc="Digital verification access control system for spare parts inventory using GM66 barcode/RFID and non-blocking finite state machine.">
+                  <div class="cyber-placeholder">
+                    <svg width="54" height="54" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+                    <span>DIGITAL ACCESS SYSTEM</span>
+                  </div>
+                </div>
+                <div class="project-details">
+                  <span class="project-badge">Project 3 • Industrial Project (Indoprima)</span>
+                  <h3 class="project-title">IoT Access Security System &amp; Automated Reporting</h3>
+                  <p class="project-desc">
+                    Designed an automated digital door verification system to secure spare parts storage. 
+                    Uses GM66 scanning module with ESP32 transmitting via MQTT to Node-RED for database authorization, non-blocking finite state machine (FSM) control, and automated audit reporting.
+                  </p>
+                  <div class="project-tags">
+                    <span>ESP32</span>
+                    <span>GM66 Module</span>
+                    <span>MQTT</span>
+                    <span>Node-RED</span>
+                    <span>FSM Firmware</span>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Project 4: Packing Monitoring -->
+              <article class="project-box">
+                <div class="project-media-wrap lightbox-trigger" data-img="assets/images/Screenshot 2026-06-04 092534.png" data-title="IoT-Based Packing Monitoring Dashboard" data-desc="Real-time production floor monitoring dashboard displaying packaging parameters, fault counts, and machine state.">
+                  <img src="assets/images/Screenshot%202026-06-04%20092534.png" alt="Grafana Monitoring Dashboard" class="project-thumb" />
+                  <div class="zoom-badge">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6m0-6L10 14M9 21H3v-6m0 6l11-11"/></svg>
+                  </div>
+                </div>
+                <div class="project-details">
+                  <span class="project-badge">Project 4 • Industrial Project (Indoprima)</span>
+                  <h3 class="project-title">IoT-Based Packing Monitoring System</h3>
+                  <p class="project-desc">
+                    Integrated MQTT, Node-RED, and SQL Server for industrial packing line data transmission. 
+                    Designed operator push-button &amp; LCD interface, accompanied by Over-The-Air (OTA) updates and real-time visualization dashboards.
+                  </p>
+                  <div class="project-tags">
+                    <span>ESP32</span>
+                    <span>Node-RED</span>
+                    <span>SQL Server</span>
+                    <span>Grafana</span>
+                    <span>OTA</span>
+                  </div>
+                </div>
+              </article>
+
+            </div>
+          </div>
+
+          <!-- Pane 3: CERTIFICATES & ACHIEVEMENTS -->
+          <div class="tab-pane" id="tab-certificates" role="tabpanel">
+            <div class="cert-grid">
+
+              <!-- Cert 1: JMP -->
+              <div class="cert-item lightbox-trigger" data-img="assets/images/Sertifikat JMP_page-0001.jpg" data-title="Junior Mobile Programmer — Digital Talent Scholarship" data-desc="Vocational School Graduate Academy (VSGA) certified by BPSDMP Kominfo Surabaya (2025).">
+                <div class="cert-img-container">
+                  <img src="assets/images/Sertifikat%20JMP_page-0001.jpg" alt="Sertifikat Junior Mobile Programmer" class="cert-thumb" />
+                  <div class="cert-hover-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg>
+                  </div>
+                </div>
+                <div class="cert-meta">
+                  <span class="cert-year">2025 • VSGA Kominfo</span>
+                  <h4 class="cert-name">Junior Mobile Programmer</h4>
+                  <p class="cert-org">BPSDMP Kominfo Surabaya — Digital Talent Scholarship</p>
+                </div>
+              </div>
+
+              <!-- Cert 2: IKMVI -->
+              <div class="cert-item lightbox-trigger" data-img="assets/images/Muhammad Harits Khairiansyah_IKMVI.png" data-title="Sertifikat Penghargaan Kongres IKMVI 2025" data-desc="Peserta Kongres Ikatan Keluarga Mahasiswa Vokasi Indonesia (2025).">
+                <div class="cert-img-container">
+                  <img src="assets/images/Muhammad%20Harits%20Khairiansyah_IKMVI.png" alt="Sertifikat IKMVI" class="cert-thumb" />
+                  <div class="cert-hover-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg>
+                  </div>
+                </div>
+                <div class="cert-meta">
+                  <span class="cert-year">2025 • Nasional</span>
+                  <h4 class="cert-name">Kongres IKMVI 2025</h4>
+                  <p class="cert-org">Ikatan Keluarga Mahasiswa Vokasi Indonesia</p>
+                </div>
+              </div>
+
+              <!-- Cert 3: OLIVIA IX -->
+              <div class="cert-item cert-text-box">
+                <div class="cert-symbol">🏆</div>
+                <div class="cert-meta">
+                  <span class="cert-year">2025 • Nasional</span>
+                  <h4 class="cert-name">National Participant — OLIVIA IX</h4>
+                  <p class="cert-org">Olimpiade Vokasi Indonesia (Scientific Papers in Science &amp; Technology)</p>
+                  <p class="cert-caption">Forum Pendidikan Tinggi Vokasi Indonesia &amp; Universitas Hasanuddin</p>
+                </div>
+              </div>
+
+              <!-- Cert 4: CAD-IT 4.0 -->
+              <div class="cert-item cert-text-box">
+                <div class="cert-symbol">🌐</div>
+                <div class="cert-meta">
+                  <span class="cert-year">2025 • Industrial Seminar</span>
+                  <h4 class="cert-name">CAD-IT Industry 4.0 Digital Transformation</h4>
+                  <p class="cert-org">CAD-IT Consultants (Asia) Pte Ltd</p>
+                  <p class="cert-caption">Fundamentals and Real-World Industrial Case Studies</p>
+                </div>
+              </div>
+
+              <!-- Cert 5: Komdigi Mindset -->
+              <div class="cert-item cert-text-box">
+                <div class="cert-symbol">💡</div>
+                <div class="cert-meta">
+                  <span class="cert-year">2025 • Komdigi</span>
+                  <h4 class="cert-name">Digital Mindset Certification</h4>
+                  <p class="cert-org">Kementerian Komunikasi dan Digital RI</p>
+                  <p class="cert-caption">Pusat Pengembangan Literasi Digital</p>
+                </div>
+              </div>
+
+              <!-- Cert 6: PLC Training -->
+              <div class="cert-item cert-text-box">
+                <div class="cert-symbol">⚙️</div>
+                <div class="cert-meta">
+                  <span class="cert-year">2024 • Training</span>
+                  <h4 class="cert-name">PLC &amp; Microcontroller Training</h4>
+                  <p class="cert-org">Departemen Teknik Elektro Otomasi ITS</p>
+                  <p class="cert-caption">Hands-on Industrial Ladder Logic &amp; Microcontrollers</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Pane 4: SKILLS (4-Card Bento Grid) -->
+          <div class="tab-pane" id="tab-skills" role="tabpanel">
+            <div class="skills-bento-grid">
+
+              <!-- Skill Card 1: Embedded & IoT -->
+              <div class="bento-card bento-glow-blue">
+                <div class="bento-header">
+                  <div class="bento-icon">⚡</div>
+                  <div>
+                    <h3 class="bento-title">Embedded Systems &amp; Industrial IoT</h3>
+                    <p class="bento-subtitle">Hardware-level integration &amp; edge communication</p>
+                  </div>
+                </div>
+                <div class="skill-pill-group">
+                  <span class="skill-pill highlight-blue">ESP32</span>
+                  <span class="skill-pill">Arduino IDE</span>
+                  <span class="skill-pill highlight-orange">MQTT</span>
+                  <span class="skill-pill highlight-blue">Modbus RTU</span>
+                  <span class="skill-pill">PZEM-004T</span>
+                  <span class="skill-pill">OTA Updates</span>
+                  <span class="skill-pill">Sensor Integration</span>
+                  <span class="skill-pill">Serial RS485</span>
+                  <span class="skill-pill">PCB Design (Eagle)</span>
+                  <span class="skill-pill">Proteus Sim</span>
+                </div>
+              </div>
+
+              <!-- Skill Card 2: Industrial Automation -->
+              <div class="bento-card bento-glow-orange">
+                <div class="bento-header">
+                  <div class="bento-icon">⚙️</div>
+                  <div>
+                    <h3 class="bento-title">Industrial Automation &amp; Control</h3>
+                    <p class="bento-subtitle">Factory equipment &amp; power electronics</p>
+                  </div>
+                </div>
+                <div class="skill-pill-group">
+                  <span class="skill-pill highlight-orange">PLC Mitsubishi</span>
+                  <span class="skill-pill highlight-blue">GX Works2</span>
+                  <span class="skill-pill highlight-orange">Variable Frequency Drive (VFD)</span>
+                  <span class="skill-pill">Motor Protection</span>
+                  <span class="skill-pill">PID Control</span>
+                  <span class="skill-pill">Industrial Wiring</span>
+                  <span class="skill-pill">Electrical Panels</span>
+                  <span class="skill-pill">Instrumentation</span>
+                </div>
+              </div>
+
+              <!-- Skill Card 3: Data Acquisition & Software -->
+              <div class="bento-card bento-glow-blue">
+                <div class="bento-header">
+                  <div class="bento-icon">📊</div>
+                  <div>
+                    <h3 class="bento-title">Data Acquisition &amp; Cloud Monitoring</h3>
+                    <p class="bento-subtitle">Real-time telemetry, databases &amp; full-stack tools</p>
+                  </div>
+                </div>
+                <div class="skill-pill-group">
+                  <span class="skill-pill highlight-blue">Node-RED</span>
+                  <span class="skill-pill highlight-orange">Grafana Dashboards</span>
+                  <span class="skill-pill">MySQL</span>
+                  <span class="skill-pill">PostgreSQL</span>
+                  <span class="skill-pill">SQL Server</span>
+                  <span class="skill-pill highlight-blue">Python FastAPI</span>
+                  <span class="skill-pill">React</span>
+                  <span class="skill-pill">XAMPP</span>
+                </div>
+              </div>
+
+              <!-- Skill Card 4: Soft Skills & 3D Tools -->
+              <div class="bento-card bento-glow-orange">
+                <div class="bento-header">
+                  <div class="bento-icon">🧠</div>
+                  <div>
+                    <h3 class="bento-title">Soft Skills, 3D Modeling &amp; Languages</h3>
+                    <p class="bento-subtitle">Team leadership, design visualization &amp; languages</p>
+                  </div>
+                </div>
+                <div class="skill-pill-group">
+                  <span class="skill-pill highlight-orange">Problem Solving</span>
+                  <span class="skill-pill">Analytical Thinking</span>
+                  <span class="skill-pill">Teamwork</span>
+                  <span class="skill-pill">Project Management</span>
+                  <span class="skill-pill">Fusion 360</span>
+                  <span class="skill-pill">CoppeliaSim EDU</span>
+                  <span class="skill-pill">SketchUp</span>
+                  <span class="skill-pill highlight-blue">Indonesian (Native)</span>
+                  <span class="skill-pill">English (Working Proficiency)</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 5. SECTION: CONTACT ME & CLOSING ========== -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="contact-card-main">
+          <div class="contact-header text-center">
+            <span class="section-tag">Let's Connect</span>
+            <h2 class="contact-big-title">THANK YOU</h2>
+            <p class="contact-subtitle">Let's Work Together!</p>
+            <p class="contact-intro">
+              Open to collaboration, internship opportunities, and industrial automation projects. 
+              Feel free to reach out directly through any of the channels below:
+            </p>
+          </div>
+
+          <div class="contact-channels-grid">
+            <!-- Email -->
+            <a href="mailto:mkh4iriansy4h@gmail.com" class="channel-card">
+              <div class="channel-icon icon-blue">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div class="channel-info">
+                <span class="channel-label">Email</span>
+                <span class="channel-val">mkh4iriansy4h@gmail.com</span>
+              </div>
+            </a>
+
+            <!-- WhatsApp -->
+            <a href="https://wa.me/6281336877945" target="_blank" rel="noreferrer" class="channel-card">
+              <div class="channel-icon icon-orange">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+              </div>
+              <div class="channel-info">
+                <span class="channel-label">WhatsApp</span>
+                <span class="channel-val">+62 813-3687-7945</span>
+              </div>
+            </a>
+
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/harits-k-1a1717308/" target="_blank" rel="noreferrer" class="channel-card">
+              <div class="channel-icon icon-blue">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              </div>
+              <div class="channel-info">
+                <span class="channel-label">LinkedIn</span>
+                <span class="channel-val">Muhammad Harits Khairiansyah</span>
+              </div>
+            </a>
+
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/ritskhair" target="_blank" rel="noreferrer" class="channel-card">
+              <div class="channel-icon icon-orange">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+              </div>
+              <div class="channel-info">
+                <span class="channel-label">Instagram</span>
+                <span class="channel-val">@ritskhair</span>
+              </div>
+            </a>
+
+            <!-- GitHub -->
+            <a href="https://github.com/ritskhair" target="_blank" rel="noreferrer" class="channel-card">
+              <div class="channel-icon icon-blue">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+              </div>
+              <div class="channel-info">
+                <span class="channel-label">GitHub</span>
+                <span class="channel-val">github.com/ritskhair</span>
+              </div>
+            </a>
+
+            <!-- Location -->
+            <div class="channel-card">
+              <div class="channel-icon icon-orange">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div class="channel-info">
+                <span class="channel-label">Location</span>
+                <span class="channel-val">Surabaya, Indonesia</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
   </main>
 
-  <!-- ========== FOOTER ========== -->
+  <!-- ========== 6. FOOTER ========== -->
   <footer class="footer">
-    <div class="footer-inner">
-      <img src="assets/images/DRACO_transparent.png" class="footer-logo" alt="DRACO" />
-      <p>Designed & built by Muhammad Harits Khairiansyah. &copy; 2026</p>
+    <div class="container footer-content">
+      <img src="assets/images/DRACO_transparent.png" class="footer-draco-logo" alt="DRACO Logo" />
+      <p class="footer-text">
+        Designed &amp; Engineered by <strong>Muhammad Harits Khairiansyah</strong> • 2026<br />
+        Built with HTML5, CSS3 &amp; Vanilla JavaScript
+      </p>
     </div>
   </footer>
+
+  <!-- ========== 7. LIGHTBOX MODAL ========== -->
+  <div class="lightbox-modal" id="lightboxModal" aria-hidden="true" role="dialog">
+    <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+    <div class="lightbox-container">
+      <button class="lightbox-close" id="lightboxClose" aria-label="Close modal">&times;</button>
+      <div class="lightbox-img-wrap">
+        <img src="" alt="Modal Preview" id="lightboxImg" />
+      </div>
+      <div class="lightbox-caption">
+        <h4 id="lightboxTitle">Title</h4>
+        <p id="lightboxDesc">Description</p>
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
