@@ -43,8 +43,8 @@
 
     <!-- ========== 2. SECTION: HOME ========== -->
     <section class="hero-section" id="home">
-      <div class="container hero-grid">
-        <div class="hero-text-col">
+      <div class="container hero-centered-container">
+        <div class="hero-centered-content">
           <p class="hero-eyebrow">
             <span class="eyebrow-dot"></span>
             Automation &amp; Industrial IoT Engineer
@@ -66,24 +66,6 @@
                   stroke-linejoin="round" />
               </svg>
             </a>
-          </div>
-        </div>
-
-        <div class="hero-visual-col">
-          <div class="industrial-card-wrap">
-            <div class="gear-backdrop">
-              <img src="assets/images/DRACO_transparent.png" alt="DRACO Gear Backdrop" class="gear-img" />
-            </div>
-            <div class="card-glow-ring"></div>
-            <div class="photo-industrial-card">
-              <img src="assets/images/FOTOku.jpg" alt="Muhammad Harits Khairiansyah" class="photo-img" />
-              <div class="photo-card-overlay">
-                <div class="card-status-badge">
-                  <span class="live-pulse"></span>
-                  <span>OPEN FOR INTERNSHIP &amp; PROJECTS</span>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -123,9 +105,37 @@
             </div>
           </div>
 
-          <!-- Col 2: Center Photo (khairi.png with glowing aura) -->
+          <!-- Col 2: Center Photo (khairi.png with glowing aura & programmatic rotating gear) -->
           <div class="triptych-col-floating triptych-photo">
             <div class="center-photo-stage">
+              <!-- Programmatic Mechanical SVG Gear (Smooth 8s rotation on hover) -->
+              <div class="gear-backdrop-svg">
+                <svg class="programmatic-gear" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <linearGradient id="dracoGearGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#1E90FF" />
+                      <stop offset="50%" stop-color="#2B3B78" />
+                      <stop offset="100%" stop-color="#FF6B00" />
+                    </linearGradient>
+                  </defs>
+                  <!-- Main Gear Body -->
+                  <path d="M 258.0,150.0 L 257.8,156.8 L 286.1,173.0 L 279.3,198.1 L 246.7,198.0 L 243.5,204.0 L 240.0,209.8 L 256.3,238.0 L 238.0,256.3 L 209.8,240.0 L 204.0,243.5 L 198.0,246.7 L 198.1,279.3 L 173.0,286.1 L 156.8,257.8 L 150.0,258.0 L 143.2,257.8 L 127.0,286.1 L 101.9,279.3 L 102.0,246.7 L 96.0,243.5 L 90.2,240.0 L 62.0,256.3 L 43.7,238.0 L 60.0,209.8 L 56.5,204.0 L 53.3,198.0 L 20.7,198.1 L 13.9,173.0 L 42.2,156.8 L 42.0,150.0 L 42.2,143.2 L 13.9,127.0 L 20.7,101.9 L 53.3,102.0 L 56.5,96.0 L 60.0,90.2 L 43.7,62.0 L 62.0,43.7 L 90.2,60.0 L 96.0,56.5 L 102.0,53.3 L 101.9,20.7 L 127.0,13.9 L 143.2,42.2 L 150.0,42.0 L 156.8,42.2 L 173.0,13.9 L 198.1,20.7 L 198.0,53.3 L 204.0,56.5 L 209.8,60.0 L 238.0,43.7 L 256.3,62.0 L 240.0,90.2 L 243.5,96.0 L 246.7,102.0 L 279.3,101.9 L 286.1,127.0 L 257.8,143.2 L 258.0,150.0 Z" fill="rgba(13, 21, 40, 0.88)" stroke="url(#dracoGearGrad)" stroke-width="2.5" stroke-linejoin="round" />
+                  <!-- Pitch & Addendum Guidance Circles -->
+                  <circle cx="150" cy="150" r="108" stroke="rgba(30, 144, 255, 0.35)" stroke-width="1" stroke-dasharray="4 4" />
+                  <circle cx="150" cy="150" r="92" stroke="rgba(255, 107, 0, 0.35)" stroke-width="1" />
+                  <!-- 6 Lightening Spoke Holes -->
+                  <circle cx="224.0" cy="150.0" r="14" fill="#070A12" stroke="url(#dracoGearGrad)" stroke-width="1.5" />
+                  <circle cx="187.0" cy="214.1" r="14" fill="#070A12" stroke="url(#dracoGearGrad)" stroke-width="1.5" />
+                  <circle cx="113.0" cy="214.1" r="14" fill="#070A12" stroke="url(#dracoGearGrad)" stroke-width="1.5" />
+                  <circle cx="76.0" cy="150.0" r="14" fill="#070A12" stroke="url(#dracoGearGrad)" stroke-width="1.5" />
+                  <circle cx="113.0" cy="85.9" r="14" fill="#070A12" stroke="url(#dracoGearGrad)" stroke-width="1.5" />
+                  <circle cx="187.0" cy="85.9" r="14" fill="#070A12" stroke="url(#dracoGearGrad)" stroke-width="1.5" />
+                  <!-- Center Hub and Keyway -->
+                  <circle cx="150" cy="150" r="42" fill="rgba(9, 14, 26, 0.95)" stroke="url(#dracoGearGrad)" stroke-width="2" />
+                  <circle cx="150" cy="150" r="20" fill="#070A12" stroke="rgba(30, 144, 255, 0.6)" stroke-width="1.5" />
+                  <rect x="147" y="126" width="6" height="8" fill="#070A12" stroke="rgba(30, 144, 255, 0.6)" stroke-width="1" />
+                </svg>
+              </div>
               <div class="stage-aura"></div>
               <div class="stage-ring"></div>
               <div class="cutout-wrapper">
