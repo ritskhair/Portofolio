@@ -1,103 +1,245 @@
 /* ==========================================================================
    DRACO PORTFOLIO — JAVASCRIPT
-   Client: Muhammad Harits Khairiansyah
-   Features: Tab Switcher (ala alfari.my.id), Lightbox Modal, Scroll Spy, Mobile Nav
+   Author: Muhammad Harits Khairiansyah
+   Features:
+   1. Lenis Smooth Scroll (Integrated with GSAP Ticker, zero vibration)
+   2. Horizontal Photo Gallery Pinned Scroll (ala landonorris.com)
+   3. Starting with open negative space + floating quote, then photos glide from right
+   4. Photo Center-Focus Detection & Subtle Parallax
+   5. Minimalist Corner Editorial Header & Fullscreen Drawer Nav
+   6. Interactive 4-Tab Switcher with ScrollTrigger.refresh()
+   7. Lightbox Modal & Accessible Keyboard Navigation
    ========================================================================== */
 
 (function () {
   'use strict';
 
-  // --- 1. NAVBAR SCROLL EFFECT ---
-  const navbar = document.getElementById('navbar');
+  // ------------------------------------------------------------------------
+  // 1. LENIS SMOOTH SCROLL (Desktop Only, Zero Vibration)
+  // ------------------------------------------------------------------------
+  let lenis = null;
+  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  const isDesktop = window.innerWidth > 768 && !isTouchDevice;
 
-  function handleNavbarScroll() {
-    if (!navbar) return;
-    if (window.scrollY > 40) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
+  if (typeof Lenis !== 'undefined' && isDesktop) {
+    try {
+      lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        smoothWheel: true,
+        smoothTouch: false,
+        touchMultiplier: 1.2,
+      });
+
+      // Synchronize Lenis with GSAP ScrollTrigger
+      if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+        lenis.on('scroll', ScrollTrigger.update);
+
+        gsap.ticker.add((time) => {
+          lenis.raf(time * 1000);
+        });
+
+        gsap.ticker.lagSmoothing(0);
+      } else {
+        function raf(time) {
+          lenis.raf(time);
+          requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+      }
+    } catch (e) {
+      console.warn('Lenis initialization notice:', e);
     }
   }
 
-  window.addEventListener('scroll', handleNavbarScroll, { passive: true });
-  handleNavbarScroll();
+  // ------------------------------------------------------------------------
+  // 2. GSAP SCROLLTRIGGER: HORIZONTAL PHOTO GALLERY (ala landonorris.com)
+  // ------------------------------------------------------------------------
+  if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+    gsap.registerPlugin(ScrollTrigger);
 
-  // --- 2. MOBILE MENU TOGGLE ---
-  const navToggle = document.getElementById('navToggle');
-  const navLinks = document.getElementById('navLinks');
+    const mm = gsap.matchMedia();
 
-  if (navToggle && navLinks) {
-    navToggle.addEventListener('click', function () {
-      navLinks.classList.toggle('open');
-      navToggle.classList.toggle('active');
-    });
+    mm.add('(min-width: 769px)', () => {
+      const track = document.getElementById('galleryTrack');
+      const viewport = document.getElementById('galleryViewport');
+      const photos = document.querySelectorAll('.gallery-photo');
 
-    // Close mobile nav when clicking any link
-    navLinks.querySelectorAll('a').forEach(function (link) {
-      link.addEventListener('click', function () {
-        navLinks.classList.remove('open');
-        navToggle.classList.remove('active');
+      if (!track || !viewport) return;
+
+      // Calculate horizontal translation distance dynamically
+      function getScrollDistance() {
+        return Math.max(0, track.scrollWidth - window.innerWidth);
+      }
+
+      // Main Horizontal Tween pinned to viewport
+      const galleryTween = gsap.to(track, {
+        x: () => -getScrollDistance(),
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '.gallery-hscroll-section',
+          pin: true,
+          scrub: 0.9,
+          start: 'top top',
+          end: () => '+=' + getScrollDistance(),
+          invalidateOnRefresh: true,
+          onUpdate: (self) => {
+            // Photo center focus detection
+            if (photos.length > 0) {
+              const viewportCenter = window.innerWidth / 2;
+              photos.forEach((photo) => {
+                const rect = photo.getBoundingClientRect();
+                const photoCenter = rect.left + rect.width / 2;
+                const distance = Math.abs(viewportCenter - photoCenter);
+
+                // If photo is within the central 70% of viewport, illuminate and scale
+                if (distance < rect.width * 0.95 && rect.right > 0 && rect.left < window.innerWidth) {
+                  photo.setAttribute('data-tone', 'focus');
+                } else {
+                  photo.setAttribute('data-tone', 'dim');
+                }
+              });
+            }
+          },
+        },
       });
+
+      // Subtle Parallax Layering for Photo Cards (data-speed 0.88 to 1.15)
+      const parallaxCards = document.querySelectorAll('.gallery-photo[data-speed]');
+      parallaxCards.forEach((card) => {
+        const speed = parseFloat(card.getAttribute('data-speed')) || 1.0;
+        const deltaX = (speed - 1.0) * 160;
+
+        gsap.to(card, {
+          x: deltaX,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: '.gallery-hscroll-section',
+            start: 'top top',
+            end: () => '+=' + getScrollDistance(),
+            scrub: true,
+          },
+        });
+      });
+
+      // Recalculate once all lazy images have loaded
+      window.addEventListener('load', () => {
+        ScrollTrigger.refresh();
+      });
+
+      return () => {
+        // Cleanup if breakpoint leaves desktop
+        galleryTween.kill();
+      };
     });
   }
 
-  // --- 3. SCROLL SPY (4 Sections: Home, About, Experience, Contact) ---
-  const sections = document.querySelectorAll('section[id]');
-  const navAnchors = document.querySelectorAll('.nav-links a');
+  // ------------------------------------------------------------------------
+  // 3. EDITORIAL TOP-RIGHT MENU & FULLSCREEN DRAWER OVERLAY
+  // ------------------------------------------------------------------------
+  const menuToggle = document.getElementById('menuToggle');
+  const navDrawer = document.getElementById('navDrawer');
+  const drawerClose = document.getElementById('drawerClose');
+  const drawerBackdrop = document.getElementById('drawerBackdrop');
+  const drawerLinks = document.querySelectorAll('.drawer-link');
 
-  function updateActiveNavLink() {
-    const scrollY = window.scrollY;
+  function openDrawer() {
+    if (!navDrawer) return;
+    navDrawer.classList.add('open');
+    navDrawer.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    if (lenis) lenis.stop();
+  }
 
-    sections.forEach(function (sec) {
-      const sectionHeight = sec.offsetHeight;
-      const sectionTop = sec.offsetTop - 120;
-      const sectionId = sec.getAttribute('id');
+  function closeDrawer() {
+    if (!navDrawer) return;
+    navDrawer.classList.remove('open');
+    navDrawer.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if (lenis) lenis.start();
+  }
 
-      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-        navAnchors.forEach(function (a) {
-          a.classList.remove('active');
-          if (a.getAttribute('href') === '#' + sectionId) {
-            a.classList.add('active');
-          }
-        });
+  if (menuToggle) {
+    menuToggle.addEventListener('click', openDrawer);
+  }
+
+  if (drawerClose) {
+    drawerClose.addEventListener('click', closeDrawer);
+  }
+
+  if (drawerBackdrop) {
+    drawerBackdrop.addEventListener('click', closeDrawer);
+  }
+
+  drawerLinks.forEach((link) => {
+    link.addEventListener('click', function (e) {
+      const targetId = this.getAttribute('href');
+      closeDrawer();
+
+      if (targetId && targetId !== '#') {
+        const targetEl = document.querySelector(targetId);
+        if (targetEl) {
+          e.preventDefault();
+          setTimeout(() => {
+            if (lenis) {
+              lenis.scrollTo(targetEl, { offset: 0, duration: 1.2 });
+            } else {
+              targetEl.scrollIntoView({ behavior: 'smooth' });
+            }
+          }, 300);
+        }
       }
     });
-  }
+  });
 
-  window.addEventListener('scroll', updateActiveNavLink, { passive: true });
-  updateActiveNavLink();
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navDrawer && navDrawer.classList.contains('open')) {
+      closeDrawer();
+    }
+  });
 
-  // --- 4. INTERACTIVE TAB SWITCHER (Section 3: Experience) ---
+  // ------------------------------------------------------------------------
+  // 4. INTERACTIVE TAB SWITCHER (Section: Experience)
+  // ------------------------------------------------------------------------
   const tabBtns = document.querySelectorAll('.tab-btn');
   const tabPanes = document.querySelectorAll('.tab-pane');
 
   if (tabBtns.length > 0 && tabPanes.length > 0) {
-    tabBtns.forEach(function (btn) {
+    tabBtns.forEach((btn) => {
       btn.addEventListener('click', function () {
         const targetTabId = this.getAttribute('data-tab');
 
-        // Deactivate all buttons
-        tabBtns.forEach(function (b) {
+        // Deactivate all
+        tabBtns.forEach((b) => {
           b.classList.remove('active');
           b.setAttribute('aria-selected', 'false');
         });
 
-        // Activate clicked button
+        // Activate clicked
         this.classList.add('active');
         this.setAttribute('aria-selected', 'true');
 
-        // Switch visible pane
-        tabPanes.forEach(function (pane) {
+        // Switch pane
+        tabPanes.forEach((pane) => {
           pane.classList.remove('active');
           if (pane.getAttribute('id') === targetTabId) {
             pane.classList.add('active');
           }
         });
+
+        // Refresh ScrollTrigger so that dynamic heights update smoothly
+        if (typeof ScrollTrigger !== 'undefined') {
+          setTimeout(() => {
+            ScrollTrigger.refresh();
+          }, 80);
+        }
       });
     });
   }
 
-  // --- 5. LIGHTBOX MODAL (Certificates & Projects Preview) ---
+  // ------------------------------------------------------------------------
+  // 5. LIGHTBOX MODAL (Projects & Certificates Preview)
+  // ------------------------------------------------------------------------
   const lightboxModal = document.getElementById('lightboxModal');
   const lightboxImg = document.getElementById('lightboxImg');
   const lightboxTitle = document.getElementById('lightboxTitle');
@@ -113,7 +255,8 @@
     lightboxDesc.textContent = desc || '';
     lightboxModal.classList.add('active');
     lightboxModal.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden'; // prevent bg scroll
+    document.body.style.overflow = 'hidden';
+    if (lenis) lenis.stop();
   }
 
   function closeLightbox() {
@@ -122,9 +265,10 @@
     lightboxModal.setAttribute('aria-hidden', 'true');
     lightboxImg.src = '';
     document.body.style.overflow = '';
+    if (lenis) lenis.start();
   }
 
-  triggers.forEach(function (trigger) {
+  triggers.forEach((trigger) => {
     trigger.addEventListener('click', function () {
       const imgSrc = this.getAttribute('data-img');
       const title = this.getAttribute('data-title');
@@ -143,24 +287,43 @@
     lightboxBackdrop.addEventListener('click', closeLightbox);
   }
 
-  document.addEventListener('keydown', function (e) {
+  document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && lightboxModal && lightboxModal.classList.contains('active')) {
       closeLightbox();
     }
   });
 
-  // --- 6. SMOOTH SCROLL FOR IN-PAGE ANCHORS ---
-  document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+  // ------------------------------------------------------------------------
+  // 6. SMOOTH IN-PAGE ANCHOR SCROLL
+  // ------------------------------------------------------------------------
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener('click', function (e) {
       const targetId = this.getAttribute('href');
       if (targetId && targetId !== '#') {
         const targetEl = document.querySelector(targetId);
         if (targetEl) {
           e.preventDefault();
-          targetEl.scrollIntoView({ behavior: 'smooth' });
+          if (lenis) {
+            lenis.scrollTo(targetEl, { offset: 0, duration: 1.2 });
+          } else {
+            targetEl.scrollIntoView({ behavior: 'smooth' });
+          }
         }
       }
     });
+  });
+
+  // ------------------------------------------------------------------------
+  // 7. WINDOW RESIZE RECALCULATION
+  // ------------------------------------------------------------------------
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      if (typeof ScrollTrigger !== 'undefined') {
+        ScrollTrigger.refresh();
+      }
+    }, 200);
   });
 
 })();

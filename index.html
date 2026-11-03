@@ -10,247 +10,455 @@
   <meta property="og:description"
     content="D4 Automation Engineering student at ITS with experience in Industrial IoT, ESP32 monitoring, Node-RED, Grafana, and Modbus RTU." />
   <meta property="og:type" content="website" />
-  <title>Muhammad Harits Khairiansyah | Automation & Industrial IoT Engineer</title>
-  <link rel="icon" type="image/png" href="favicon.png" />
+  <title>Muhammad Harits Khairiansyah | Automation &amp; Industrial IoT Engineer</title>
+  <link rel="icon" type="image/png" href="assets/images/DRACO_transparent.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 
-<body>
+<body class="draco-theme">
 
-  <!-- ========== 1. NAVBAR ========== -->
-  <header class="navbar" id="navbar">
-    <div class="nav-brand">
-      <img src="assets/images/DRACO_transparent.png" class="nav-logo" alt="DRACO Logo" />
-      <span class="nav-brand-text">MHK</span>
+  <!-- Ambient Draco Radial Glows & Vignette -->
+  <div class="ambient-glow glow-top-right" aria-hidden="true"></div>
+  <div class="ambient-glow glow-bottom-left" aria-hidden="true"></div>
+  <div class="vignette-overlay" aria-hidden="true"></div>
+
+  <!-- ========== FIXED EDITORIAL HEADER (CORNER STYLE ALA LANDO NORRIS) ========== -->
+  <header class="editorial-top-header" id="editorialHeader">
+    <div class="header-brand-wrap">
+      <!-- Draco Logo Translucent Watermark behind the name -->
+      <img src="assets/images/DRACO_transparent.png" class="header-draco-watermark" alt="DRACO Watermark" aria-hidden="true" />
+      <a href="#home" class="header-name-brand" aria-label="Home — Muhammad Harits Khairiansyah">
+        <span class="brand-line-1">MUH</span>
+        <span class="brand-line-2">KHAIRIANSYAH</span>
+      </a>
     </div>
-    <nav class="nav-links" id="navLinks">
-      <a href="#home" class="active">Home</a>
-      <a href="#about">About Me</a>
-      <a href="#experience">Experience</a>
-      <a href="#contact">Contact Me</a>
-    </nav>
-    <button class="nav-mobile-toggle" id="navToggle" aria-label="Toggle navigation">
-      <span></span><span></span><span></span>
+
+    <!-- Minimalist Menu Toggle in top-right corner -->
+    <button class="header-menu-btn" id="menuToggle" aria-label="Toggle navigation menu">
+      <span class="menu-label">MENU</span>
+      <span class="menu-burger" aria-hidden="true">
+        <span></span>
+        <span></span>
+      </span>
     </button>
   </header>
 
+  <!-- Fullscreen / Drawer Overlay Navigation -->
+  <div class="nav-overlay-drawer" id="navDrawer" aria-hidden="true">
+    <div class="nav-drawer-backdrop" id="drawerBackdrop"></div>
+    <div class="nav-drawer-panel">
+      <button class="drawer-close-btn" id="drawerClose" aria-label="Close menu">&times;</button>
+      <div class="drawer-nav-links">
+        <a href="#home" class="drawer-link"><span class="drawer-num">01</span><span>Home</span></a>
+        <a href="#gallery" class="drawer-link"><span class="drawer-num">02</span><span>Archive Gallery</span></a>
+        <a href="#about" class="drawer-link"><span class="drawer-num">03</span><span>Profile &amp; Education</span></a>
+        <a href="#experience" class="drawer-link"><span class="drawer-num">04</span><span>Experience &amp; Skills</span></a>
+        <a href="#contact" class="drawer-link"><span class="drawer-num">05</span><span>Contact Me</span></a>
+      </div>
+      <div class="drawer-footer-note">
+        <span class="drawer-draco-mark">DRACO AUTOMATION // SURABAYA</span>
+      </div>
+    </div>
+  </div>
+
   <main>
 
-    <!-- ========== 2. SECTION: HOME ========== -->
+    <!-- ========== 1. HERO SECTION (referensi2.jpg Style) ========== -->
     <section class="hero-section" id="home">
-      <div class="container hero-centered-container">
-        <div class="hero-centered-content">
-          <p class="hero-eyebrow">
-            <span class="eyebrow-dot"></span>
-            Automation &amp; Industrial IoT Engineer
-          </p>
-          <h1 class="hero-title">
-            Muhammad Harits
-            <span class="title-gradient">Khairiansyah</span>
-          </h1>
-          <p class="hero-desc">
+      <!-- Giant Background Typography: PORTFOLIO -->
+      <div class="hero-giant-bg-text" aria-hidden="true">PORTFOLIO</div>
+
+      <!-- Rotating Gear Watermark in Background -->
+      <div class="hero-watermark-gear" aria-hidden="true">
+        <svg class="gear-svg-spin" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="dracoHeroGearGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#27386B" stop-opacity="0.6" />
+              <stop offset="100%" stop-color="#F47C20" stop-opacity="0.3" />
+            </linearGradient>
+          </defs>
+          <path d="M 258.0,150.0 L 257.8,156.8 L 286.1,173.0 L 279.3,198.1 L 246.7,198.0 L 243.5,204.0 L 240.0,209.8 L 256.3,238.0 L 238.0,256.3 L 209.8,240.0 L 204.0,243.5 L 198.0,246.7 L 198.1,279.3 L 173.0,286.1 L 156.8,257.8 L 150.0,258.0 L 143.2,257.8 L 127.0,286.1 L 101.9,279.3 L 102.0,246.7 L 96.0,243.5 L 90.2,240.0 L 62.0,256.3 L 43.7,238.0 L 60.0,209.8 L 56.5,204.0 L 53.3,198.0 L 20.7,198.1 L 13.9,173.0 L 42.2,156.8 L 42.0,150.0 L 42.2,143.2 L 13.9,127.0 L 20.7,101.9 L 53.3,102.0 L 56.5,96.0 L 60.0,90.2 L 43.7,62.0 L 62.0,43.7 L 90.2,60.0 L 96.0,56.5 L 102.0,53.3 L 101.9,20.7 L 127.0,13.9 L 143.2,42.2 L 150.0,42.0 L 156.8,42.2 L 173.0,13.9 L 198.1,20.7 L 198.0,53.3 L 204.0,56.5 L 209.8,60.0 L 238.0,43.7 L 256.3,62.0 L 240.0,90.2 L 243.5,96.0 L 246.7,102.0 L 279.3,101.9 L 286.1,127.0 L 257.8,143.2 L 258.0,150.0 Z" stroke="url(#dracoHeroGearGrad)" stroke-width="2" />
+          <circle cx="150" cy="150" r="108" stroke="rgba(39, 56, 107, 0.25)" stroke-width="1" stroke-dasharray="4 4" />
+          <circle cx="150" cy="150" r="42" stroke="rgba(244, 124, 32, 0.3)" stroke-width="1.5" />
+        </svg>
+      </div>
+
+      <div class="container hero-editorial-grid">
+
+        <!-- Left Column: Greeting, Big Name, Role, Bio, CTA -->
+        <div class="hero-col-left">
+          <div class="hero-top-eyebrow">
+            <span class="eyebrow-accent">AUTOMATION &amp; INDUSTRIAL IOT ENGINEER</span>
+            <span class="eyebrow-sub">D4 AUTOMATION — ITS</span>
+          </div>
+
+          <div class="hero-name-wrapper">
+            <span class="hero-script-greet">Hello, I'm</span>
+            <h1 class="hero-headline-name">
+              MUHAMMAD HARITS<br />
+              <span class="hero-gradient-text">KHAIRIANSYAH</span>
+            </h1>
+          </div>
+
+          <p class="hero-role-tag">AUTOMATION &amp; INDUSTRIAL IOT ENGINEER</p>
+
+          <p class="hero-desc-editorial">
             D4 Automation Engineering student at <strong>Institut Teknologi Sepuluh Nopember (ITS)</strong>.
             Passionate about Industrial IoT, real-time monitoring, ESP32 architecture,
             Modbus RTU / MQTT protocols, and Grafana telemetry dashboards.
           </p>
-          <div class="hero-cta-group">
-            <a href="#experience" class="btn btn-primary">
+
+          <div class="hero-action-row">
+            <a href="#experience" class="btn btn-draco-primary">
               <span>Explore Experience</span>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round" />
+              <svg width="15" height="15" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
             </a>
+            <div class="hero-status-pill">
+              <span class="status-dot"></span>
+              <span>SURABAYA, INDONESIA • OPEN FOR COLLABORATION</span>
+            </div>
           </div>
         </div>
+
+        <!-- Center Column: khairi.png Cutout Portrait with Gradient Mask -->
+        <div class="hero-col-center">
+          <div class="hero-portrait-stage">
+            <div class="hero-aura-glow"></div>
+            <img src="assets/images/khairi.png" alt="Muhammad Harits Khairiansyah" class="hero-cutout-img" />
+            <div class="hero-fade-mask" aria-hidden="true"></div>
+          </div>
+        </div>
+
+        <!-- Right Column: Subtle quote pill + Vertical Metrics Column -->
+        <div class="hero-col-right">
+          <div class="hero-quote-badge">
+            <div class="quote-badge-spark">✦</div>
+            <p class="quote-badge-text">
+              Engineering precision, telemetry data, and resilient industrial automation.
+            </p>
+          </div>
+
+          <div class="hero-metrics-stack">
+            <div class="hero-metric-item">
+              <div class="metric-num-wrap">
+                <span class="metric-large-num">3.26</span>
+              </div>
+              <div class="metric-label-wrap">
+                <span class="metric-lbl-primary">GPA</span>
+                <span class="metric-lbl-sub">/ 4.00 SCALE</span>
+              </div>
+            </div>
+
+            <div class="hero-metric-divider"></div>
+
+            <div class="hero-metric-item">
+              <div class="metric-num-wrap">
+                <span class="metric-large-num">2</span>
+              </div>
+              <div class="metric-label-wrap">
+                <span class="metric-lbl-primary">INDUSTRIAL</span>
+                <span class="metric-lbl-sub">INTERNSHIPS</span>
+              </div>
+            </div>
+
+            <div class="hero-metric-divider"></div>
+
+            <div class="hero-metric-item">
+              <div class="metric-num-wrap">
+                <span class="metric-large-num">4+</span>
+              </div>
+              <div class="metric-label-wrap">
+                <span class="metric-lbl-primary">KEY ENGINEERING</span>
+                <span class="metric-lbl-sub">PROJECTS</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <!-- ========== 3. SECTION: ABOUT ME ========== -->
-    <section class="section about-section" id="about">
-      <div class="container">
-        <div class="section-header text-center">
-          <span class="section-tag">About Me</span>
-          <h2 class="section-heading">Focused on Automation, IoT &amp; Industrial Systems</h2>
-        </div>
+    <!-- ========== 2. HORIZONTAL PHOTO GALLERY (ala landonorris.com) ========== -->
+    <!-- Murni galeri foto asimetris dari bahan scroll + kutipan mengambang pembuka -->
+    <section class="gallery-hscroll-section" id="gallery">
+      <div class="gallery-viewport" id="galleryViewport">
+        <div class="gallery-track" id="galleryTrack">
 
-        <!-- Top: 3-Column Floating Triptych Layout (No boxes/borders) -->
-        <div class="about-triptych-floating">
-          <!-- Col 1: Greeting & Floating Stats -->
-          <div class="triptych-col-floating triptych-intro">
-            <span class="intro-eyebrow">HELLO, I'M</span>
-            <h3 class="intro-name">
-              MUHAMMAD HARITS<br />
-              <span class="text-gradient">KHAIRIANSYAH</span>
-            </h3>
-            <p class="intro-role">D4 Automation Engineering<br />Institut Teknologi Sepuluh Nopember</p>
-            <div class="floating-stats-wrap">
-              <div class="floating-stat-item">
-                <span class="stat-big-val">3.26</span>
-                <span class="stat-small-lbl">GPA / 4.00</span>
-              </div>
-              <div class="floating-stat-item">
-                <span class="stat-big-val">2</span>
-                <span class="stat-small-lbl">Industrial Internships</span>
-              </div>
-              <div class="floating-stat-item">
-                <span class="stat-big-val">4+</span>
-                <span class="stat-small-lbl">Key Engineering Projects</span>
+          <!-- OPENING VAST EMPTY SPACE WITH FLOATING INSTRUMENT SERIF QUOTE -->
+          <div class="gallery-opening-space">
+            <div class="floating-quote-container">
+              <span class="floating-quote-mark" aria-hidden="true">&ldquo;</span>
+              <blockquote class="floating-quote-text">
+                Engineering is not merely about making machines work; it is about orchestrating precision, data, and resilience into seamless harmony.
+              </blockquote>
+              <div class="floating-quote-author">
+                <div class="floating-author-line" aria-hidden="true"></div>
+                <cite class="floating-author-name">Muhammad Harits Khairiansyah</cite>
+                <span class="floating-author-title">Automation &amp; Industrial IoT Specialist</span>
               </div>
             </div>
           </div>
 
-          <!-- Col 2: Center Photo (khairi.png with glowing aura & programmatic rotating gear) -->
-          <div class="triptych-col-floating triptych-photo">
-            <div class="center-photo-stage">
-              <!-- Programmatic Mechanical SVG Gear (Smooth 8s rotation on hover) -->
-              <div class="gear-backdrop-svg">
-                <svg class="programmatic-gear" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- ASYMMETRICAL SCATTERED PHOTO CARDS (SQUARE 1:1, RANDOM SIZES, WIDE GAPS) -->
+          <!-- Foto 1: Copy of DSC02478.JPG (Large Hero) -->
+          <figure class="gallery-photo photo-size-l photo-valign-center" data-speed="1.0">
+            <div class="gallery-photo-caption">AUTOMATION FIELDWORK, 2026</div>
+            <div class="gallery-photo-wrap">
+              <img src="assets/images/scroll/Copy of DSC02478.JPG" alt="Automation Fieldwork" loading="lazy" />
+            </div>
+          </figure>
+
+          <!-- Foto 2: IMG-20240721-WA0023.jpg (Medium, Top) -->
+          <figure class="gallery-photo photo-size-m photo-valign-top" data-speed="0.88">
+            <div class="gallery-photo-caption">ITS SURABAYA, 2024</div>
+            <div class="gallery-photo-wrap">
+              <img src="assets/images/scroll/IMG-20240721-WA0023.jpg" alt="ITS Surabaya Campus Life" loading="lazy" />
+            </div>
+          </figure>
+
+          <!-- Foto 3: IMG-20250227-WA0015.jpg (Small, Bottom) -->
+          <figure class="gallery-photo photo-size-s photo-valign-bottom" data-speed="1.15">
+            <div class="gallery-photo-caption">AUTOMATION LAB, 2025</div>
+            <div class="gallery-photo-wrap">
+              <img src="assets/images/scroll/IMG-20250227-WA0015.jpg" alt="Automation Lab Session" loading="lazy" />
+            </div>
+          </figure>
+
+          <!-- Foto 4: Copy of DSC02626.JPG (Medium, Center) -->
+          <figure class="gallery-photo photo-size-m photo-valign-center" data-speed="0.95">
+            <div class="gallery-photo-caption">SYSTEM COMMISSIONING, 2026</div>
+            <div class="gallery-photo-wrap">
+              <img src="assets/images/scroll/Copy of DSC02626.JPG" alt="System Commissioning" loading="lazy" />
+            </div>
+          </figure>
+
+          <!-- Foto 5: IMG-20250301-WA0004.jpg (Large Hero, Top) -->
+          <figure class="gallery-photo photo-size-l photo-valign-top" data-speed="1.02">
+            <div class="gallery-photo-caption">INDUSTRIAL DEPLOYMENT, 2025</div>
+            <div class="gallery-photo-wrap">
+              <img src="assets/images/scroll/IMG-20250301-WA0004.jpg" alt="Industrial Deployment" loading="lazy" />
+            </div>
+          </figure>
+
+          <!-- Foto 6: IMG-20260118-WA0025.jpg (Small, Bottom) -->
+          <figure class="gallery-photo photo-size-s photo-valign-bottom" data-speed="1.1">
+            <div class="gallery-photo-caption">ELECTRICAL WORKSHOP, 2026</div>
+            <div class="gallery-photo-wrap">
+              <img src="assets/images/scroll/IMG-20260118-WA0025.jpg" alt="Electrical Workshop" loading="lazy" />
+            </div>
+          </figure>
+
+          <!-- Foto 7: IMG_5080.JPG (Large Hero, Center) -->
+          <figure class="gallery-photo photo-size-l photo-valign-center" data-speed="1.0">
+            <div class="gallery-photo-caption">FACTORY FLOOR, 2025</div>
+            <div class="gallery-photo-wrap">
+              <img src="assets/images/scroll/IMG_5080.JPG" alt="Factory Floor Operation" loading="lazy" />
+            </div>
+          </figure>
+
+          <!-- Foto 8: IMG-20250308-WA0036.jpg (Medium, Top) -->
+          <figure class="gallery-photo photo-size-m photo-valign-top" data-speed="0.88">
+            <div class="gallery-photo-caption">PROJECT ASSEMBLY, 2025</div>
+            <div class="gallery-photo-wrap">
+              <img src="assets/images/scroll/IMG-20250308-WA0036.jpg" alt="Hardware Project Assembly" loading="lazy" />
+            </div>
+          </figure>
+
+          <!-- Foto 9: Foto tim.jpg (Medium, Bottom) -->
+          <figure class="gallery-photo photo-size-m photo-valign-bottom" data-speed="1.05">
+            <div class="gallery-photo-caption">TEAM COLLABORATION, 2025</div>
+            <div class="gallery-photo-wrap">
+              <img src="assets/images/Foto tim.jpg" alt="Engineering Team Collaboration" loading="lazy" />
+            </div>
+          </figure>
+
+          <!-- Spacious End Spacer -->
+          <div class="gallery-end-spacer" aria-hidden="true"></div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 3. SECTION: PROFILE & ACADEMIC JOURNEY ========== -->
+    <!-- Berada di alur scroll vertikal normal setelah galeri foto horizontal -->
+    <section class="section profile-journey-section" id="about">
+      <div class="container">
+
+        <div class="section-header-editorial text-center">
+          <span class="section-tag-draco">02 // PROFILE &amp; ACADEMIC JOURNEY</span>
+          <h2 class="section-heading-large">Focused on Automation, IoT &amp; Industrial Systems</h2>
+          <p class="section-subtitle-muted">Bridging hands-on electrical instrumentation with cloud telemetry and edge intelligence.</p>
+        </div>
+
+        <!-- Upper Block: Formal Portrait & Biography / Specs -->
+        <div class="profile-layout-grid">
+
+          <!-- Left: Formal Portrait with Rotating Gear Watermark -->
+          <div class="profile-portrait-col">
+            <div class="portrait-stage-editorial">
+              <div class="gear-backdrop-svg" aria-hidden="true">
+                <svg class="gear-watermark-spin" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <defs>
-                    <linearGradient id="dracoGearGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stop-color="#1E90FF" />
-                      <stop offset="50%" stop-color="#2B3B78" />
-                      <stop offset="100%" stop-color="#FF6B00" />
+                    <linearGradient id="dracoPanelGearGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#27386B" stop-opacity="0.8" />
+                      <stop offset="50%" stop-color="#16223B" stop-opacity="0.6" />
+                      <stop offset="100%" stop-color="#F47C20" stop-opacity="0.8" />
                     </linearGradient>
                   </defs>
-                  <!-- Main Gear Body -->
-                  <path d="M 258.0,150.0 L 257.8,156.8 L 286.1,173.0 L 279.3,198.1 L 246.7,198.0 L 243.5,204.0 L 240.0,209.8 L 256.3,238.0 L 238.0,256.3 L 209.8,240.0 L 204.0,243.5 L 198.0,246.7 L 198.1,279.3 L 173.0,286.1 L 156.8,257.8 L 150.0,258.0 L 143.2,257.8 L 127.0,286.1 L 101.9,279.3 L 102.0,246.7 L 96.0,243.5 L 90.2,240.0 L 62.0,256.3 L 43.7,238.0 L 60.0,209.8 L 56.5,204.0 L 53.3,198.0 L 20.7,198.1 L 13.9,173.0 L 42.2,156.8 L 42.0,150.0 L 42.2,143.2 L 13.9,127.0 L 20.7,101.9 L 53.3,102.0 L 56.5,96.0 L 60.0,90.2 L 43.7,62.0 L 62.0,43.7 L 90.2,60.0 L 96.0,56.5 L 102.0,53.3 L 101.9,20.7 L 127.0,13.9 L 143.2,42.2 L 150.0,42.0 L 156.8,42.2 L 173.0,13.9 L 198.1,20.7 L 198.0,53.3 L 204.0,56.5 L 209.8,60.0 L 238.0,43.7 L 256.3,62.0 L 240.0,90.2 L 243.5,96.0 L 246.7,102.0 L 279.3,101.9 L 286.1,127.0 L 257.8,143.2 L 258.0,150.0 Z" fill="rgba(13, 21, 40, 0.88)" stroke="url(#dracoGearGrad)" stroke-width="2.5" stroke-linejoin="round" />
-                  <!-- Pitch & Addendum Guidance Circles -->
-                  <circle cx="150" cy="150" r="108" stroke="rgba(30, 144, 255, 0.35)" stroke-width="1" stroke-dasharray="4 4" />
-                  <circle cx="150" cy="150" r="92" stroke="rgba(255, 107, 0, 0.35)" stroke-width="1" />
-                  <!-- 6 Lightening Spoke Holes -->
-                  <circle cx="224.0" cy="150.0" r="14" fill="#070A12" stroke="url(#dracoGearGrad)" stroke-width="1.5" />
-                  <circle cx="187.0" cy="214.1" r="14" fill="#070A12" stroke="url(#dracoGearGrad)" stroke-width="1.5" />
-                  <circle cx="113.0" cy="214.1" r="14" fill="#070A12" stroke="url(#dracoGearGrad)" stroke-width="1.5" />
-                  <circle cx="76.0" cy="150.0" r="14" fill="#070A12" stroke="url(#dracoGearGrad)" stroke-width="1.5" />
-                  <circle cx="113.0" cy="85.9" r="14" fill="#070A12" stroke="url(#dracoGearGrad)" stroke-width="1.5" />
-                  <circle cx="187.0" cy="85.9" r="14" fill="#070A12" stroke="url(#dracoGearGrad)" stroke-width="1.5" />
-                  <!-- Center Hub and Keyway -->
-                  <circle cx="150" cy="150" r="42" fill="rgba(9, 14, 26, 0.95)" stroke="url(#dracoGearGrad)" stroke-width="2" />
-                  <circle cx="150" cy="150" r="20" fill="#070A12" stroke="rgba(30, 144, 255, 0.6)" stroke-width="1.5" />
-                  <rect x="147" y="126" width="6" height="8" fill="#070A12" stroke="rgba(30, 144, 255, 0.6)" stroke-width="1" />
+                  <path d="M 258.0,150.0 L 257.8,156.8 L 286.1,173.0 L 279.3,198.1 L 246.7,198.0 L 243.5,204.0 L 240.0,209.8 L 256.3,238.0 L 238.0,256.3 L 209.8,240.0 L 204.0,243.5 L 198.0,246.7 L 198.1,279.3 L 173.0,286.1 L 156.8,257.8 L 150.0,258.0 L 143.2,257.8 L 127.0,286.1 L 101.9,279.3 L 102.0,246.7 L 96.0,243.5 L 90.2,240.0 L 62.0,256.3 L 43.7,238.0 L 60.0,209.8 L 56.5,204.0 L 53.3,198.0 L 20.7,198.1 L 13.9,173.0 L 42.2,156.8 L 42.0,150.0 L 42.2,143.2 L 13.9,127.0 L 20.7,101.9 L 53.3,102.0 L 56.5,96.0 L 60.0,90.2 L 43.7,62.0 L 62.0,43.7 L 90.2,60.0 L 96.0,56.5 L 102.0,53.3 L 101.9,20.7 L 127.0,13.9 L 143.2,42.2 L 150.0,42.0 L 156.8,42.2 L 173.0,13.9 L 198.1,20.7 L 198.0,53.3 L 204.0,56.5 L 209.8,60.0 L 238.0,43.7 L 256.3,62.0 L 240.0,90.2 L 243.5,96.0 L 246.7,102.0 L 279.3,101.9 L 286.1,127.0 L 257.8,143.2 L 258.0,150.0 Z" stroke="url(#dracoPanelGearGrad)" stroke-width="2.5" />
+                  <circle cx="150" cy="150" r="108" stroke="rgba(39, 56, 107, 0.35)" stroke-width="1" stroke-dasharray="4 4" />
+                  <circle cx="150" cy="150" r="92" stroke="rgba(244, 124, 32, 0.35)" stroke-width="1" />
+                  <circle cx="150" cy="150" r="42" fill="rgba(5, 7, 13, 0.85)" stroke="url(#dracoPanelGearGrad)" stroke-width="2" />
                 </svg>
               </div>
-              <div class="stage-aura"></div>
-              <div class="stage-ring"></div>
-              <div class="cutout-wrapper">
-                <img src="assets/images/khairi.png" alt="Muhammad Harits Khairiansyah Portrait" class="cutout-img" />
-              </div>
-              <div class="photo-floating-pill">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>
-                <span>Surabaya, Indonesia</span>
+              <div class="portrait-frame">
+                <img src="assets/images/FOTOku.jpg" alt="Muhammad Harits Khairiansyah Formal Portrait" class="portrait-photo-img" />
+                <div class="portrait-card-footer">
+                  <span class="photo-loc-badge">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                      <circle cx="12" cy="10" r="3" />
+                    </svg>
+                    Surabaya, Indonesia
+                  </span>
+                  <span class="photo-index-badge">FORMAL ARCHIVE</span>
+                </div>
               </div>
             </div>
           </div>
 
-          <!-- Col 3: Detailed Bio Floating -->
-          <div class="triptych-col-floating triptych-desc">
-            <h4 class="desc-heading">Profile &amp; Technical Focus</h4>
-            <p>
-              I am a student in the D4 Automation Engineering programme at Institut Teknologi Sepuluh Nopember (ITS),
-              equipped with practical hands-on experience in Industrial IoT, automation systems,
-              ESP32-based monitoring, Node-RED, and PLC-based control.
-            </p>
-            <p>
-              Skilled in developing real-time monitoring dashboards using Grafana and implementing robust industrial
-              communication protocols such as MQTT and Modbus RTU. Passionate about applying embedded technology
-              to solve real industrial challenges in motor protection, energy efficiency, and predictive maintenance.
-            </p>
-            <div class="floating-spec-list">
-              <div class="spec-row">
-                <span class="spec-label">Specialization:</span>
-                <span class="spec-val">Industrial IoT &amp; Electrical Control</span>
+          <!-- Right: Profile, Specs & Milestones -->
+          <div class="profile-bio-col">
+            <h3 class="profile-block-heading">Profile &amp; Technical Focus</h3>
+            <div class="profile-bio-paragraphs">
+              <p>
+                I am a student in the D4 Automation Engineering programme at Institut Teknologi Sepuluh Nopember (ITS),
+                equipped with practical hands-on experience in Industrial IoT, automation systems,
+                ESP32-based monitoring, Node-RED, and PLC-based control.
+              </p>
+              <p>
+                Skilled in developing real-time monitoring dashboards using Grafana and implementing robust industrial
+                communication protocols such as MQTT and Modbus RTU. Passionate about applying embedded technology
+                to solve real industrial challenges in motor protection, energy efficiency, and predictive maintenance.
+              </p>
+            </div>
+
+            <!-- Specifications Table -->
+            <div class="editorial-spec-list">
+              <div class="spec-item">
+                <span class="spec-label-caps">SPECIALIZATION</span>
+                <span class="spec-val-high">Industrial IoT &amp; Electrical Control</span>
               </div>
-              <div class="spec-row">
-                <span class="spec-label">Hardware Stack:</span>
-                <span class="spec-val">ESP32, PZEM, PLC Mitsubishi, RS485</span>
+              <div class="spec-item">
+                <span class="spec-label-caps">HARDWARE STACK</span>
+                <span class="spec-val-high">ESP32, PZEM, PLC Mitsubishi, RS485</span>
               </div>
-              <div class="spec-row">
-                <span class="spec-label">Software Stack:</span>
-                <span class="spec-val">Grafana, Node-RED, MySQL, FastAPI, React</span>
+              <div class="spec-item">
+                <span class="spec-label-caps">SOFTWARE STACK</span>
+                <span class="spec-val-high">Grafana, Node-RED, MySQL, FastAPI, React</span>
+              </div>
+            </div>
+
+            <!-- Inline Milestones -->
+            <div class="profile-milestones-row">
+              <div class="mini-milestone-box">
+                <span class="mini-milestone-num">3.26</span>
+                <span class="mini-milestone-lbl">GPA / 4.00</span>
+              </div>
+              <div class="mini-milestone-box">
+                <span class="mini-milestone-num">2</span>
+                <span class="mini-milestone-lbl">Industrial Internships</span>
+              </div>
+              <div class="mini-milestone-box">
+                <span class="mini-milestone-num">4+</span>
+                <span class="mini-milestone-lbl">Key Engineering Projects</span>
               </div>
             </div>
           </div>
+
         </div>
 
-        <!-- Bottom: Education Experience (Lando Norris Notched Chamfered Cards with Background Hover Transition) -->
-        <div class="education-block">
-          <div class="sub-header">
-            <span class="sub-tag">Academic Journey</span>
-            <h3 class="sub-heading">Education Experience</h3>
+        <!-- Lower Block: Education Experience (3 Editorial Cards) -->
+        <div class="education-block-wrapper">
+          <div class="sub-header-editorial">
+            <span class="section-tag-draco">ACADEMIC JOURNEY</span>
+            <h3 class="sub-heading-editorial">Education Experience</h3>
           </div>
 
-          <div class="norris-cards-grid">
-            <!-- Card 1: SMP Al Uswah -->
-            <div class="norris-card edu-card" style="--card-bg-img: url('assets/images/fotosmp.jpg');">
-              <div class="norris-card-hover-bg"></div>
-              <div class="norris-card-inner">
-                <div class="norris-card-header">
-                  <div class="school-logo-wrap">
-                    <img src="assets/images/aluswah.jpg" alt="Logo SMPIT Al Uswah Surabaya" class="school-logo" />
-                  </div>
-                  <span class="norris-card-badge">Junior High School</span>
-                </div>
-                <h4 class="norris-card-title">SMPIT Al Uswah Surabaya</h4>
-                <p class="norris-card-desc">Academic foundation in science, mathematics, character building, and
-                  analytical problem-solving skills.</p>
+          <div class="editorial-edu-cards-row">
+            <!-- Edu 1: SMPIT Al Uswah -->
+            <div class="edu-editorial-card">
+              <div class="edu-card-bg-wrap">
+                <img src="assets/images/fotosmp.jpg" alt="SMPIT Al Uswah Surabaya" class="edu-bg-img" loading="lazy" />
+                <div class="edu-card-overlay"></div>
               </div>
-              <div class="norris-bottom-tab">
-                <span class="tab-title">SMPIT AL USWAH</span>
-                <span class="tab-year-accent">2017 – 2020</span>
+              <div class="edu-card-content">
+                <div class="edu-card-top">
+                  <img src="assets/images/aluswah.jpg" alt="Logo SMPIT Al Uswah" class="edu-logo-badge" />
+                  <span class="edu-level-pill">Junior High School</span>
+                </div>
+                <h4 class="edu-card-title">SMPIT Al Uswah Surabaya</h4>
+                <p class="edu-card-desc">
+                  Academic foundation in science, mathematics, character building, and analytical problem-solving skills.
+                </p>
+                <div class="edu-card-footer">
+                  <span class="edu-footer-school">SMPIT AL USWAH</span>
+                  <span class="edu-footer-years">2017 – 2020</span>
+                </div>
               </div>
             </div>
 
-            <!-- Card 2: SMA MA Darul Fikri -->
-            <div class="norris-card edu-card" style="--card-bg-img: url('assets/images/fotosma.jpg');">
-              <div class="norris-card-hover-bg"></div>
-              <div class="norris-card-inner">
-                <div class="norris-card-header">
-                  <div class="school-logo-wrap">
-                    <img src="assets/images/Dafi.png" alt="Logo MA Darul Fikri Sidoarjo" class="school-logo" />
-                  </div>
-                  <span class="norris-card-badge">Senior High School</span>
-                </div>
-                <h4 class="norris-card-title">MA Darul Fikri Sidoarjo</h4>
-                <p class="norris-card-sub">Science &amp; Technology Programme</p>
-                <p class="norris-card-desc">Advanced study in exact sciences, computer logic, analytical thinking, and
-                  organizational leadership.</p>
+            <!-- Edu 2: MA Darul Fikri -->
+            <div class="edu-editorial-card">
+              <div class="edu-card-bg-wrap">
+                <img src="assets/images/fotosma.jpg" alt="MA Darul Fikri Sidoarjo" class="edu-bg-img" loading="lazy" />
+                <div class="edu-card-overlay"></div>
               </div>
-              <div class="norris-bottom-tab">
-                <span class="tab-title">MA DARUL FIKRI</span>
-                <span class="tab-year-accent">2020 – 2023</span>
+              <div class="edu-card-content">
+                <div class="edu-card-top">
+                  <img src="assets/images/Dafi.png" alt="Logo MA Darul Fikri" class="edu-logo-badge" />
+                  <span class="edu-level-pill">Senior High School</span>
+                </div>
+                <h4 class="edu-card-title">MA Darul Fikri Sidoarjo</h4>
+                <p class="edu-card-sub">Science &amp; Technology Programme</p>
+                <p class="edu-card-desc">
+                  Advanced study in exact sciences, computer logic, analytical thinking, and organizational leadership.
+                </p>
+                <div class="edu-card-footer">
+                  <span class="edu-footer-school">MA DARUL FIKRI</span>
+                  <span class="edu-footer-years">2020 – 2023</span>
+                </div>
               </div>
             </div>
 
-            <!-- Card 3: ITS (Active Highlighted Frame) -->
-            <div class="norris-card edu-card norris-card-active"
-              style="--card-bg-img: url('assets/images/fotokuliah.jpg');">
-              <div class="norris-card-hover-bg"></div>
-              <div class="norris-card-inner">
-                <div class="norris-card-header">
-                  <div class="school-logo-wrap">
-                    <img src="assets/images/ITS.png" alt="Logo Institut Teknologi Sepuluh Nopember"
-                      class="school-logo" />
-                  </div>
-                  <span class="norris-card-badge badge-highlight">Higher Education</span>
-                </div>
-                <h4 class="norris-card-title">Institut Teknologi Sepuluh Nopember</h4>
-                <p class="norris-card-sub">Bachelor of Applied Science — Electrical Automation Engineering</p>
-                <div class="norris-gpa-pill">GPA: <strong>3.26</strong> / 4.00</div>
-                <p class="norris-card-desc">Specialized in Industrial Automation, PLC programming, SCADA, Industrial IoT
-                  architecture, and electrical instrumentation.</p>
+            <!-- Edu 3: ITS Surabaya -->
+            <div class="edu-editorial-card edu-card-highlighted">
+              <div class="edu-card-bg-wrap">
+                <img src="assets/images/fotokuliah.jpg" alt="Institut Teknologi Sepuluh Nopember" class="edu-bg-img" loading="lazy" />
+                <div class="edu-card-overlay"></div>
               </div>
-              <div class="norris-bottom-tab">
-                <span class="tab-title">ITS SURABAYA</span>
-                <span class="tab-year-accent">2023 – Present</span>
+              <div class="edu-card-content">
+                <div class="edu-card-top">
+                  <img src="assets/images/ITS.png" alt="Logo ITS Surabaya" class="edu-logo-badge" />
+                  <span class="edu-level-pill pill-orange">Higher Education</span>
+                </div>
+                <h4 class="edu-card-title">Institut Teknologi Sepuluh Nopember</h4>
+                <p class="edu-card-sub">Bachelor of Applied Science — Electrical Automation Engineering</p>
+                <div class="edu-gpa-badge">GPA: <strong>3.26</strong> / 4.00</div>
+                <p class="edu-card-desc">
+                  Specialized in Industrial Automation, PLC programming, SCADA, Industrial IoT architecture, and electrical instrumentation.
+                </p>
+                <div class="edu-card-footer">
+                  <span class="edu-footer-school">ITS SURABAYA</span>
+                  <span class="edu-footer-years">2023 – Present</span>
+                </div>
               </div>
             </div>
           </div>
@@ -259,15 +467,16 @@
       </div>
     </section>
 
-    <!-- ========== 4. SECTION: EXPERIENCE (Interactive Tabs) ========== -->
+    <!-- ========== 4. SECTION: EXPERIENCE (Vertical Scroll, 4 Interactive Tabs) ========== -->
     <section class="section experience-section" id="experience">
       <div class="container">
-        <div class="section-header text-center">
-          <span class="section-tag">Portfolio Showcase</span>
-          <h2 class="section-heading">Professional Experience &amp; Technical Work</h2>
+        <div class="section-header-editorial text-center">
+          <span class="section-tag-draco">03 // PORTFOLIO SHOWCASE</span>
+          <h2 class="section-heading-large">Professional Experience &amp; Technical Work</h2>
+          <p class="section-subtitle-muted">Industrial deployments, embedded IoT prototypes, and certified engineering competence.</p>
         </div>
 
-        <!-- Tab Controls with Classic Minimalist SVG Icons (No Emojis) -->
+        <!-- 4 Tab Buttons -->
         <div class="tab-nav-wrapper">
           <div class="tab-nav" role="tablist">
             <button class="tab-btn active" data-tab="tab-internship" role="tab" aria-selected="true">
@@ -309,34 +518,31 @@
           </div>
         </div>
 
-        <!-- Tab Panes Container -->
+        <!-- Tab Content Panes -->
         <div class="tab-content-container">
 
-          <!-- Pane 1: INTERNSHIP (Side-by-Side 2 Columns with Lando Norris Cards & Official Logos) -->
+          <!-- Pane 1: INTERNSHIP -->
           <div class="tab-pane active" id="tab-internship" role="tabpanel">
             <div class="internship-grid-dual">
 
-              <!-- Left Column: Sampoerna Kayoe -->
-              <div class="norris-card internship-card">
-                <div class="norris-card-inner">
+              <!-- Left: Sampoerna Kayoe -->
+              <div class="editorial-card internship-card">
+                <div class="card-inner">
                   <div class="internship-header-row">
                     <div class="company-logo-container">
                       <img src="assets/images/logo_sampoerna.png" alt="Sampoerna Kayoe Logo" class="company-logo" />
                     </div>
                     <span class="internship-badge-loc">Batang, Indonesia</span>
                   </div>
+                  <span class="editorial-index-num">01 // INDUSTRIAL INTERNSHIP</span>
                   <h3 class="internship-company-title">PT. Sumber Graha Sejahtera</h3>
                   <p class="internship-unit">(Sampoerna Kayoe Group)</p>
                   <p class="internship-role-title">CMMS &amp; Maintenance Software Engineering Intern</p>
                   <ul class="internship-bullets">
-                    <li>Developing a Computerized Maintenance Management System (CMMS) to digitize Emergency Work Order
-                      (EWO) reporting, automated approval flow, and equipment history.</li>
-                    <li>Architected full-stack web applications utilizing React, Python FastAPI, and PostgreSQL for
-                      machine inventory and role-based access control.</li>
-                    <li>Designed real-time maintenance KPI dashboards to monitor MTTR, MTBF, line downtime, and EWO
-                      resolution status.</li>
-                    <li>Engineered an MCDM-based decision support model to prioritize emergency work orders based on
-                      machine criticality and factory conditions.</li>
+                    <li>Developing a Computerized Maintenance Management System (CMMS) to digitize Emergency Work Order (EWO) reporting, automated approval flow, and equipment history.</li>
+                    <li>Architected full-stack web applications utilizing React, Python FastAPI, and PostgreSQL for machine inventory and role-based access control.</li>
+                    <li>Designed real-time maintenance KPI dashboards to monitor MTTR, MTBF, line downtime, and EWO resolution status.</li>
+                    <li>Engineered an MCDM-based decision support model to prioritize emergency work orders based on machine criticality and factory conditions.</li>
                   </ul>
                   <div class="card-tech-chips">
                     <span>React</span>
@@ -346,36 +552,31 @@
                     <span>KPI Dashboards</span>
                   </div>
                 </div>
-                <div class="norris-bottom-tab">
+                <div class="card-bottom-tab">
                   <span class="tab-title">SAMPOERNA KAYOE</span>
                   <span class="tab-year-accent">2026 – 2027</span>
                 </div>
               </div>
 
-              <!-- Right Column: Indoprima Gemilang -->
-              <div class="norris-card internship-card">
-                <div class="norris-card-inner">
+              <!-- Right: Indoprima Gemilang -->
+              <div class="editorial-card internship-card">
+                <div class="card-inner">
                   <div class="internship-header-row">
                     <div class="company-logo-container">
-                      <img src="assets/images/logo_indoprima.png" alt="PT Indoprima Gemilang Logo"
-                        class="company-logo" />
+                      <img src="assets/images/logo_indoprima.png" alt="PT Indoprima Gemilang Logo" class="company-logo" />
                     </div>
                     <span class="internship-badge-loc">Surabaya, Indonesia</span>
                   </div>
+                  <span class="editorial-index-num">02 // INDUSTRIAL INTERNSHIP</span>
                   <h3 class="internship-company-title">PT. Indoprima Gemilang</h3>
                   <p class="internship-unit">(Indoprima Group)</p>
                   <p class="internship-role-title">Industrial IoT &amp; Automation Engineering Intern</p>
                   <ul class="internship-bullets">
-                    <li>Developed Industrial IoT solutions using ESP32, MQTT, Node-RED, MySQL, and SQL Server for
-                      real-time production monitoring.</li>
-                    <li>Designed and tested three-phase electrical Energy Monitoring systems utilizing PZEM sensors,
-                      multiplexing logic, and custom Grafana dashboards.</li>
-                    <li>Conducted maintenance, electrical troubleshooting, and firmware improvements on IoT-enabled
-                      manufacturing devices (hot presses, weighing systems).</li>
-                    <li>Executed hardware assembly, PCB integration, panel wiring, and on-site field deployment for
-                      manufacturing equipment.</li>
-                    <li>Implemented Over-The-Air (OTA) firmware updating to ensure seamless remote maintenance with zero
-                      production halt.</li>
+                    <li>Developed Industrial IoT solutions using ESP32, MQTT, Node-RED, MySQL, and SQL Server for real-time production monitoring.</li>
+                    <li>Designed and tested three-phase electrical Energy Monitoring systems utilizing PZEM sensors, multiplexing logic, and custom Grafana dashboards.</li>
+                    <li>Conducted maintenance, electrical troubleshooting, and firmware improvements on IoT-enabled manufacturing devices (hot presses, weighing systems).</li>
+                    <li>Executed hardware assembly, PCB integration, panel wiring, and on-site field deployment for manufacturing equipment.</li>
+                    <li>Implemented Over-The-Air (OTA) firmware updating to ensure seamless remote maintenance with zero production halt.</li>
                   </ul>
                   <div class="card-tech-chips">
                     <span>ESP32</span>
@@ -385,7 +586,7 @@
                     <span>MySQL</span>
                   </div>
                 </div>
-                <div class="norris-bottom-tab">
+                <div class="card-bottom-tab">
                   <span class="tab-title">INDOPRIMA GEMILANG</span>
                   <span class="tab-year-accent">2026</span>
                 </div>
@@ -399,12 +600,11 @@
             <div class="projects-grid">
 
               <!-- Project 1: Shredder -->
-              <article class="project-box">
+              <article class="project-box editorial-card">
                 <div class="project-media-wrap lightbox-trigger" data-img="assets/images/pencacahsampah.jpg"
-                  data-title="Plastic Waste Shredder Automation & Monitoring System"
+                  data-title="Plastic Waste Shredder Automation &amp; Monitoring System"
                   data-desc="Automated plastic shredder with real-time motor protection, anti-jamming mechanism, and Grafana monitoring.">
-                  <img src="assets/images/pencacahsampah.jpg" alt="Plastic Waste Shredder Automation"
-                    class="project-thumb" />
+                  <img src="assets/images/pencacahsampah.jpg" alt="Plastic Waste Shredder Automation" class="project-thumb" loading="lazy" />
                   <div class="zoom-badge">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                       <path d="M15 3h6v6m0-6L10 14M9 21H3v-6m0 6l11-11" />
@@ -412,13 +612,14 @@
                   </div>
                 </div>
                 <div class="project-details">
-                  <span class="project-badge">Project 1 • Project Manager (ITS)</span>
+                  <div class="project-top-row">
+                    <span class="editorial-index-num">01 // PROJECT</span>
+                    <span class="project-badge">Project Manager (ITS)</span>
+                  </div>
                   <h3 class="project-title">Plastic Waste Shredder Automation &amp; Monitoring System</h3>
                   <p class="project-desc">
                     Developed an automated plastic bottle shredder equipped with a real-time monitoring and electrical
-                    protection system.
-                    Integrates ESP32 with Modbus RTU communication, sensor fusion (current, temperature, weight), and
-                    automated reverse rotation anti-jamming logic.
+                    protection system. Integrates ESP32 with Modbus RTU communication, sensor fusion (current, temperature, weight), and automated reverse rotation anti-jamming logic.
                   </p>
                   <div class="project-tags">
                     <span>ESP32</span>
@@ -431,12 +632,11 @@
               </article>
 
               <!-- Project 2: Energy Monitoring -->
-              <article class="project-box">
+              <article class="project-box editorial-card">
                 <div class="project-media-wrap lightbox-trigger" data-img="assets/images/3phasemonitoring.jpg"
                   data-title="Three-Phase Energy Monitoring System"
                   data-desc="Industrial electrical distribution monitoring system measuring real-time 3-phase voltage, current, and energy consumption.">
-                  <img src="assets/images/3phasemonitoring.jpg" alt="Three-Phase Energy Monitoring System"
-                    class="project-thumb" />
+                  <img src="assets/images/3phasemonitoring.jpg" alt="Three-Phase Energy Monitoring System" class="project-thumb" loading="lazy" />
                   <div class="zoom-badge">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                       <path d="M15 3h6v6m0-6L10 14M9 21H3v-6m0 6l11-11" />
@@ -444,13 +644,14 @@
                   </div>
                 </div>
                 <div class="project-details">
-                  <span class="project-badge">Project 2 • Industrial Project (Indoprima)</span>
+                  <div class="project-top-row">
+                    <span class="editorial-index-num">02 // PROJECT</span>
+                    <span class="project-badge">Industrial Project (Indoprima)</span>
+                  </div>
                   <h3 class="project-title">Three-Phase Energy Monitoring System</h3>
                   <p class="project-desc">
-                    Designed and deployed a 3-phase power monitoring panel utilizing PZEM-004T sensors and CD74HC4067
-                    multiplexer.
-                    Measures real-time voltage, current, power factor, frequency, and cumulative energy consumption with
-                    automated data logging via Node-RED to MySQL.
+                    Designed and deployed a 3-phase power monitoring panel utilizing PZEM-004T sensors and CD74HC4067 multiplexer.
+                    Measures real-time voltage, current, power factor, frequency, and cumulative energy consumption with automated data logging via Node-RED to MySQL.
                   </p>
                   <div class="project-tags">
                     <span>ESP32</span>
@@ -463,14 +664,13 @@
               </article>
 
               <!-- Project 3: IoT Access Security -->
-              <article class="project-box">
+              <article class="project-box editorial-card">
                 <div class="project-media-wrap placeholder-media lightbox-trigger"
                   data-img="assets/images/DRACO_transparent.png"
-                  data-title="IoT Access Security System & Automated Reporting"
+                  data-title="IoT Access Security System &amp; Automated Reporting"
                   data-desc="Digital verification access control system for spare parts inventory using GM66 barcode/RFID and non-blocking finite state machine.">
                   <div class="cyber-placeholder">
-                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                      stroke-width="1.5">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                       <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
                       <path d="M7 11V7a5 5 0 0110 0v4" />
                     </svg>
@@ -478,12 +678,14 @@
                   </div>
                 </div>
                 <div class="project-details">
-                  <span class="project-badge">Project 3 • Industrial Project (Indoprima)</span>
+                  <div class="project-top-row">
+                    <span class="editorial-index-num">03 // PROJECT</span>
+                    <span class="project-badge">Industrial Project (Indoprima)</span>
+                  </div>
                   <h3 class="project-title">IoT Access Security System &amp; Automated Reporting</h3>
                   <p class="project-desc">
                     Designed an automated digital door verification system to secure spare parts storage.
-                    Uses GM66 scanning module with ESP32 transmitting via MQTT to Node-RED for database authorization,
-                    non-blocking finite state machine (FSM) control, and automated audit reporting.
+                    Uses GM66 scanning module with ESP32 transmitting via MQTT to Node-RED for database authorization, non-blocking finite state machine (FSM) control, and automated audit reporting.
                   </p>
                   <div class="project-tags">
                     <span>ESP32</span>
@@ -496,13 +698,12 @@
               </article>
 
               <!-- Project 4: Packing Monitoring -->
-              <article class="project-box">
+              <article class="project-box editorial-card">
                 <div class="project-media-wrap lightbox-trigger"
                   data-img="assets/images/Screenshot 2026-06-04 092534.png"
                   data-title="IoT-Based Packing Monitoring Dashboard"
                   data-desc="Real-time production floor monitoring dashboard displaying packaging parameters, fault counts, and machine state.">
-                  <img src="assets/images/Screenshot%202026-06-04%20092534.png" alt="Grafana Monitoring Dashboard"
-                    class="project-thumb" />
+                  <img src="assets/images/Screenshot 2026-06-04 092534.png" alt="Grafana Monitoring Dashboard" class="project-thumb" loading="lazy" />
                   <div class="zoom-badge">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                       <path d="M15 3h6v6m0-6L10 14M9 21H3v-6m0 6l11-11" />
@@ -510,12 +711,14 @@
                   </div>
                 </div>
                 <div class="project-details">
-                  <span class="project-badge">Project 4 • Industrial Project (Indoprima)</span>
+                  <div class="project-top-row">
+                    <span class="editorial-index-num">04 // PROJECT</span>
+                    <span class="project-badge">Industrial Project (Indoprima)</span>
+                  </div>
                   <h3 class="project-title">IoT-Based Packing Monitoring System</h3>
                   <p class="project-desc">
                     Integrated MQTT, Node-RED, and SQL Server for industrial packing line data transmission.
-                    Designed operator push-button &amp; LCD interface, accompanied by Over-The-Air (OTA) updates and
-                    real-time visualization dashboards.
+                    Designed operator push-button &amp; LCD interface, accompanied by Over-The-Air (OTA) updates and real-time visualization dashboards.
                   </p>
                   <div class="project-tags">
                     <span>ESP32</span>
@@ -530,17 +733,16 @@
             </div>
           </div>
 
-          <!-- Pane 3: CERTIFICATES & ACHIEVEMENTS (Classic Minimalist Icons) -->
+          <!-- Pane 3: CERTIFICATES & ACHIEVEMENTS -->
           <div class="tab-pane" id="tab-certificates" role="tabpanel">
             <div class="cert-grid">
 
               <!-- Cert 1: JMP -->
-              <div class="cert-item lightbox-trigger" data-img="assets/images/Sertifikat JMP_page-0001.jpg"
+              <div class="cert-item editorial-card lightbox-trigger" data-img="assets/images/Sertifikat JMP_page-0001.jpg"
                 data-title="Junior Mobile Programmer — Digital Talent Scholarship"
                 data-desc="Vocational School Graduate Academy (VSGA) certified by BPSDMP Kominfo Surabaya (2025).">
                 <div class="cert-img-container">
-                  <img src="assets/images/Sertifikat%20JMP_page-0001.jpg" alt="Sertifikat Junior Mobile Programmer"
-                    class="cert-thumb" />
+                  <img src="assets/images/Sertifikat JMP_page-0001.jpg" alt="Sertifikat Junior Mobile Programmer" class="cert-thumb" loading="lazy" />
                   <div class="cert-hover-icon">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                       <circle cx="11" cy="11" r="8" />
@@ -549,6 +751,7 @@
                   </div>
                 </div>
                 <div class="cert-meta">
+                  <span class="editorial-index-num">01 // CERTIFICATION</span>
                   <span class="cert-year">2025 • VSGA Kominfo</span>
                   <h4 class="cert-name">Junior Mobile Programmer</h4>
                   <p class="cert-org">BPSDMP Kominfo Surabaya — Digital Talent Scholarship</p>
@@ -556,12 +759,11 @@
               </div>
 
               <!-- Cert 2: IKMVI -->
-              <div class="cert-item lightbox-trigger" data-img="assets/images/Muhammad Harits Khairiansyah_IKMVI.png"
+              <div class="cert-item editorial-card lightbox-trigger" data-img="assets/images/Muhammad Harits Khairiansyah_IKMVI.png"
                 data-title="Sertifikat Penghargaan Kongres IKMVI 2025"
                 data-desc="Peserta Kongres Ikatan Keluarga Mahasiswa Vokasi Indonesia (2025).">
                 <div class="cert-img-container">
-                  <img src="assets/images/Muhammad%20Harits%20Khairiansyah_IKMVI.png" alt="Sertifikat IKMVI"
-                    class="cert-thumb" />
+                  <img src="assets/images/Muhammad Harits Khairiansyah_IKMVI.png" alt="Sertifikat IKMVI" class="cert-thumb" loading="lazy" />
                   <div class="cert-hover-icon">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                       <circle cx="11" cy="11" r="8" />
@@ -570,6 +772,7 @@
                   </div>
                 </div>
                 <div class="cert-meta">
+                  <span class="editorial-index-num">02 // CONGRESS</span>
                   <span class="cert-year">2025 • Nasional</span>
                   <h4 class="cert-name">Kongres IKMVI 2025</h4>
                   <p class="cert-org">Ikatan Keluarga Mahasiswa Vokasi Indonesia</p>
@@ -577,7 +780,7 @@
               </div>
 
               <!-- Cert 3: OLIVIA IX -->
-              <div class="cert-item cert-text-box">
+              <div class="cert-item editorial-card cert-text-box">
                 <div class="cert-classic-icon">
                   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
@@ -589,6 +792,7 @@
                   </svg>
                 </div>
                 <div class="cert-meta">
+                  <span class="editorial-index-num">03 // COMPETITION</span>
                   <span class="cert-year">2025 • Nasional</span>
                   <h4 class="cert-name">National Participant — OLIVIA IX</h4>
                   <p class="cert-org">Olimpiade Vokasi Indonesia (Scientific Papers in Science &amp; Technology)</p>
@@ -597,16 +801,16 @@
               </div>
 
               <!-- Cert 4: CAD-IT 4.0 -->
-              <div class="cert-item cert-text-box">
+              <div class="cert-item editorial-card cert-text-box">
                 <div class="cert-classic-icon">
                   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <circle cx="12" cy="12" r="10" />
                     <line x1="2" y1="12" x2="22" y2="12" />
-                    <path
-                      d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z" />
                   </svg>
                 </div>
                 <div class="cert-meta">
+                  <span class="editorial-index-num">04 // SEMINAR</span>
                   <span class="cert-year">2025 • Industrial Seminar</span>
                   <h4 class="cert-name">CAD-IT Industry 4.0 Digital Transformation</h4>
                   <p class="cert-org">CAD-IT Consultants (Asia) Pte Ltd</p>
@@ -615,16 +819,16 @@
               </div>
 
               <!-- Cert 5: Komdigi Mindset -->
-              <div class="cert-item cert-text-box">
+              <div class="cert-item editorial-card cert-text-box">
                 <div class="cert-classic-icon">
                   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M9 18h6" />
                     <path d="M10 22h4" />
-                    <path
-                      d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5.76.76 1.23 1.52 1.41 2.5" />
+                    <path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5.76.76 1.23 1.52 1.41 2.5" />
                   </svg>
                 </div>
                 <div class="cert-meta">
+                  <span class="editorial-index-num">05 // CERTIFICATION</span>
                   <span class="cert-year">2025 • Komdigi</span>
                   <h4 class="cert-name">Digital Mindset Certification</h4>
                   <p class="cert-org">Kementerian Komunikasi dan Digital RI</p>
@@ -633,15 +837,15 @@
               </div>
 
               <!-- Cert 6: PLC Training -->
-              <div class="cert-item cert-text-box">
+              <div class="cert-item editorial-card cert-text-box">
                 <div class="cert-classic-icon">
                   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <circle cx="12" cy="12" r="3" />
-                    <path
-                      d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
                   </svg>
                 </div>
                 <div class="cert-meta">
+                  <span class="editorial-index-num">06 // WORKSHOP</span>
                   <span class="cert-year">2024 • Training</span>
                   <h4 class="cert-name">PLC &amp; Microcontroller Training</h4>
                   <p class="cert-org">Departemen Teknik Elektro Otomasi ITS</p>
@@ -652,12 +856,12 @@
             </div>
           </div>
 
-          <!-- Pane 4: SKILLS (4-Card Bento Grid with Classic Line Icons) -->
+          <!-- Pane 4: SKILLS -->
           <div class="tab-pane" id="tab-skills" role="tabpanel">
             <div class="skills-bento-grid">
 
               <!-- Skill Card 1: Embedded & IoT -->
-              <div class="bento-card bento-glow-blue">
+              <div class="bento-card bento-glow-navy">
                 <div class="bento-header">
                   <div class="bento-classic-icon">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -665,6 +869,7 @@
                     </svg>
                   </div>
                   <div>
+                    <span class="editorial-index-num">01 // DOMAIN</span>
                     <h3 class="bento-title">Embedded Systems &amp; Industrial IoT</h3>
                     <p class="bento-subtitle">Hardware-level integration &amp; edge communication</p>
                   </div>
@@ -689,11 +894,11 @@
                   <div class="bento-classic-icon">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                       <circle cx="12" cy="12" r="3" />
-                      <path
-                        d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+                      <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
                     </svg>
                   </div>
                   <div>
+                    <span class="editorial-index-num">02 // DOMAIN</span>
                     <h3 class="bento-title">Industrial Automation &amp; Control</h3>
                     <p class="bento-subtitle">Factory equipment &amp; power electronics</p>
                   </div>
@@ -711,7 +916,7 @@
               </div>
 
               <!-- Skill Card 3: Data Acquisition & Software -->
-              <div class="bento-card bento-glow-blue">
+              <div class="bento-card bento-glow-navy">
                 <div class="bento-header">
                   <div class="bento-classic-icon">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -721,6 +926,7 @@
                     </svg>
                   </div>
                   <div>
+                    <span class="editorial-index-num">03 // DOMAIN</span>
                     <h3 class="bento-title">Data Acquisition &amp; Cloud Monitoring</h3>
                     <p class="bento-subtitle">Real-time telemetry, databases &amp; full-stack tools</p>
                   </div>
@@ -749,6 +955,7 @@
                     </svg>
                   </div>
                   <div>
+                    <span class="editorial-index-num">04 // DOMAIN</span>
                     <h3 class="bento-title">Soft Skills, 3D Modeling &amp; Languages</h3>
                     <p class="bento-subtitle">Team leadership, design visualization &amp; languages</p>
                   </div>
@@ -773,92 +980,121 @@
       </div>
     </section>
 
-    <!-- ========== 5. SECTION: CONTACT ME & CLOSING (No WhatsApp) ========== -->
+    <!-- ========== 5. SECTION: CONTACT ME & CLOSING (referensi2.jpg Style) ========== -->
     <section class="section contact-section" id="contact">
       <div class="container">
-        <div class="contact-card-main">
-          <div class="contact-header text-center">
-            <span class="section-tag">Let's Connect</span>
-            <h2 class="contact-big-title">THANK YOU</h2>
-            <p class="contact-subtitle">Let's Work Together!</p>
-            <p class="contact-intro">
+        <div class="contact-editorial-layout">
+
+          <!-- Left Column: Big Headline & Intro -->
+          <div class="contact-left-col">
+            <span class="section-tag-draco">04 // GET IN TOUCH</span>
+            <h2 class="contact-mega-title">
+              LET'S WORK<br />
+              <span class="text-gradient-draco">TOGETHER ✦</span>
+            </h2>
+            <p class="contact-intro-editorial">
               Open to collaboration, internship opportunities, and industrial automation projects.
-              Feel free to reach out directly through any of the channels below:
+              Feel free to reach out directly through any of the channels listed.
             </p>
-          </div>
-
-          <div class="contact-channels-grid">
-            <!-- Email -->
-            <a href="mailto:mkh4iriansy4h@gmail.com" class="channel-card">
-              <div class="channel-icon icon-blue">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                  <polyline points="22,6 12,13 2,6" />
-                </svg>
-              </div>
-              <div class="channel-info">
-                <span class="channel-label">Email</span>
-                <span class="channel-val">mkh4iriansy4h@gmail.com</span>
-              </div>
-            </a>
-
-            <!-- LinkedIn -->
-            <a href="https://www.linkedin.com/in/harits-k-1a1717308/" target="_blank" rel="noreferrer"
-              class="channel-card">
-              <div class="channel-icon icon-blue">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-                  <path
-                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                </svg>
-              </div>
-              <div class="channel-info">
-                <span class="channel-label">LinkedIn</span>
-                <span class="channel-val">Muhammad Harits Khairiansyah</span>
-              </div>
-            </a>
-
-            <!-- Instagram -->
-            <a href="https://www.instagram.com/ritskhair" target="_blank" rel="noreferrer" class="channel-card">
-              <div class="channel-icon icon-orange">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-                  <path
-                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
-                </svg>
-              </div>
-              <div class="channel-info">
-                <span class="channel-label">Instagram</span>
-                <span class="channel-val">@ritskhair</span>
-              </div>
-            </a>
-
-            <!-- GitHub -->
-            <a href="https://github.com/ritskhair" target="_blank" rel="noreferrer" class="channel-card">
-              <div class="channel-icon icon-blue">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-                  <path
-                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
-                </svg>
-              </div>
-              <div class="channel-info">
-                <span class="channel-label">GitHub</span>
-                <span class="channel-val">github.com/ritskhair</span>
-              </div>
-            </a>
-
-            <!-- Location -->
-            <div class="channel-card">
-              <div class="channel-icon icon-orange">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>
-              </div>
-              <div class="channel-info">
-                <span class="channel-label">Location</span>
-                <span class="channel-val">Surabaya, Indonesia</span>
-              </div>
+            <div class="contact-avail-box">
+              <span class="status-dot"></span>
+              <span>AVAILABLE FOR INDUSTRIAL PROJECTS &amp; FULL-TIME ROLES</span>
             </div>
           </div>
+
+          <!-- Right Column: Full-width Editorial Contact Rows with Outline Circle Icons -->
+          <div class="contact-right-col">
+            <div class="editorial-contact-rows">
+
+              <!-- Email -->
+              <a href="mailto:mkh4iriansy4h@gmail.com" class="contact-row-item">
+                <div class="row-left">
+                  <div class="circle-outline-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                      <polyline points="22,6 12,13 2,6" />
+                    </svg>
+                  </div>
+                  <div class="row-text">
+                    <span class="row-label">EMAIL ADDRESS</span>
+                    <span class="row-value">mkh4iriansy4h@gmail.com</span>
+                  </div>
+                </div>
+                <div class="row-arrow">↗</div>
+              </a>
+
+              <!-- LinkedIn -->
+              <a href="https://www.linkedin.com/in/harits-k-1a1717308/" target="_blank" rel="noreferrer" class="contact-row-item">
+                <div class="row-left">
+                  <div class="circle-outline-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                      <rect x="2" y="9" width="4" height="12" />
+                      <circle cx="4" cy="4" r="2" />
+                    </svg>
+                  </div>
+                  <div class="row-text">
+                    <span class="row-label">LINKEDIN PROFILE</span>
+                    <span class="row-value">Muhammad Harits Khairiansyah</span>
+                  </div>
+                </div>
+                <div class="row-arrow">↗</div>
+              </a>
+
+              <!-- Instagram -->
+              <a href="https://www.instagram.com/ritskhair" target="_blank" rel="noreferrer" class="contact-row-item">
+                <div class="row-left">
+                  <div class="circle-outline-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                    </svg>
+                  </div>
+                  <div class="row-text">
+                    <span class="row-label">INSTAGRAM</span>
+                    <span class="row-value">@ritskhair</span>
+                  </div>
+                </div>
+                <div class="row-arrow">↗</div>
+              </a>
+
+              <!-- GitHub -->
+              <a href="https://github.com/ritskhair" target="_blank" rel="noreferrer" class="contact-row-item">
+                <div class="row-left">
+                  <div class="circle-outline-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                      <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                    </svg>
+                  </div>
+                  <div class="row-text">
+                    <span class="row-label">GITHUB REPOSITORY</span>
+                    <span class="row-value">github.com/ritskhair</span>
+                  </div>
+                </div>
+                <div class="row-arrow">↗</div>
+              </a>
+
+              <!-- Location -->
+              <div class="contact-row-item static-row">
+                <div class="row-left">
+                  <div class="circle-outline-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                      <circle cx="12" cy="10" r="3" />
+                    </svg>
+                  </div>
+                  <div class="row-text">
+                    <span class="row-label">BASE LOCATION</span>
+                    <span class="row-value">Surabaya, Indonesia</span>
+                  </div>
+                </div>
+                <div class="row-badge">GMT+7</div>
+              </div>
+
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -868,11 +1104,22 @@
   <!-- ========== 6. FOOTER ========== -->
   <footer class="footer">
     <div class="container footer-content">
-      <img src="assets/images/DRACO_transparent.png" class="footer-draco-logo" alt="DRACO Logo" />
+      <div class="footer-draco-brand">
+        <img src="assets/images/DRACO_transparent.png" class="footer-draco-logo" alt="DRACO Logo" />
+        <span class="footer-draco-title">DRACO AUTOMATION</span>
+      </div>
       <p class="footer-text">
         Designed &amp; Engineered by <strong>Muhammad Harits Khairiansyah</strong> • 2026<br />
-        Built with HTML5, CSS3 &amp; Vanilla JavaScript
+        Built with HTML5, CSS3, GSAP &amp; Lenis
       </p>
+      <div class="footer-to-top">
+        <a href="#home" class="to-top-btn" aria-label="Back to top">
+          <span>TOP</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 15l-6-6-6 6" />
+          </svg>
+        </a>
+      </div>
     </div>
   </footer>
 
@@ -891,6 +1138,10 @@
     </div>
   </div>
 
+  <!-- CDN Scripts (Fixed versions for GSAP, ScrollTrigger, and Lenis) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
   <script src="script.js"></script>
 </body>
 
