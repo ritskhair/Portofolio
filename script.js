@@ -122,7 +122,14 @@
         });
       });
 
-      // Recalculate once all lazy images have loaded
+      // Recalculate once all images inside track finish loading
+      const galleryImages = track.querySelectorAll('img');
+      galleryImages.forEach((img) => {
+        if (!img.complete) {
+          img.addEventListener('load', () => ScrollTrigger.refresh(), { once: true });
+        }
+      });
+
       window.addEventListener('load', () => {
         ScrollTrigger.refresh();
       });
@@ -159,8 +166,30 @@
     if (lenis) lenis.start();
   }
 
+  let isMenuSpinning = false;
+
   if (menuToggle) {
-    menuToggle.addEventListener('click', openDrawer);
+    menuToggle.addEventListener('click', function (e) {
+      e.preventDefault();
+      if (isMenuSpinning) return;
+      isMenuSpinning = true;
+
+      const dracoIcon = menuToggle.querySelector('.draco-menu-icon');
+      if (dracoIcon) {
+        dracoIcon.classList.remove('is-spinning');
+        void dracoIcon.offsetWidth; // Force DOM reflow to restart animation reliably
+        dracoIcon.classList.add('is-spinning');
+      }
+
+      // Smooth 360-degree spin takes 450ms, open drawer right as spin concludes
+      setTimeout(() => {
+        openDrawer();
+        isMenuSpinning = false;
+        if (dracoIcon) {
+          dracoIcon.classList.remove('is-spinning');
+        }
+      }, 440);
+    });
   }
 
   if (drawerClose) {

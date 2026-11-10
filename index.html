@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Space+Grotesk:wght@500;600;700;800&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -27,24 +27,18 @@
   <div class="ambient-glow glow-bottom-left" aria-hidden="true"></div>
   <div class="vignette-overlay" aria-hidden="true"></div>
 
-  <!-- ========== FIXED EDITORIAL HEADER (CORNER STYLE ALA LANDO NORRIS) ========== -->
+  <!-- ========== FIXED EDITORIAL HEADER  ========== -->
   <header class="editorial-top-header" id="editorialHeader">
     <div class="header-brand-wrap">
-      <!-- Draco Logo Translucent Watermark behind the name -->
-      <img src="assets/images/DRACO_transparent.png" class="header-draco-watermark" alt="DRACO Watermark" aria-hidden="true" />
       <a href="#home" class="header-name-brand" aria-label="Home — Muhammad Harits Khairiansyah">
-        <span class="brand-line-1">MUH</span>
+        <span class="brand-line-1">MUHH</span>
         <span class="brand-line-2">KHAIRIANSYAH</span>
       </a>
     </div>
 
-    <!-- Minimalist Menu Toggle in top-right corner -->
+    <!-- Draco Logo Menu Button (Top Right) -->
     <button class="header-menu-btn" id="menuToggle" aria-label="Toggle navigation menu">
-      <span class="menu-label">MENU</span>
-      <span class="menu-burger" aria-hidden="true">
-        <span></span>
-        <span></span>
-      </span>
+      <img src="assets/images/DRACO_transparent.png" class="draco-menu-icon" alt="DRACO Navigation Menu" />
     </button>
   </header>
 
@@ -57,7 +51,8 @@
         <a href="#home" class="drawer-link"><span class="drawer-num">01</span><span>Home</span></a>
         <a href="#gallery" class="drawer-link"><span class="drawer-num">02</span><span>Archive Gallery</span></a>
         <a href="#about" class="drawer-link"><span class="drawer-num">03</span><span>Profile &amp; Education</span></a>
-        <a href="#experience" class="drawer-link"><span class="drawer-num">04</span><span>Experience &amp; Skills</span></a>
+        <a href="#experience" class="drawer-link"><span class="drawer-num">04</span><span>Experience &amp;
+            Skills</span></a>
         <a href="#contact" class="drawer-link"><span class="drawer-num">05</span><span>Contact Me</span></a>
       </div>
       <div class="drawer-footer-note">
@@ -82,7 +77,9 @@
               <stop offset="100%" stop-color="#F47C20" stop-opacity="0.3" />
             </linearGradient>
           </defs>
-          <path d="M 258.0,150.0 L 257.8,156.8 L 286.1,173.0 L 279.3,198.1 L 246.7,198.0 L 243.5,204.0 L 240.0,209.8 L 256.3,238.0 L 238.0,256.3 L 209.8,240.0 L 204.0,243.5 L 198.0,246.7 L 198.1,279.3 L 173.0,286.1 L 156.8,257.8 L 150.0,258.0 L 143.2,257.8 L 127.0,286.1 L 101.9,279.3 L 102.0,246.7 L 96.0,243.5 L 90.2,240.0 L 62.0,256.3 L 43.7,238.0 L 60.0,209.8 L 56.5,204.0 L 53.3,198.0 L 20.7,198.1 L 13.9,173.0 L 42.2,156.8 L 42.0,150.0 L 42.2,143.2 L 13.9,127.0 L 20.7,101.9 L 53.3,102.0 L 56.5,96.0 L 60.0,90.2 L 43.7,62.0 L 62.0,43.7 L 90.2,60.0 L 96.0,56.5 L 102.0,53.3 L 101.9,20.7 L 127.0,13.9 L 143.2,42.2 L 150.0,42.0 L 156.8,42.2 L 173.0,13.9 L 198.1,20.7 L 198.0,53.3 L 204.0,56.5 L 209.8,60.0 L 238.0,43.7 L 256.3,62.0 L 240.0,90.2 L 243.5,96.0 L 246.7,102.0 L 279.3,101.9 L 286.1,127.0 L 257.8,143.2 L 258.0,150.0 Z" stroke="url(#dracoHeroGearGrad)" stroke-width="2" />
+          <path
+            d="M 258.0,150.0 L 257.8,156.8 L 286.1,173.0 L 279.3,198.1 L 246.7,198.0 L 243.5,204.0 L 240.0,209.8 L 256.3,238.0 L 238.0,256.3 L 209.8,240.0 L 204.0,243.5 L 198.0,246.7 L 198.1,279.3 L 173.0,286.1 L 156.8,257.8 L 150.0,258.0 L 143.2,257.8 L 127.0,286.1 L 101.9,279.3 L 102.0,246.7 L 96.0,243.5 L 90.2,240.0 L 62.0,256.3 L 43.7,238.0 L 60.0,209.8 L 56.5,204.0 L 53.3,198.0 L 20.7,198.1 L 13.9,173.0 L 42.2,156.8 L 42.0,150.0 L 42.2,143.2 L 13.9,127.0 L 20.7,101.9 L 53.3,102.0 L 56.5,96.0 L 60.0,90.2 L 43.7,62.0 L 62.0,43.7 L 90.2,60.0 L 96.0,56.5 L 102.0,53.3 L 101.9,20.7 L 127.0,13.9 L 143.2,42.2 L 150.0,42.0 L 156.8,42.2 L 173.0,13.9 L 198.1,20.7 L 198.0,53.3 L 204.0,56.5 L 209.8,60.0 L 238.0,43.7 L 256.3,62.0 L 240.0,90.2 L 243.5,96.0 L 246.7,102.0 L 279.3,101.9 L 286.1,127.0 L 257.8,143.2 L 258.0,150.0 Z"
+            stroke="url(#dracoHeroGearGrad)" stroke-width="2" />
           <circle cx="150" cy="150" r="108" stroke="rgba(39, 56, 107, 0.25)" stroke-width="1" stroke-dasharray="4 4" />
           <circle cx="150" cy="150" r="42" stroke="rgba(244, 124, 32, 0.3)" stroke-width="1.5" />
         </svg>
@@ -117,7 +114,8 @@
             <a href="#experience" class="btn btn-draco-primary">
               <span>Explore Experience</span>
               <svg width="15" height="15" viewBox="0 0 16 16" fill="none">
-                <path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
               </svg>
             </a>
             <div class="hero-status-pill">
@@ -196,7 +194,8 @@
             <div class="floating-quote-container">
               <span class="floating-quote-mark" aria-hidden="true">&ldquo;</span>
               <blockquote class="floating-quote-text">
-                Engineering is not merely about making machines work; it is about orchestrating precision, data, and resilience into seamless harmony.
+                Engineering is not merely about making machines work; it is about orchestrating precision, data, and
+                resilience into seamless harmony.
               </blockquote>
               <div class="floating-quote-author">
                 <div class="floating-author-line" aria-hidden="true"></div>
@@ -206,78 +205,172 @@
             </div>
           </div>
 
-          <!-- ASYMMETRICAL SCATTERED PHOTO CARDS (SQUARE 1:1, RANDOM SIZES, WIDE GAPS) -->
-          <!-- Foto 1: Copy of DSC02478.JPG (Large Hero) -->
-          <figure class="gallery-photo photo-size-l photo-valign-center" data-speed="1.0">
-            <div class="gallery-photo-caption">AUTOMATION FIELDWORK, 2026</div>
-            <div class="gallery-photo-wrap">
-              <img src="assets/images/scroll/Copy of DSC02478.JPG" alt="Automation Fieldwork" loading="lazy" />
-            </div>
-          </figure>
+          <!-- ========================================================
+               ASYMMETRICAL SCATTERED PHOTO CLUSTERS (EDITORIAL ALA LANDO NORRIS)
+               Aturan: 1 Foto Utama Besar (tanpa angka) dikelilingi foto pendamping sedang/kecil
+               ======================================================== -->
 
-          <!-- Foto 2: IMG-20240721-WA0023.jpg (Medium, Top) -->
-          <figure class="gallery-photo photo-size-m photo-valign-top" data-speed="0.88">
-            <div class="gallery-photo-caption">ITS SURABAYA, 2024</div>
-            <div class="gallery-photo-wrap">
-              <img src="assets/images/scroll/IMG-20240721-WA0023.jpg" alt="ITS Surabaya Campus Life" loading="lazy" />
-            </div>
-          </figure>
+          <!-- KLUSTER 1: BEM -->
+          <div class="gallery-cluster cluster--bem">
+            <figure class="gallery-photo photo-size-l photo-valign-center photo-hero" data-speed="1.0">
+              <div class="gallery-photo-caption">BEM KABINET, 2024</div>
+              <div class="gallery-photo-wrap">
+                <img src="assets/images/scroll/bem.jpg" alt="BEM Kabinet ITS" loading="lazy" />
+              </div>
+            </figure>
 
-          <!-- Foto 3: IMG-20250227-WA0015.jpg (Small, Bottom) -->
-          <figure class="gallery-photo photo-size-s photo-valign-bottom" data-speed="1.15">
-            <div class="gallery-photo-caption">AUTOMATION LAB, 2025</div>
-            <div class="gallery-photo-wrap">
-              <img src="assets/images/scroll/IMG-20250227-WA0015.jpg" alt="Automation Lab Session" loading="lazy" />
-            </div>
-          </figure>
+            <figure class="gallery-photo photo-size-m photo-valign-top" data-speed="0.88">
+              <div class="gallery-photo-caption">EXECUTIVE FORUM 01, 2024</div>
+              <div class="gallery-photo-wrap">
+                <img src="assets/images/scroll/bem1.jpg" alt="BEM Executive Forum" loading="lazy" />
+              </div>
+            </figure>
 
-          <!-- Foto 4: Copy of DSC02626.JPG (Medium, Center) -->
-          <figure class="gallery-photo photo-size-m photo-valign-center" data-speed="0.95">
-            <div class="gallery-photo-caption">SYSTEM COMMISSIONING, 2026</div>
-            <div class="gallery-photo-wrap">
-              <img src="assets/images/scroll/Copy of DSC02626.JPG" alt="System Commissioning" loading="lazy" />
-            </div>
-          </figure>
+            <figure class="gallery-photo photo-size-s photo-valign-bottom" data-speed="1.15">
+              <div class="gallery-photo-caption">STUDENT LEADERSHIP 02, 2024</div>
+              <div class="gallery-photo-wrap">
+                <img src="assets/images/scroll/bem2.jpg" alt="Student Leadership Session" loading="lazy" />
+              </div>
+            </figure>
+          </div>
 
-          <!-- Foto 5: IMG-20250301-WA0004.jpg (Large Hero, Top) -->
-          <figure class="gallery-photo photo-size-l photo-valign-top" data-speed="1.02">
-            <div class="gallery-photo-caption">INDUSTRIAL DEPLOYMENT, 2025</div>
-            <div class="gallery-photo-wrap">
-              <img src="assets/images/scroll/IMG-20250301-WA0004.jpg" alt="Industrial Deployment" loading="lazy" />
-            </div>
-          </figure>
+          <!-- KLUSTER 2: BROMO EXPEDITION -->
+          <div class="gallery-cluster cluster--bromo">
+            <figure class="gallery-photo photo-size-l photo-valign-center photo-hero" data-speed="1.0">
+              <div class="gallery-photo-caption">BROMO EXPEDITION, 2024</div>
+              <div class="gallery-photo-wrap">
+                <img src="assets/images/scroll/bromo.jpg" alt="Mount Bromo Expedition" loading="lazy" />
+              </div>
+            </figure>
 
-          <!-- Foto 6: IMG-20260118-WA0025.jpg (Small, Bottom) -->
-          <figure class="gallery-photo photo-size-s photo-valign-bottom" data-speed="1.1">
-            <div class="gallery-photo-caption">ELECTRICAL WORKSHOP, 2026</div>
-            <div class="gallery-photo-wrap">
-              <img src="assets/images/scroll/IMG-20260118-WA0025.jpg" alt="Electrical Workshop" loading="lazy" />
-            </div>
-          </figure>
+            <figure class="gallery-photo photo-size-m photo-valign-bottom" data-speed="0.92">
+              <div class="gallery-photo-caption">VOLCANIC RIDGE 01, 2024</div>
+              <div class="gallery-photo-wrap">
+                <img src="assets/images/scroll/bromo1.JPG" alt="Bromo Volcanic Ridge" loading="lazy" />
+              </div>
+            </figure>
 
-          <!-- Foto 7: IMG_5080.JPG (Large Hero, Center) -->
-          <figure class="gallery-photo photo-size-l photo-valign-center" data-speed="1.0">
-            <div class="gallery-photo-caption">FACTORY FLOOR, 2025</div>
-            <div class="gallery-photo-wrap">
-              <img src="assets/images/scroll/IMG_5080.JPG" alt="Factory Floor Operation" loading="lazy" />
-            </div>
-          </figure>
+            <figure class="gallery-photo photo-size-m photo-valign-top" data-speed="0.86">
+              <div class="gallery-photo-caption">HIGH ALTITUDE 02, 2024</div>
+              <div class="gallery-photo-wrap">
+                <img src="assets/images/scroll/bromo2.JPG" alt="High Altitude Caldera" loading="lazy" />
+              </div>
+            </figure>
 
-          <!-- Foto 8: IMG-20250308-WA0036.jpg (Medium, Top) -->
-          <figure class="gallery-photo photo-size-m photo-valign-top" data-speed="0.88">
-            <div class="gallery-photo-caption">PROJECT ASSEMBLY, 2025</div>
-            <div class="gallery-photo-wrap">
-              <img src="assets/images/scroll/IMG-20250308-WA0036.jpg" alt="Hardware Project Assembly" loading="lazy" />
-            </div>
-          </figure>
+            <figure class="gallery-photo photo-size-s photo-valign-bottom" data-speed="1.18">
+              <div class="gallery-photo-caption">CALDERA TRAIL 03, 2024</div>
+              <div class="gallery-photo-wrap">
+                <img src="assets/images/scroll/bromo3.jpg" alt="Caldera Trail Expedition" loading="lazy" />
+              </div>
+            </figure>
+          </div>
 
-          <!-- Foto 9: Foto tim.jpg (Medium, Bottom) -->
-          <figure class="gallery-photo photo-size-m photo-valign-bottom" data-speed="1.05">
-            <div class="gallery-photo-caption">TEAM COLLABORATION, 2025</div>
-            <div class="gallery-photo-wrap">
-              <img src="assets/images/Foto tim.jpg" alt="Engineering Team Collaboration" loading="lazy" />
-            </div>
-          </figure>
+          <!-- KLUSTER 3: DCAMPEX EXHIBITION -->
+          <div class="gallery-cluster cluster--dcampex">
+            <figure class="gallery-photo photo-size-l photo-valign-center photo-hero" data-speed="1.0">
+              <div class="gallery-photo-caption">DCAMPEX EXHIBITION, 2025</div>
+              <div class="gallery-photo-wrap">
+                <img src="assets/images/scroll/dcampex.JPG" alt="Dcampex Project Exhibition" loading="lazy" />
+              </div>
+            </figure>
+
+            <figure class="gallery-photo photo-size-m photo-valign-top" data-speed="0.9">
+              <div class="gallery-photo-caption">HARDWARE SHOWCASE 01, 2025</div>
+              <div class="gallery-photo-wrap">
+                <img src="assets/images/scroll/dcampex1.jpg" alt="Dcampex Hardware Showcase" loading="lazy" />
+              </div>
+            </figure>
+
+            <figure class="gallery-photo photo-size-s photo-valign-bottom" data-speed="1.12">
+              <div class="gallery-photo-caption">PROJECT DEMO 02, 2025</div>
+              <div class="gallery-photo-wrap">
+                <img src="assets/images/scroll/dcampex2.jpg" alt="Project Live Demo" loading="lazy" />
+              </div>
+            </figure>
+          </div>
+
+          <!-- KLUSTER 4: GERIGI ITS -->
+          <div class="gallery-cluster cluster--gerigi">
+            <figure class="gallery-photo photo-size-l photo-valign-center photo-hero" data-speed="1.0">
+              <div class="gallery-photo-caption">GERIGI ITS, 2023</div>
+              <div class="gallery-photo-wrap">
+                <img src="assets/images/scroll/gerigi.jpg" alt="Gerigi ITS Orientation" loading="lazy" />
+              </div>
+            </figure>
+
+            <figure class="gallery-photo photo-size-m photo-valign-top" data-speed="0.88">
+              <div class="gallery-photo-caption">CAMPUS CEREMONY 01, 2023</div>
+              <div class="gallery-photo-wrap">
+                <img src="assets/images/scroll/gerigi1.jpg" alt="Gerigi Campus Ceremony" loading="lazy" />
+              </div>
+            </figure>
+
+            <figure class="gallery-photo photo-size-s photo-valign-bottom" data-speed="1.16">
+              <div class="gallery-photo-caption">COHORT ASSEMBLY 02, 2023</div>
+              <div class="gallery-photo-wrap">
+                <img src="assets/images/scroll/gerigi2.jpg" alt="Cohort Assembly" loading="lazy" />
+              </div>
+            </figure>
+          </div>
+
+          <!-- KLUSTER 5: SPORTS & ATHLETICS -->
+          <div class="gallery-cluster cluster--sport">
+            <figure class="gallery-photo photo-size-l photo-valign-center photo-hero" data-speed="1.0">
+              <div class="gallery-photo-caption">SPORTS &amp; ATHLETICS, 2025</div>
+              <div class="gallery-photo-wrap">
+                <img src="assets/images/scroll/sport.JPG" alt="Sports & Athletics Field" loading="lazy" />
+              </div>
+            </figure>
+
+            <figure class="gallery-photo photo-size-m photo-valign-top" data-speed="0.94">
+              <div class="gallery-photo-caption">CHAMPIONSHIP MATCH 01, 2025</div>
+              <div class="gallery-photo-wrap">
+                <img src="assets/images/scroll/sport1.JPG" alt="Championship Match Session" loading="lazy" />
+              </div>
+            </figure>
+
+            <figure class="gallery-photo photo-size-s photo-valign-bottom" data-speed="1.14">
+              <div class="gallery-photo-caption">ATHLETIC TRAINING 02, 2025</div>
+              <div class="gallery-photo-wrap">
+                <img src="assets/images/scroll/sport2.JPG" alt="Athletic Training Session" loading="lazy" />
+              </div>
+            </figure>
+          </div>
+
+          <!-- KLUSTER 6: PT INDOPRIMA GEMILANG -->
+          <div class="gallery-cluster cluster--ipg">
+            <figure class="gallery-photo photo-size-l photo-valign-center photo-hero" data-speed="1.0">
+              <div class="gallery-photo-caption">PT INDOPRIMA GEMILANG, 2026</div>
+              <div class="gallery-photo-wrap">
+                <img src="assets/images/scroll/ipg.jpg" alt="PT Indoprima Gemilang Industrial Deployment"
+                  loading="lazy" />
+              </div>
+            </figure>
+          </div>
+
+          <!-- KLUSTER 7: CAMPUS ARCHIVE -->
+          <div class="gallery-cluster cluster--archive">
+            <figure class="gallery-photo photo-size-l photo-valign-center photo-hero" data-speed="1.0">
+              <div class="gallery-photo-caption">CAMPUS ARCHIVE, 2024</div>
+              <div class="gallery-photo-wrap">
+                <img src="assets/images/scroll/last (1).jpg" alt="Campus Archive" loading="lazy" />
+              </div>
+            </figure>
+
+            <figure class="gallery-photo photo-size-m photo-valign-top" data-speed="0.9">
+              <div class="gallery-photo-caption">CAMPUS ARCHIVE 01, 2024</div>
+              <div class="gallery-photo-wrap">
+                <img src="assets/images/scroll/last (2).jpg" alt="Campus Archive 01" loading="lazy" />
+              </div>
+            </figure>
+
+            <figure class="gallery-photo photo-size-s photo-valign-bottom" data-speed="1.15">
+              <div class="gallery-photo-caption">CAMPUS ARCHIVE 02, 2024</div>
+              <div class="gallery-photo-wrap">
+                <img src="assets/images/scroll/last (3).jpg" alt="Campus Archive 02" loading="lazy" />
+              </div>
+            </figure>
+          </div>
 
           <!-- Spacious End Spacer -->
           <div class="gallery-end-spacer" aria-hidden="true"></div>
@@ -294,7 +387,8 @@
         <div class="section-header-editorial text-center">
           <span class="section-tag-draco">02 // PROFILE &amp; ACADEMIC JOURNEY</span>
           <h2 class="section-heading-large">Focused on Automation, IoT &amp; Industrial Systems</h2>
-          <p class="section-subtitle-muted">Bridging hands-on electrical instrumentation with cloud telemetry and edge intelligence.</p>
+          <p class="section-subtitle-muted">Bridging hands-on electrical instrumentation with cloud telemetry and edge
+            intelligence.</p>
         </div>
 
         <!-- Upper Block: Formal Portrait & Biography / Specs -->
@@ -312,14 +406,19 @@
                       <stop offset="100%" stop-color="#F47C20" stop-opacity="0.8" />
                     </linearGradient>
                   </defs>
-                  <path d="M 258.0,150.0 L 257.8,156.8 L 286.1,173.0 L 279.3,198.1 L 246.7,198.0 L 243.5,204.0 L 240.0,209.8 L 256.3,238.0 L 238.0,256.3 L 209.8,240.0 L 204.0,243.5 L 198.0,246.7 L 198.1,279.3 L 173.0,286.1 L 156.8,257.8 L 150.0,258.0 L 143.2,257.8 L 127.0,286.1 L 101.9,279.3 L 102.0,246.7 L 96.0,243.5 L 90.2,240.0 L 62.0,256.3 L 43.7,238.0 L 60.0,209.8 L 56.5,204.0 L 53.3,198.0 L 20.7,198.1 L 13.9,173.0 L 42.2,156.8 L 42.0,150.0 L 42.2,143.2 L 13.9,127.0 L 20.7,101.9 L 53.3,102.0 L 56.5,96.0 L 60.0,90.2 L 43.7,62.0 L 62.0,43.7 L 90.2,60.0 L 96.0,56.5 L 102.0,53.3 L 101.9,20.7 L 127.0,13.9 L 143.2,42.2 L 150.0,42.0 L 156.8,42.2 L 173.0,13.9 L 198.1,20.7 L 198.0,53.3 L 204.0,56.5 L 209.8,60.0 L 238.0,43.7 L 256.3,62.0 L 240.0,90.2 L 243.5,96.0 L 246.7,102.0 L 279.3,101.9 L 286.1,127.0 L 257.8,143.2 L 258.0,150.0 Z" stroke="url(#dracoPanelGearGrad)" stroke-width="2.5" />
-                  <circle cx="150" cy="150" r="108" stroke="rgba(39, 56, 107, 0.35)" stroke-width="1" stroke-dasharray="4 4" />
+                  <path
+                    d="M 258.0,150.0 L 257.8,156.8 L 286.1,173.0 L 279.3,198.1 L 246.7,198.0 L 243.5,204.0 L 240.0,209.8 L 256.3,238.0 L 238.0,256.3 L 209.8,240.0 L 204.0,243.5 L 198.0,246.7 L 198.1,279.3 L 173.0,286.1 L 156.8,257.8 L 150.0,258.0 L 143.2,257.8 L 127.0,286.1 L 101.9,279.3 L 102.0,246.7 L 96.0,243.5 L 90.2,240.0 L 62.0,256.3 L 43.7,238.0 L 60.0,209.8 L 56.5,204.0 L 53.3,198.0 L 20.7,198.1 L 13.9,173.0 L 42.2,156.8 L 42.0,150.0 L 42.2,143.2 L 13.9,127.0 L 20.7,101.9 L 53.3,102.0 L 56.5,96.0 L 60.0,90.2 L 43.7,62.0 L 62.0,43.7 L 90.2,60.0 L 96.0,56.5 L 102.0,53.3 L 101.9,20.7 L 127.0,13.9 L 143.2,42.2 L 150.0,42.0 L 156.8,42.2 L 173.0,13.9 L 198.1,20.7 L 198.0,53.3 L 204.0,56.5 L 209.8,60.0 L 238.0,43.7 L 256.3,62.0 L 240.0,90.2 L 243.5,96.0 L 246.7,102.0 L 279.3,101.9 L 286.1,127.0 L 257.8,143.2 L 258.0,150.0 Z"
+                    stroke="url(#dracoPanelGearGrad)" stroke-width="2.5" />
+                  <circle cx="150" cy="150" r="108" stroke="rgba(39, 56, 107, 0.35)" stroke-width="1"
+                    stroke-dasharray="4 4" />
                   <circle cx="150" cy="150" r="92" stroke="rgba(244, 124, 32, 0.35)" stroke-width="1" />
-                  <circle cx="150" cy="150" r="42" fill="rgba(5, 7, 13, 0.85)" stroke="url(#dracoPanelGearGrad)" stroke-width="2" />
+                  <circle cx="150" cy="150" r="42" fill="rgba(5, 7, 13, 0.85)" stroke="url(#dracoPanelGearGrad)"
+                    stroke-width="2" />
                 </svg>
               </div>
               <div class="portrait-frame">
-                <img src="assets/images/FOTOku.jpg" alt="Muhammad Harits Khairiansyah Formal Portrait" class="portrait-photo-img" />
+                <img src="assets/images/FOTOku.jpg" alt="Muhammad Harits Khairiansyah Formal Portrait"
+                  class="portrait-photo-img" />
                 <div class="portrait-card-footer">
                   <span class="photo-loc-badge">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -394,71 +493,80 @@
 
           <div class="editorial-edu-cards-row">
             <!-- Edu 1: SMPIT Al Uswah -->
-            <div class="edu-editorial-card">
-              <div class="edu-card-bg-wrap">
-                <img src="assets/images/fotosmp.jpg" alt="SMPIT Al Uswah Surabaya" class="edu-bg-img" loading="lazy" />
-                <div class="edu-card-overlay"></div>
+            <div class="edu-float-card">
+              <div class="edu-card-media">
+                <img src="assets/images/fotosmp.jpg" alt="SMPIT Al Uswah Surabaya" class="edu-card-img"
+                  loading="lazy" />
+                <div class="edu-card-gradient" aria-hidden="true"></div>
+                <div class="edu-shimmer-sweep" aria-hidden="true"></div>
+                <div class="edu-corner-glow glow-tr" aria-hidden="true"></div>
+                <div class="edu-corner-glow glow-bl" aria-hidden="true"></div>
               </div>
-              <div class="edu-card-content">
-                <div class="edu-card-top">
-                  <img src="assets/images/aluswah.jpg" alt="Logo SMPIT Al Uswah" class="edu-logo-badge" />
-                  <span class="edu-level-pill">Junior High School</span>
+
+              <!-- Overlaid Header: Logo at top-left, Year at top-right -->
+              <div class="edu-card-header-overlay">
+                <div class="edu-logo-tile">
+                  <img src="assets/images/aluswah.jpg" alt="Logo SMPIT Al Uswah" class="edu-school-logo" />
                 </div>
-                <h4 class="edu-card-title">SMPIT Al Uswah Surabaya</h4>
-                <p class="edu-card-desc">
-                  Academic foundation in science, mathematics, character building, and analytical problem-solving skills.
-                </p>
-                <div class="edu-card-footer">
-                  <span class="edu-footer-school">SMPIT AL USWAH</span>
-                  <span class="edu-footer-years">2017 – 2020</span>
-                </div>
+                <span class="edu-year-badge">2017 – 2020</span>
+              </div>
+
+              <!-- Overlaid Bottom: School Name and Jurusan -->
+              <div class="edu-card-bottom-overlay">
+                <h4 class="edu-school-name">SMPIT Al Uswah Surabaya</h4>
+                <p class="edu-school-major">Junior High School</p>
               </div>
             </div>
 
             <!-- Edu 2: MA Darul Fikri -->
-            <div class="edu-editorial-card">
-              <div class="edu-card-bg-wrap">
-                <img src="assets/images/fotosma.jpg" alt="MA Darul Fikri Sidoarjo" class="edu-bg-img" loading="lazy" />
-                <div class="edu-card-overlay"></div>
+            <div class="edu-float-card">
+              <div class="edu-card-media">
+                <img src="assets/images/fotosma.jpg" alt="MA Darul Fikri Sidoarjo" class="edu-card-img"
+                  loading="lazy" />
+                <div class="edu-card-gradient" aria-hidden="true"></div>
+                <div class="edu-shimmer-sweep" aria-hidden="true"></div>
+                <div class="edu-corner-glow glow-tr" aria-hidden="true"></div>
+                <div class="edu-corner-glow glow-bl" aria-hidden="true"></div>
               </div>
-              <div class="edu-card-content">
-                <div class="edu-card-top">
-                  <img src="assets/images/Dafi.png" alt="Logo MA Darul Fikri" class="edu-logo-badge" />
-                  <span class="edu-level-pill">Senior High School</span>
+
+              <!-- Overlaid Header: Logo at top-left, Year at top-right -->
+              <div class="edu-card-header-overlay">
+                <div class="edu-logo-tile">
+                  <img src="assets/images/Dafi.png" alt="Logo MA Darul Fikri" class="edu-school-logo" />
                 </div>
-                <h4 class="edu-card-title">MA Darul Fikri Sidoarjo</h4>
-                <p class="edu-card-sub">Science &amp; Technology Programme</p>
-                <p class="edu-card-desc">
-                  Advanced study in exact sciences, computer logic, analytical thinking, and organizational leadership.
-                </p>
-                <div class="edu-card-footer">
-                  <span class="edu-footer-school">MA DARUL FIKRI</span>
-                  <span class="edu-footer-years">2020 – 2023</span>
-                </div>
+                <span class="edu-year-badge">2020 – 2023</span>
+              </div>
+
+              <!-- Overlaid Bottom: School Name and Jurusan -->
+              <div class="edu-card-bottom-overlay">
+                <h4 class="edu-school-name">MA Darul Fikri Sidoarjo</h4>
+                <p class="edu-school-major">Science &amp; Technology Programme</p>
               </div>
             </div>
 
             <!-- Edu 3: ITS Surabaya -->
-            <div class="edu-editorial-card edu-card-highlighted">
-              <div class="edu-card-bg-wrap">
-                <img src="assets/images/fotokuliah.jpg" alt="Institut Teknologi Sepuluh Nopember" class="edu-bg-img" loading="lazy" />
-                <div class="edu-card-overlay"></div>
+            <div class="edu-float-card edu-card-featured">
+              <div class="edu-card-media">
+                <img src="assets/images/fotokuliah.jpg" alt="Institut Teknologi Sepuluh Nopember" class="edu-card-img"
+                  loading="lazy" />
+                <div class="edu-card-gradient" aria-hidden="true"></div>
+                <div class="edu-shimmer-sweep" aria-hidden="true"></div>
+                <div class="edu-corner-glow glow-tr" aria-hidden="true"></div>
+                <div class="edu-corner-glow glow-bl" aria-hidden="true"></div>
               </div>
-              <div class="edu-card-content">
-                <div class="edu-card-top">
-                  <img src="assets/images/ITS.png" alt="Logo ITS Surabaya" class="edu-logo-badge" />
-                  <span class="edu-level-pill pill-orange">Higher Education</span>
+
+              <!-- Overlaid Header: Logo at top-left, Year at top-right -->
+              <div class="edu-card-header-overlay">
+                <div class="edu-logo-tile">
+                  <img src="assets/images/ITS.png" alt="Logo ITS Surabaya" class="edu-school-logo" />
                 </div>
-                <h4 class="edu-card-title">Institut Teknologi Sepuluh Nopember</h4>
-                <p class="edu-card-sub">Bachelor of Applied Science — Electrical Automation Engineering</p>
-                <div class="edu-gpa-badge">GPA: <strong>3.26</strong> / 4.00</div>
-                <p class="edu-card-desc">
-                  Specialized in Industrial Automation, PLC programming, SCADA, Industrial IoT architecture, and electrical instrumentation.
-                </p>
-                <div class="edu-card-footer">
-                  <span class="edu-footer-school">ITS SURABAYA</span>
-                  <span class="edu-footer-years">2023 – Present</span>
-                </div>
+                <span class="edu-year-badge badge-active">2023 – Present</span>
+              </div>
+
+              <!-- Overlaid Bottom: School Name and Jurusan -->
+              <div class="edu-card-bottom-overlay">
+                <h4 class="edu-school-name">Institut Teknologi Sepuluh Nopember</h4>
+                <p class="edu-school-major">Bachelor of Applied Science — Electrical Automation Engineering</p>
               </div>
             </div>
           </div>
@@ -473,7 +581,8 @@
         <div class="section-header-editorial text-center">
           <span class="section-tag-draco">03 // PORTFOLIO SHOWCASE</span>
           <h2 class="section-heading-large">Professional Experience &amp; Technical Work</h2>
-          <p class="section-subtitle-muted">Industrial deployments, embedded IoT prototypes, and certified engineering competence.</p>
+          <p class="section-subtitle-muted">Industrial deployments, embedded IoT prototypes, and certified engineering
+            competence.</p>
         </div>
 
         <!-- 4 Tab Buttons -->
@@ -539,10 +648,14 @@
                   <p class="internship-unit">(Sampoerna Kayoe Group)</p>
                   <p class="internship-role-title">CMMS &amp; Maintenance Software Engineering Intern</p>
                   <ul class="internship-bullets">
-                    <li>Developing a Computerized Maintenance Management System (CMMS) to digitize Emergency Work Order (EWO) reporting, automated approval flow, and equipment history.</li>
-                    <li>Architected full-stack web applications utilizing React, Python FastAPI, and PostgreSQL for machine inventory and role-based access control.</li>
-                    <li>Designed real-time maintenance KPI dashboards to monitor MTTR, MTBF, line downtime, and EWO resolution status.</li>
-                    <li>Engineered an MCDM-based decision support model to prioritize emergency work orders based on machine criticality and factory conditions.</li>
+                    <li>Developing a Computerized Maintenance Management System (CMMS) to digitize Emergency Work Order
+                      (EWO) reporting, automated approval flow, and equipment history.</li>
+                    <li>Architected full-stack web applications utilizing React, Python FastAPI, and PostgreSQL for
+                      machine inventory and role-based access control.</li>
+                    <li>Designed real-time maintenance KPI dashboards to monitor MTTR, MTBF, line downtime, and EWO
+                      resolution status.</li>
+                    <li>Engineered an MCDM-based decision support model to prioritize emergency work orders based on
+                      machine criticality and factory conditions.</li>
                   </ul>
                   <div class="card-tech-chips">
                     <span>React</span>
@@ -563,7 +676,8 @@
                 <div class="card-inner">
                   <div class="internship-header-row">
                     <div class="company-logo-container">
-                      <img src="assets/images/logo_indoprima.png" alt="PT Indoprima Gemilang Logo" class="company-logo" />
+                      <img src="assets/images/logo_indoprima.png" alt="PT Indoprima Gemilang Logo"
+                        class="company-logo" />
                     </div>
                     <span class="internship-badge-loc">Surabaya, Indonesia</span>
                   </div>
@@ -572,11 +686,16 @@
                   <p class="internship-unit">(Indoprima Group)</p>
                   <p class="internship-role-title">Industrial IoT &amp; Automation Engineering Intern</p>
                   <ul class="internship-bullets">
-                    <li>Developed Industrial IoT solutions using ESP32, MQTT, Node-RED, MySQL, and SQL Server for real-time production monitoring.</li>
-                    <li>Designed and tested three-phase electrical Energy Monitoring systems utilizing PZEM sensors, multiplexing logic, and custom Grafana dashboards.</li>
-                    <li>Conducted maintenance, electrical troubleshooting, and firmware improvements on IoT-enabled manufacturing devices (hot presses, weighing systems).</li>
-                    <li>Executed hardware assembly, PCB integration, panel wiring, and on-site field deployment for manufacturing equipment.</li>
-                    <li>Implemented Over-The-Air (OTA) firmware updating to ensure seamless remote maintenance with zero production halt.</li>
+                    <li>Developed Industrial IoT solutions using ESP32, MQTT, Node-RED, MySQL, and SQL Server for
+                      real-time production monitoring.</li>
+                    <li>Designed and tested three-phase electrical Energy Monitoring systems utilizing PZEM sensors,
+                      multiplexing logic, and custom Grafana dashboards.</li>
+                    <li>Conducted maintenance, electrical troubleshooting, and firmware improvements on IoT-enabled
+                      manufacturing devices (hot presses, weighing systems).</li>
+                    <li>Executed hardware assembly, PCB integration, panel wiring, and on-site field deployment for
+                      manufacturing equipment.</li>
+                    <li>Implemented Over-The-Air (OTA) firmware updating to ensure seamless remote maintenance with zero
+                      production halt.</li>
                   </ul>
                   <div class="card-tech-chips">
                     <span>ESP32</span>
@@ -604,7 +723,8 @@
                 <div class="project-media-wrap lightbox-trigger" data-img="assets/images/pencacahsampah.jpg"
                   data-title="Plastic Waste Shredder Automation &amp; Monitoring System"
                   data-desc="Automated plastic shredder with real-time motor protection, anti-jamming mechanism, and Grafana monitoring.">
-                  <img src="assets/images/pencacahsampah.jpg" alt="Plastic Waste Shredder Automation" class="project-thumb" loading="lazy" />
+                  <img src="assets/images/pencacahsampah.jpg" alt="Plastic Waste Shredder Automation"
+                    class="project-thumb" loading="lazy" />
                   <div class="zoom-badge">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                       <path d="M15 3h6v6m0-6L10 14M9 21H3v-6m0 6l11-11" />
@@ -619,7 +739,8 @@
                   <h3 class="project-title">Plastic Waste Shredder Automation &amp; Monitoring System</h3>
                   <p class="project-desc">
                     Developed an automated plastic bottle shredder equipped with a real-time monitoring and electrical
-                    protection system. Integrates ESP32 with Modbus RTU communication, sensor fusion (current, temperature, weight), and automated reverse rotation anti-jamming logic.
+                    protection system. Integrates ESP32 with Modbus RTU communication, sensor fusion (current,
+                    temperature, weight), and automated reverse rotation anti-jamming logic.
                   </p>
                   <div class="project-tags">
                     <span>ESP32</span>
@@ -636,7 +757,8 @@
                 <div class="project-media-wrap lightbox-trigger" data-img="assets/images/3phasemonitoring.jpg"
                   data-title="Three-Phase Energy Monitoring System"
                   data-desc="Industrial electrical distribution monitoring system measuring real-time 3-phase voltage, current, and energy consumption.">
-                  <img src="assets/images/3phasemonitoring.jpg" alt="Three-Phase Energy Monitoring System" class="project-thumb" loading="lazy" />
+                  <img src="assets/images/3phasemonitoring.jpg" alt="Three-Phase Energy Monitoring System"
+                    class="project-thumb" loading="lazy" />
                   <div class="zoom-badge">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                       <path d="M15 3h6v6m0-6L10 14M9 21H3v-6m0 6l11-11" />
@@ -650,8 +772,10 @@
                   </div>
                   <h3 class="project-title">Three-Phase Energy Monitoring System</h3>
                   <p class="project-desc">
-                    Designed and deployed a 3-phase power monitoring panel utilizing PZEM-004T sensors and CD74HC4067 multiplexer.
-                    Measures real-time voltage, current, power factor, frequency, and cumulative energy consumption with automated data logging via Node-RED to MySQL.
+                    Designed and deployed a 3-phase power monitoring panel utilizing PZEM-004T sensors and CD74HC4067
+                    multiplexer.
+                    Measures real-time voltage, current, power factor, frequency, and cumulative energy consumption with
+                    automated data logging via Node-RED to MySQL.
                   </p>
                   <div class="project-tags">
                     <span>ESP32</span>
@@ -670,7 +794,8 @@
                   data-title="IoT Access Security System &amp; Automated Reporting"
                   data-desc="Digital verification access control system for spare parts inventory using GM66 barcode/RFID and non-blocking finite state machine.">
                   <div class="cyber-placeholder">
-                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="1.5">
                       <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
                       <path d="M7 11V7a5 5 0 0110 0v4" />
                     </svg>
@@ -685,7 +810,8 @@
                   <h3 class="project-title">IoT Access Security System &amp; Automated Reporting</h3>
                   <p class="project-desc">
                     Designed an automated digital door verification system to secure spare parts storage.
-                    Uses GM66 scanning module with ESP32 transmitting via MQTT to Node-RED for database authorization, non-blocking finite state machine (FSM) control, and automated audit reporting.
+                    Uses GM66 scanning module with ESP32 transmitting via MQTT to Node-RED for database authorization,
+                    non-blocking finite state machine (FSM) control, and automated audit reporting.
                   </p>
                   <div class="project-tags">
                     <span>ESP32</span>
@@ -703,7 +829,8 @@
                   data-img="assets/images/Screenshot 2026-06-04 092534.png"
                   data-title="IoT-Based Packing Monitoring Dashboard"
                   data-desc="Real-time production floor monitoring dashboard displaying packaging parameters, fault counts, and machine state.">
-                  <img src="assets/images/Screenshot 2026-06-04 092534.png" alt="Grafana Monitoring Dashboard" class="project-thumb" loading="lazy" />
+                  <img src="assets/images/Screenshot 2026-06-04 092534.png" alt="Grafana Monitoring Dashboard"
+                    class="project-thumb" loading="lazy" />
                   <div class="zoom-badge">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                       <path d="M15 3h6v6m0-6L10 14M9 21H3v-6m0 6l11-11" />
@@ -718,7 +845,8 @@
                   <h3 class="project-title">IoT-Based Packing Monitoring System</h3>
                   <p class="project-desc">
                     Integrated MQTT, Node-RED, and SQL Server for industrial packing line data transmission.
-                    Designed operator push-button &amp; LCD interface, accompanied by Over-The-Air (OTA) updates and real-time visualization dashboards.
+                    Designed operator push-button &amp; LCD interface, accompanied by Over-The-Air (OTA) updates and
+                    real-time visualization dashboards.
                   </p>
                   <div class="project-tags">
                     <span>ESP32</span>
@@ -738,11 +866,13 @@
             <div class="cert-grid">
 
               <!-- Cert 1: JMP -->
-              <div class="cert-item editorial-card lightbox-trigger" data-img="assets/images/Sertifikat JMP_page-0001.jpg"
+              <div class="cert-item editorial-card lightbox-trigger"
+                data-img="assets/images/Sertifikat JMP_page-0001.jpg"
                 data-title="Junior Mobile Programmer — Digital Talent Scholarship"
                 data-desc="Vocational School Graduate Academy (VSGA) certified by BPSDMP Kominfo Surabaya (2025).">
                 <div class="cert-img-container">
-                  <img src="assets/images/Sertifikat JMP_page-0001.jpg" alt="Sertifikat Junior Mobile Programmer" class="cert-thumb" loading="lazy" />
+                  <img src="assets/images/Sertifikat JMP_page-0001.jpg" alt="Sertifikat Junior Mobile Programmer"
+                    class="cert-thumb" loading="lazy" />
                   <div class="cert-hover-icon">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                       <circle cx="11" cy="11" r="8" />
@@ -759,11 +889,13 @@
               </div>
 
               <!-- Cert 2: IKMVI -->
-              <div class="cert-item editorial-card lightbox-trigger" data-img="assets/images/Muhammad Harits Khairiansyah_IKMVI.png"
+              <div class="cert-item editorial-card lightbox-trigger"
+                data-img="assets/images/Muhammad Harits Khairiansyah_IKMVI.png"
                 data-title="Sertifikat Penghargaan Kongres IKMVI 2025"
                 data-desc="Peserta Kongres Ikatan Keluarga Mahasiswa Vokasi Indonesia (2025).">
                 <div class="cert-img-container">
-                  <img src="assets/images/Muhammad Harits Khairiansyah_IKMVI.png" alt="Sertifikat IKMVI" class="cert-thumb" loading="lazy" />
+                  <img src="assets/images/Muhammad Harits Khairiansyah_IKMVI.png" alt="Sertifikat IKMVI"
+                    class="cert-thumb" loading="lazy" />
                   <div class="cert-hover-icon">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                       <circle cx="11" cy="11" r="8" />
@@ -824,7 +956,8 @@
                   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M9 18h6" />
                     <path d="M10 22h4" />
-                    <path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5.76.76 1.23 1.52 1.41 2.5" />
+                    <path
+                      d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5.76.76 1.23 1.52 1.41 2.5" />
                   </svg>
                 </div>
                 <div class="cert-meta">
@@ -841,7 +974,8 @@
                 <div class="cert-classic-icon">
                   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <circle cx="12" cy="12" r="3" />
-                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+                    <path
+                      d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
                   </svg>
                 </div>
                 <div class="cert-meta">
@@ -894,7 +1028,8 @@
                   <div class="bento-classic-icon">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                       <circle cx="12" cy="12" r="3" />
-                      <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+                      <path
+                        d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
                     </svg>
                   </div>
                   <div>
@@ -1010,7 +1145,8 @@
               <a href="mailto:mkh4iriansy4h@gmail.com" class="contact-row-item">
                 <div class="row-left">
                   <div class="circle-outline-icon">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="1.8">
                       <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
                       <polyline points="22,6 12,13 2,6" />
                     </svg>
@@ -1024,10 +1160,12 @@
               </a>
 
               <!-- LinkedIn -->
-              <a href="https://www.linkedin.com/in/harits-k-1a1717308/" target="_blank" rel="noreferrer" class="contact-row-item">
+              <a href="https://www.linkedin.com/in/harits-k-1a1717308/" target="_blank" rel="noreferrer"
+                class="contact-row-item">
                 <div class="row-left">
                   <div class="circle-outline-icon">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="1.8">
                       <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
                       <rect x="2" y="9" width="4" height="12" />
                       <circle cx="4" cy="4" r="2" />
@@ -1045,7 +1183,8 @@
               <a href="https://www.instagram.com/ritskhair" target="_blank" rel="noreferrer" class="contact-row-item">
                 <div class="row-left">
                   <div class="circle-outline-icon">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="1.8">
                       <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
                       <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
                       <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
@@ -1063,8 +1202,10 @@
               <a href="https://github.com/ritskhair" target="_blank" rel="noreferrer" class="contact-row-item">
                 <div class="row-left">
                   <div class="circle-outline-icon">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                      <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="1.8">
+                      <path
+                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
                     </svg>
                   </div>
                   <div class="row-text">
@@ -1079,7 +1220,8 @@
               <div class="contact-row-item static-row">
                 <div class="row-left">
                   <div class="circle-outline-icon">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="1.8">
                       <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                       <circle cx="12" cy="10" r="3" />
                     </svg>
