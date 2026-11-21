@@ -27,7 +27,6 @@
         duration: 1.2,
         easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
         smoothWheel: true,
-        smoothTouch: false,
         touchMultiplier: 1.2,
       });
 
@@ -72,73 +71,186 @@
         return Math.max(0, track.scrollWidth - window.innerWidth);
       }
 
+      const photoPositions = Array.from(photos, (photo) => ({
+        element: photo,
+        center: 0,
+        width: 0,
+        tone: '',
+      }));
+
+      function cachePhotoPositions() {
+        const trackRect = track.getBoundingClientRect();
+        photoPositions.forEach((item) => {
+          item.center = item.element.offsetLeft + item.element.offsetWidth / 2 - trackRect.left;
+          item.width = item.element.offsetWidth;
+        });
+      }
+
+      function updatePhotoTones(progress) {
+        const travel = getScrollDistance();
+        const viewportCenter = window.innerWidth / 2;
+        photoPositions.forEach((item) => {
+          const center = item.center - travel * progress;
+          const focused = Math.abs(viewportCenter - center) < item.width * 0.95
+            && center + item.width / 2 > 0
+            && center - item.width / 2 < window.innerWidth;
+          const tone = focused ? 'focus' : 'dim';
+          if (item.tone !== tone) {
+            item.tone = tone;
+            item.element.setAttribute('data-tone', tone);
+          }
+        });
+      }
+
       // Main Horizontal Tween pinned to viewport
       const galleryTween = gsap.to(track, {
         x: () => -getScrollDistance(),
+        force3D: true,
         ease: 'none',
         scrollTrigger: {
           trigger: '.gallery-hscroll-section',
           pin: true,
-          scrub: 0.9,
+          scrub: true,
           start: 'top top',
           end: () => '+=' + getScrollDistance(),
           invalidateOnRefresh: true,
           onUpdate: (self) => {
-            // Photo center focus detection
-            if (photos.length > 0) {
-              const viewportCenter = window.innerWidth / 2;
-              photos.forEach((photo) => {
-                const rect = photo.getBoundingClientRect();
-                const photoCenter = rect.left + rect.width / 2;
-                const distance = Math.abs(viewportCenter - photoCenter);
-
-                // If photo is within the central 70% of viewport, illuminate and scale
-                if (distance < rect.width * 0.95 && rect.right > 0 && rect.left < window.innerWidth) {
-                  photo.setAttribute('data-tone', 'focus');
-                } else {
-                  photo.setAttribute('data-tone', 'dim');
-                }
-              });
-            }
+            updatePhotoTones(self.progress);
           },
         },
       });
 
       // Subtle Parallax Layering for Photo Cards (data-speed 0.88 to 1.15)
       const parallaxCards = document.querySelectorAll('.gallery-photo[data-speed]');
+      const parallaxTimeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: '.gallery-hscroll-section',
+          start: 'top top',
+          end: () => '+=' + getScrollDistance(),
+          scrub: true,
+          invalidateOnRefresh: true,
+        },
+      });
       parallaxCards.forEach((card) => {
         const speed = parseFloat(card.getAttribute('data-speed')) || 1.0;
-        const deltaX = (speed - 1.0) * 160;
-
-        gsap.to(card, {
-          x: deltaX,
+        parallaxTimeline.to(card, {
+          x: (speed - 1.0) * 160,
+          force3D: true,
           ease: 'none',
-          scrollTrigger: {
-            trigger: '.gallery-hscroll-section',
-            start: 'top top',
-            end: () => '+=' + getScrollDistance(),
-            scrub: true,
-          },
-        });
+        }, 0);
       });
 
       // Recalculate once all images inside track finish loading
       const galleryImages = track.querySelectorAll('img');
+      let refreshTimer;
+      const scheduleGalleryRefresh = () => {
+        clearTimeout(refreshTimer);
+        refreshTimer = setTimeout(() => ScrollTrigger.refresh(), 150);
+      };
+
       galleryImages.forEach((img) => {
         if (!img.complete) {
-          img.addEventListener('load', () => ScrollTrigger.refresh(), { once: true });
+          img.addEventListener('load', scheduleGalleryRefresh, { once: true });
         }
       });
 
       window.addEventListener('load', () => {
-        ScrollTrigger.refresh();
+        scheduleGalleryRefresh();
       });
+      ScrollTrigger.addEventListener('refresh', cachePhotoPositions);
+      cachePhotoPositions();
 
       return () => {
         // Cleanup if breakpoint leaves desktop
         galleryTween.kill();
+        parallaxTimeline.kill();
+        ScrollTrigger.removeEventListener('refresh', cachePhotoPositions);
       };
     });
+  }
+
+  // ------------------------------------------------------------------------
+  // 2B. TRACK PORTAL (ON TRACK / OFF TRACK) STICKY REVEAL ANIMATION
+  // ------------------------------------------------------------------------
+  const ototSection = document.getElementById('track-portal');
+  if (ototSection && typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (!prefersReducedMotion) {
+      ScrollTrigger.matchMedia({
+        // Desktop: Pin and scrub reveal
+        '(min-width: 992px)': function () {
+          const ototTl = gsap.timeline({
+            scrollTrigger: {
+              trigger: '#track-portal',
+              start: 'top top',
+              end: '+=70%',
+              pin: true,
+              scrub: 0.6,
+              anticipatePin: 1,
+            },
+          });
+
+          // Left skeleton slides & reveals from left
+          ototTl.from('.otot-photo-col.is-left .otot-skeleton-card', {
+            x: -80,
+            opacity: 0.2,
+            clipPath: 'inset(0% 100% 0% 0%)',
+            ease: 'power2.out',
+            duration: 1,
+          }, 0);
+
+          // Right skeleton slides & reveals from right
+          ototTl.from('.otot-photo-col.is-right .otot-skeleton-card', {
+            x: 80,
+            opacity: 0.2,
+            clipPath: 'inset(0% 0% 0% 100%)',
+            ease: 'power2.out',
+            duration: 1,
+          }, 0);
+
+          // Center ON TRACK text block
+          ototTl.from('.otot-block.is-ontrack', {
+            y: -30,
+            opacity: 0,
+            ease: 'power2.out',
+            duration: 0.8,
+          }, 0.15);
+
+          // Center Divider
+          ototTl.from('.otot-mid-divider', {
+            scaleX: 0,
+            opacity: 0,
+            ease: 'power2.out',
+            duration: 0.6,
+          }, 0.2);
+
+          // Center OFF TRACK text block
+          ototTl.from('.otot-block.is-offtrack', {
+            y: 30,
+            opacity: 0,
+            ease: 'power2.out',
+            duration: 0.8,
+          }, 0.25);
+        },
+
+        // Mobile/Tablet: Clean staggered scroll reveal without pinning
+        '(max-width: 991px)': function () {
+          gsap.from('.otot-block', {
+            scrollTrigger: {
+              trigger: '#track-portal',
+              start: 'top 80%',
+              once: true,
+            },
+            y: 40,
+            opacity: 0,
+            stagger: 0.2,
+            duration: 0.8,
+            ease: 'power2.out',
+          });
+        },
+      });
+    }
   }
 
   // ------------------------------------------------------------------------
@@ -181,7 +293,6 @@
         dracoIcon.classList.add('is-spinning');
       }
 
-      // Smooth 360-degree spin takes 450ms, open drawer right as spin concludes
       setTimeout(() => {
         openDrawer();
         isMenuSpinning = false;
@@ -232,6 +343,53 @@
   // ------------------------------------------------------------------------
   const tabBtns = document.querySelectorAll('.tab-btn');
   const tabPanes = document.querySelectorAll('.tab-pane');
+  const folderChoices = document.querySelectorAll('.folder-choice');
+  const folderPanels = document.querySelectorAll('.folder-panel');
+
+  function closeFolders() {
+    folderPanels.forEach((panel) => {
+      panel.classList.remove('is-open');
+      panel.setAttribute('aria-hidden', 'true');
+    });
+    folderChoices.forEach((choice) => {
+      choice.hidden = false;
+    });
+    if (typeof ScrollTrigger !== 'undefined') {
+      setTimeout(() => ScrollTrigger.refresh(), 150);
+    }
+  }
+
+  function openFolder(folderName) {
+    closeFolders();
+    const panel = document.querySelector(`[data-folder-panel="${folderName}"]`);
+    if (!panel) return;
+    const choice = document.querySelector(`[data-folder="${folderName}"]`);
+    if (choice) choice.hidden = true;
+    panel.classList.add('is-open');
+    panel.setAttribute('aria-hidden', 'false');
+    if (typeof gsap !== 'undefined') {
+      gsap.fromTo(panel, { scale: 0.35, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.85, ease: 'expo.out' });
+      gsap.fromTo(panel.querySelector('.folder-panel-info'), { opacity: 0, x: -18 }, { opacity: 1, x: 0, duration: 0.45, delay: 0.35, ease: 'power2.out' });
+      gsap.fromTo(panel.querySelectorAll('.folder-photo-card'), { opacity: 0, x: 45, scale: 0.96 }, {
+        opacity: 1,
+        x: 0,
+        scale: 1,
+        duration: 0.5,
+        stagger: 0.1,
+        delay: 0.4,
+        ease: 'power3.out',
+      });
+    }
+  }
+
+  folderChoices.forEach((choice) => {
+    choice.addEventListener('click', () => openFolder(choice.getAttribute('data-folder')));
+  });
+
+  folderPanels.forEach((panel) => {
+    const closeButton = panel.querySelector('.folder-close');
+    if (closeButton) closeButton.addEventListener('click', closeFolders);
+  });
 
   if (tabBtns.length > 0 && tabPanes.length > 0) {
     tabBtns.forEach((btn) => {
@@ -243,6 +401,8 @@
           b.classList.remove('active');
           b.setAttribute('aria-selected', 'false');
         });
+
+        closeFolders();
 
         // Activate clicked
         this.classList.add('active');
@@ -319,6 +479,8 @@
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && lightboxModal && lightboxModal.classList.contains('active')) {
       closeLightbox();
+    } else if (e.key === 'Escape' && document.querySelector('.folder-panel.is-open')) {
+      closeFolders();
     }
   });
 
@@ -341,6 +503,93 @@
       }
     });
   });
+
+  // ------------------------------------------------------------------------
+  // 6B. EDITORIAL SECTION ENTRANCE ANIMATIONS (GSAP ScrollTrigger)
+  // ------------------------------------------------------------------------
+  if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (!prefersReducedMotion) {
+      // Reveal section headers
+      gsap.utils.toArray('.section-header-editorial, .sub-header-editorial').forEach((header) => {
+        gsap.from(header, {
+          scrollTrigger: {
+            trigger: header,
+            start: 'top 85%',
+            once: true,
+          },
+          y: 35,
+          opacity: 0,
+          duration: 0.8,
+          ease: 'power2.out',
+        });
+      });
+
+      // Reveal profile columns & vision box
+      if (document.querySelector('.profile-layout-grid')) {
+        gsap.from('.profile-portrait-col, .profile-bio-col', {
+          scrollTrigger: {
+            trigger: '.profile-layout-grid',
+            start: 'top 80%',
+            once: true,
+          },
+          y: 45,
+          opacity: 0,
+          stagger: 0.2,
+          duration: 0.85,
+          ease: 'power2.out',
+        });
+      }
+
+      // Reveal education float cards
+      if (document.querySelector('.editorial-edu-cards-row')) {
+        gsap.from('.edu-float-card', {
+          scrollTrigger: {
+            trigger: '.editorial-edu-cards-row',
+            start: 'top 80%',
+            once: true,
+          },
+          y: 50,
+          opacity: 0,
+          stagger: 0.15,
+          duration: 0.75,
+          ease: 'power2.out',
+        });
+      }
+
+      // Reveal Tab Navigation
+      if (document.querySelector('.tab-nav-wrapper')) {
+        gsap.from('.tab-nav-wrapper', {
+          scrollTrigger: {
+            trigger: '.tab-nav-wrapper',
+            start: 'top 85%',
+            once: true,
+          },
+          y: 30,
+          opacity: 0,
+          duration: 0.7,
+          ease: 'power2.out',
+        });
+      }
+
+      // Reveal Contact section columns
+      if (document.querySelector('.contact-editorial-layout')) {
+        gsap.from('.contact-left-col, .contact-right-col', {
+          scrollTrigger: {
+            trigger: '.contact-editorial-layout',
+            start: 'top 80%',
+            once: true,
+          },
+          y: 40,
+          opacity: 0,
+          stagger: 0.2,
+          duration: 0.85,
+          ease: 'power2.out',
+        });
+      }
+    }
+  }
 
   // ------------------------------------------------------------------------
   // 7. WINDOW RESIZE RECALCULATION

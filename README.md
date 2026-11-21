@@ -2,9 +2,9 @@
 
 Personal engineering portfolio website for **Muhammad Harits Khairiansyah**, specialized in **Automation Engineering & Industrial IoT**.
 
-**Theme:** DRACO — Dark Navy (`#0A0F1E`), Electric Blue (`#1E90FF`), and Fire Orange (`#FF6B00`)  
+**Theme:** DRACO — Deep Navy (`#05070D`), Navy (`#27386B`), and Draco Orange (`#F47C20`)
 **Design Reference:** [alfari.my.id](https://www.alfari.my.id/)  
-**Tech Stack:** HTML5, CSS3, Vanilla JavaScript (zero external dependencies)  
+**Tech Stack:** HTML5, CSS3, Vanilla JavaScript, GSAP ScrollTrigger, and Lenis (CDN)
 **Hosting:** GitHub Pages
 
 ---
@@ -24,8 +24,8 @@ Personal engineering portfolio website for **Muhammad Harits Khairiansyah**, spe
      - Horizontal Connected Stepper Roadmap connecting SMPIT Al Uswah Surabaya ➔ MA Darul Fikri Sidoarjo ➔ Institut Teknologi Sepuluh Nopember (ITS).
 
 3. **Experience (`#experience`):**
-   - **Interactive Pill Tabs (ala alfari.my.id):**
-     - 🏢 **Internship:** PT Indoprima Gemilang & PT Sumber Graha Sejahtera (Sampoerna Kayoe).
+   - **Interactive Pill Tabs:**
+     - 🏢 **Internship:** Two interactive glass folders for PT Indoprima Gemilang and PT Sumber Graha Sejahtera (Sampoerna Kayoe). Each folder opens a performance panel with five editorial photo placeholders.
      - 🚀 **Projects:** Plastic Waste Shredder, Three-Phase Energy Monitoring, IoT Access Security System, IoT Packing Monitoring.
      - 📜 **Certificates & Achievements:** VSGA Junior Mobile Programmer, Kongres IKMVI, OLIVIA IX, CAD-IT Industry 4.0, PLC Training (with click-to-zoom Lightbox modal).
      - ⚡ **Skills:** 4-Card Bento Grid (Embedded IoT, Industrial Automation, Cloud/Web Monitoring, Soft Skills & Languages).
@@ -63,7 +63,10 @@ Portofolio/
         ├── Muhammad Harits Khairiansyah_IKMVI.png
         ├── pencacahsampah.jpg
         ├── Screenshot 2026-06-04 092534.png
-        └── Sertifikat JMP_page-0001.jpg
+        ├── Sertifikat JMP_page-0001.jpg
+        └── internship/
+            ├── sampoerna-1.jpg ... sampoerna-5.jpg
+            └── indoprima-1.jpg ... indoprima-5.jpg
 ```
 
 ---
@@ -80,3 +83,7 @@ git commit -m "feat: restructure portfolio into 4 sections with interactive tabs
 git push -u origin main
 ```
 Enable GitHub Pages in your repository **Settings > Pages > Branch: main / (root)**.
+
+## Updating internship photos
+
+Replace the ten files in `assets/images/internship/` with square photos, ideally at least 1000 × 1000 pixels. Edit the static captions, years, and lightbox metadata beside each `folder-photo-card` in `index.html`; each card includes a `GANTI FOTO` comment identifying its file.

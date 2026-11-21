@@ -68,23 +68,6 @@
       <!-- Giant Background Typography: PORTFOLIO -->
       <div class="hero-giant-bg-text" aria-hidden="true">PORTFOLIO</div>
 
-      <!-- Rotating Gear Watermark in Background -->
-      <div class="hero-watermark-gear" aria-hidden="true">
-        <svg class="gear-svg-spin" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="dracoHeroGearGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#27386B" stop-opacity="0.6" />
-              <stop offset="100%" stop-color="#F47C20" stop-opacity="0.3" />
-            </linearGradient>
-          </defs>
-          <path
-            d="M 258.0,150.0 L 257.8,156.8 L 286.1,173.0 L 279.3,198.1 L 246.7,198.0 L 243.5,204.0 L 240.0,209.8 L 256.3,238.0 L 238.0,256.3 L 209.8,240.0 L 204.0,243.5 L 198.0,246.7 L 198.1,279.3 L 173.0,286.1 L 156.8,257.8 L 150.0,258.0 L 143.2,257.8 L 127.0,286.1 L 101.9,279.3 L 102.0,246.7 L 96.0,243.5 L 90.2,240.0 L 62.0,256.3 L 43.7,238.0 L 60.0,209.8 L 56.5,204.0 L 53.3,198.0 L 20.7,198.1 L 13.9,173.0 L 42.2,156.8 L 42.0,150.0 L 42.2,143.2 L 13.9,127.0 L 20.7,101.9 L 53.3,102.0 L 56.5,96.0 L 60.0,90.2 L 43.7,62.0 L 62.0,43.7 L 90.2,60.0 L 96.0,56.5 L 102.0,53.3 L 101.9,20.7 L 127.0,13.9 L 143.2,42.2 L 150.0,42.0 L 156.8,42.2 L 173.0,13.9 L 198.1,20.7 L 198.0,53.3 L 204.0,56.5 L 209.8,60.0 L 238.0,43.7 L 256.3,62.0 L 240.0,90.2 L 243.5,96.0 L 246.7,102.0 L 279.3,101.9 L 286.1,127.0 L 257.8,143.2 L 258.0,150.0 Z"
-            stroke="url(#dracoHeroGearGrad)" stroke-width="2" />
-          <circle cx="150" cy="150" r="108" stroke="rgba(39, 56, 107, 0.25)" stroke-width="1" stroke-dasharray="4 4" />
-          <circle cx="150" cy="150" r="42" stroke="rgba(244, 124, 32, 0.3)" stroke-width="1.5" />
-        </svg>
-      </div>
-
       <div class="container hero-editorial-grid">
 
         <!-- Left Column: Greeting, Big Name, Role, Bio, CTA -->
@@ -137,7 +120,11 @@
         <!-- Right Column: Subtle quote pill + Vertical Metrics Column -->
         <div class="hero-col-right">
           <div class="hero-quote-badge">
-            <div class="quote-badge-spark">✦</div>
+            <div class="quote-badge-spark">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/>
+              </svg>
+            </div>
             <p class="quote-badge-text">
               Engineering precision, telemetry data, and resilient industrial automation.
             </p>
@@ -234,37 +221,6 @@
             </figure>
           </div>
 
-          <!-- KLUSTER 2: BROMO EXPEDITION -->
-          <div class="gallery-cluster cluster--bromo">
-            <figure class="gallery-photo photo-size-l photo-valign-center photo-hero" data-speed="1.0">
-              <div class="gallery-photo-caption">BROMO EXPEDITION, 2024</div>
-              <div class="gallery-photo-wrap">
-                <img src="assets/images/scroll/bromo.jpg" alt="Mount Bromo Expedition" loading="lazy" />
-              </div>
-            </figure>
-
-            <figure class="gallery-photo photo-size-m photo-valign-bottom" data-speed="0.92">
-              <div class="gallery-photo-caption">VOLCANIC RIDGE 01, 2024</div>
-              <div class="gallery-photo-wrap">
-                <img src="assets/images/scroll/bromo1.JPG" alt="Bromo Volcanic Ridge" loading="lazy" />
-              </div>
-            </figure>
-
-            <figure class="gallery-photo photo-size-m photo-valign-top" data-speed="0.86">
-              <div class="gallery-photo-caption">HIGH ALTITUDE 02, 2024</div>
-              <div class="gallery-photo-wrap">
-                <img src="assets/images/scroll/bromo2.JPG" alt="High Altitude Caldera" loading="lazy" />
-              </div>
-            </figure>
-
-            <figure class="gallery-photo photo-size-s photo-valign-bottom" data-speed="1.18">
-              <div class="gallery-photo-caption">CALDERA TRAIL 03, 2024</div>
-              <div class="gallery-photo-wrap">
-                <img src="assets/images/scroll/bromo3.jpg" alt="Caldera Trail Expedition" loading="lazy" />
-              </div>
-            </figure>
-          </div>
-
           <!-- KLUSTER 3: DCAMPEX EXHIBITION -->
           <div class="gallery-cluster cluster--dcampex">
             <figure class="gallery-photo photo-size-l photo-valign-center photo-hero" data-speed="1.0">
@@ -289,55 +245,24 @@
             </figure>
           </div>
 
-          <!-- KLUSTER 4: GERIGI ITS -->
+          <!-- KLUSTER 4: CAMPUS LIFE (GERIGI ITS) -->
           <div class="gallery-cluster cluster--gerigi">
             <figure class="gallery-photo photo-size-l photo-valign-center photo-hero" data-speed="1.0">
-              <div class="gallery-photo-caption">GERIGI ITS, 2023</div>
+              <div class="gallery-photo-caption">CAMPUS LIFE, 2023</div>
               <div class="gallery-photo-wrap">
-                <img src="assets/images/scroll/gerigi.jpg" alt="Gerigi ITS Orientation" loading="lazy" />
+                <img src="assets/images/scroll/gerigi.jpg" alt="Campus Life Gerigi ITS" loading="lazy" />
               </div>
             </figure>
 
             <figure class="gallery-photo photo-size-m photo-valign-top" data-speed="0.88">
-              <div class="gallery-photo-caption">CAMPUS CEREMONY 01, 2023</div>
+              <div class="gallery-photo-caption">COHORT ASSEMBLY 01, 2023</div>
               <div class="gallery-photo-wrap">
-                <img src="assets/images/scroll/gerigi1.jpg" alt="Gerigi Campus Ceremony" loading="lazy" />
-              </div>
-            </figure>
-
-            <figure class="gallery-photo photo-size-s photo-valign-bottom" data-speed="1.16">
-              <div class="gallery-photo-caption">COHORT ASSEMBLY 02, 2023</div>
-              <div class="gallery-photo-wrap">
-                <img src="assets/images/scroll/gerigi2.jpg" alt="Cohort Assembly" loading="lazy" />
+                <img src="assets/images/scroll/gerigi1.jpg" alt="Cohort Assembly" loading="lazy" />
               </div>
             </figure>
           </div>
 
-          <!-- KLUSTER 5: SPORTS & ATHLETICS -->
-          <div class="gallery-cluster cluster--sport">
-            <figure class="gallery-photo photo-size-l photo-valign-center photo-hero" data-speed="1.0">
-              <div class="gallery-photo-caption">SPORTS &amp; ATHLETICS, 2025</div>
-              <div class="gallery-photo-wrap">
-                <img src="assets/images/scroll/sport.JPG" alt="Sports & Athletics Field" loading="lazy" />
-              </div>
-            </figure>
-
-            <figure class="gallery-photo photo-size-m photo-valign-top" data-speed="0.94">
-              <div class="gallery-photo-caption">CHAMPIONSHIP MATCH 01, 2025</div>
-              <div class="gallery-photo-wrap">
-                <img src="assets/images/scroll/sport1.JPG" alt="Championship Match Session" loading="lazy" />
-              </div>
-            </figure>
-
-            <figure class="gallery-photo photo-size-s photo-valign-bottom" data-speed="1.14">
-              <div class="gallery-photo-caption">ATHLETIC TRAINING 02, 2025</div>
-              <div class="gallery-photo-wrap">
-                <img src="assets/images/scroll/sport2.JPG" alt="Athletic Training Session" loading="lazy" />
-              </div>
-            </figure>
-          </div>
-
-          <!-- KLUSTER 6: PT INDOPRIMA GEMILANG -->
+          <!-- KLUSTER 5: PT INDOPRIMA GEMILANG -->
           <div class="gallery-cluster cluster--ipg">
             <figure class="gallery-photo photo-size-l photo-valign-center photo-hero" data-speed="1.0">
               <div class="gallery-photo-caption">PT INDOPRIMA GEMILANG, 2026</div>
@@ -348,29 +273,127 @@
             </figure>
           </div>
 
-          <!-- KLUSTER 7: CAMPUS ARCHIVE -->
-          <div class="gallery-cluster cluster--archive">
-            <figure class="gallery-photo photo-size-l photo-valign-center photo-hero" data-speed="1.0">
-              <div class="gallery-photo-caption">CAMPUS ARCHIVE, 2024</div>
-              <div class="gallery-photo-wrap">
-                <img src="assets/images/scroll/last (1).jpg" alt="Campus Archive" loading="lazy" />
-              </div>
-            </figure>
+          <!-- Spacious End Spacer -->
+          <div class="gallery-end-spacer" aria-hidden="true"></div>
 
-            <figure class="gallery-photo photo-size-m photo-valign-top" data-speed="0.9">
-              <div class="gallery-photo-caption">CAMPUS ARCHIVE 01, 2024</div>
-              <div class="gallery-photo-wrap">
-                <img src="assets/images/scroll/last (2).jpg" alt="Campus Archive 01" loading="lazy" />
-              </div>
-            </figure>
+        </div>
+      </div>
+    </section>
 
-            <figure class="gallery-photo photo-size-s photo-valign-bottom" data-speed="1.15">
-              <div class="gallery-photo-caption">CAMPUS ARCHIVE 02, 2024</div>
-              <div class="gallery-photo-wrap">
-                <img src="assets/images/scroll/last (3).jpg" alt="Campus Archive 02" loading="lazy" />
+    <!-- ========== 3. TRACK SELECTION PORTAL (ON TRACK / OFF TRACK) ========== -->
+    <section class="otot-section" id="track-portal" aria-label="Portal On Track and Off Track">
+      <div class="otot-sticky-wrapper">
+        <div class="container otot-container">
+
+          <!-- Left: ON TRACK Skeleton Stage (Engineering) -->
+          <div class="otot-photo-col is-left">
+            <div class="otot-skeleton-card">
+              <div class="skeleton-shimmer"></div>
+              <div class="skeleton-tech-hud">
+                <span class="hud-tag">ON TRACK // 01</span>
+                <span class="hud-status">TELEMETRY &bull; HARDWARE</span>
               </div>
-            </figure>
+              <div class="skeleton-placeholder-center">
+                <svg class="skeleton-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                  <line x1="8" y1="21" x2="16" y2="21"/>
+                  <line x1="12" y1="17" x2="12" y2="21"/>
+                </svg>
+                <span class="skeleton-label">ENGINEERING PREVIEW</span>
+              </div>
+              <div class="skeleton-corner top-left"></div>
+              <div class="skeleton-corner top-right"></div>
+              <div class="skeleton-corner bottom-left"></div>
+              <div class="skeleton-corner bottom-right"></div>
+            </div>
           </div>
+
+          <!-- Center: Choice Navigation Stack -->
+          <div class="otot-content-col">
+
+            <!-- Upper Row: ON TRACK (Align Right) -->
+            <div class="otot-block is-ontrack">
+              <div class="otot-label-row">
+                <span class="otot-eyebrow">01 // PROFESSIONAL DEPLOYMENTS</span>
+              </div>
+              <h2 class="otot-title text-impact-on">
+                <span class="otot-title-main">ON</span><br />
+                <span class="otot-title-sub">TRACK</span>
+              </h2>
+              <p class="otot-desc">
+                Key engineering projects, industrial IoT deployments, and telemetry systems.
+              </p>
+              <div class="otot-btn-wrap">
+                <a href="#experience" class="otot-action-btn" aria-label="Explore On Track Engineering">
+                  <span>View Engineering</span>
+                  <span class="btn-arrow-circle">
+                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M3 8h10m0 0L9 4m4 4L9 12" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Subtle Center Divider -->
+            <div class="otot-mid-divider" aria-hidden="true">
+              <span class="divider-line"></span>
+              <span class="divider-node">✦</span>
+              <span class="divider-line"></span>
+            </div>
+
+            <!-- Lower Row: OFF TRACK (Align Left) -->
+            <div class="otot-block is-offtrack">
+              <div class="otot-label-row">
+                <span class="otot-eyebrow">02 // CAMPUS LIFE & ARCHIVE</span>
+              </div>
+              <h2 class="otot-title text-impact-off">
+                <span class="otot-title-main">OFF</span><br />
+                <span class="otot-title-sub">TRACK</span>
+              </h2>
+              <p class="otot-desc">
+                Campus leadership, expeditions, student activities, and creative archives.
+              </p>
+              <div class="otot-btn-wrap">
+                <a href="offtrack.html" class="otot-action-btn" aria-label="Explore Off Track Archive">
+                  <span>Enter Archive</span>
+                  <span class="btn-arrow-circle">
+                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M3 8h10m0 0L9 4m4 4L9 12" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right: OFF TRACK Skeleton Stage (Campus Life & Expeditions) -->
+          <div class="otot-photo-col is-right">
+            <div class="otot-skeleton-card">
+              <div class="skeleton-shimmer"></div>
+              <div class="skeleton-tech-hud">
+                <span class="hud-tag">OFF TRACK // 02</span>
+                <span class="hud-status">EXPEDITION &bull; ARCHIVE</span>
+              </div>
+              <div class="skeleton-placeholder-center">
+                <svg class="skeleton-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                  <circle cx="8.5" cy="8.5" r="1.5"/>
+                  <polyline points="21 15 16 10 5 21"/>
+                </svg>
+                <span class="skeleton-label">OFFTRACK PREVIEW</span>
+              </div>
+              <div class="skeleton-corner top-left"></div>
+              <div class="skeleton-corner top-right"></div>
+              <div class="skeleton-corner bottom-left"></div>
+              <div class="skeleton-corner bottom-right"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
 
           <!-- Spacious End Spacer -->
           <div class="gallery-end-spacer" aria-hidden="true"></div>
@@ -465,20 +488,15 @@
               </div>
             </div>
 
-            <!-- Inline Milestones -->
-            <div class="profile-milestones-row">
-              <div class="mini-milestone-box">
-                <span class="mini-milestone-num">3.26</span>
-                <span class="mini-milestone-lbl">GPA / 4.00</span>
+            <!-- Career Objective / Core Focus (Replaces duplicate metrics) -->
+            <div class="profile-vision-box">
+              <div class="vision-tag-row">
+                <span class="vision-dot"></span>
+                <span class="vision-tag-text">CAREER OBJECTIVE</span>
               </div>
-              <div class="mini-milestone-box">
-                <span class="mini-milestone-num">2</span>
-                <span class="mini-milestone-lbl">Industrial Internships</span>
-              </div>
-              <div class="mini-milestone-box">
-                <span class="mini-milestone-num">4+</span>
-                <span class="mini-milestone-lbl">Key Engineering Projects</span>
-              </div>
+              <p class="vision-quote">
+                Targeting industrial automation and IoT roles focused on high-reliability SCADA architectures, smart factory telemetry, and edge-to-cloud instrumentation.
+              </p>
             </div>
           </div>
 
@@ -632,85 +650,99 @@
 
           <!-- Pane 1: INTERNSHIP -->
           <div class="tab-pane active" id="tab-internship" role="tabpanel">
-            <div class="internship-grid-dual">
+            <div class="internship-folders">
+              <button class="folder-choice" type="button" data-folder="sampoerna" aria-controls="folderPanelSampoerna">
+                <svg class="folder-svg" viewBox="0 0 420 300" role="img" aria-label="Open Sampoerna Kayoe internship folder">
+                  <defs>
+                    <linearGradient id="folderOrange" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0" stop-color="#FF8F3D" />
+                      <stop offset="1" stop-color="#D45D08" />
+                    </linearGradient>
+                  </defs>
+                  <path class="folder-back" d="M22 75V47a14 14 0 0 1 14-14h102l27 27h219a14 14 0 0 1 14 14v174a14 14 0 0 1-14 14H36a14 14 0 0 1-14-14Z" />
+                  <path class="folder-front" d="M22 91a18 18 0 0 1 18-18h350a14 14 0 0 1 14 14l-25 168a15 15 0 0 1-15 13H38a16 16 0 0 1-16-16Z" />
+                  <path class="folder-highlight" d="M40 77h350a14 14 0 0 1 14 14l-25 164" />
+                  <image href="assets/images/logo_sampoerna.png" x="170" y="130" width="80" height="56" preserveAspectRatio="xMidYMid meet" />
+                </svg>
+                <span class="folder-label"><strong>Sampoerna Kayoe</strong><span>2026 – 2027 · Click to open</span></span>
+              </button>
 
-              <!-- Left: Sampoerna Kayoe -->
-              <div class="editorial-card internship-card">
-                <div class="card-inner">
-                  <div class="internship-header-row">
-                    <div class="company-logo-container">
-                      <img src="assets/images/logo_sampoerna.png" alt="Sampoerna Kayoe Logo" class="company-logo" />
-                    </div>
-                    <span class="internship-badge-loc">Batang, Indonesia</span>
-                  </div>
+              <button class="folder-choice" type="button" data-folder="indoprima" aria-controls="folderPanelIndoprima">
+                <svg class="folder-svg" viewBox="0 0 420 300" role="img" aria-label="Open Indoprima Gemilang internship folder">
+                  <defs>
+                    <linearGradient id="folderOrangeIndo" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0" stop-color="#FF8F3D" />
+                      <stop offset="1" stop-color="#D45D08" />
+                    </linearGradient>
+                  </defs>
+                  <path class="folder-back" fill="url(#folderOrangeIndo)" d="M22 75V47a14 14 0 0 1 14-14h102l27 27h219a14 14 0 0 1 14 14v174a14 14 0 0 1-14 14H36a14 14 0 0 1-14-14Z" />
+                  <path class="folder-front" fill="url(#folderOrangeIndo)" d="M22 91a18 18 0 0 1 18-18h350a14 14 0 0 1 14 14l-25 168a15 15 0 0 1-15 13H38a16 16 0 0 1-16-16Z" />
+                  <path class="folder-highlight" d="M40 77h350a14 14 0 0 1 14 14l-25 164" />
+                  <image href="assets/images/logo_indoprima.png" x="170" y="130" width="80" height="56" preserveAspectRatio="xMidYMid meet" />
+                </svg>
+                <span class="folder-label"><strong>Indoprima Gemilang</strong><span>2026 · Click to open</span></span>
+              </button>
+
+              <div class="folder-panel" id="folderPanelSampoerna" data-folder-panel="sampoerna" aria-hidden="true">
+                <div class="folder-panel-info">
+                  <button class="folder-close" type="button" aria-label="Close folder">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 15 12 9 18 15" /></svg>
+                  </button>
                   <span class="editorial-index-num">01 // INDUSTRIAL INTERNSHIP</span>
+                  <div class="company-logo-container"><img src="assets/images/logo_sampoerna.png" alt="Sampoerna Kayoe Logo" class="company-logo" /></div>
                   <h3 class="internship-company-title">PT. Sumber Graha Sejahtera</h3>
                   <p class="internship-unit">(Sampoerna Kayoe Group)</p>
-                  <p class="internship-role-title">CMMS &amp; Maintenance Software Engineering Intern</p>
+                  <p class="internship-role-title">CMMS &amp; Maintenance Software Engineering Intern · Batang, Indonesia · 2026 – 2027</p>
                   <ul class="internship-bullets">
-                    <li>Developing a Computerized Maintenance Management System (CMMS) to digitize Emergency Work Order
-                      (EWO) reporting, automated approval flow, and equipment history.</li>
-                    <li>Architected full-stack web applications utilizing React, Python FastAPI, and PostgreSQL for
-                      machine inventory and role-based access control.</li>
-                    <li>Designed real-time maintenance KPI dashboards to monitor MTTR, MTBF, line downtime, and EWO
-                      resolution status.</li>
-                    <li>Engineered an MCDM-based decision support model to prioritize emergency work orders based on
-                      machine criticality and factory conditions.</li>
+                    <li>Developing a Computerized Maintenance Management System (CMMS) to digitize Emergency Work Order (EWO) reporting, automated approval flow, and equipment history.</li>
+                    <li>Architected full-stack web applications utilizing React, Python FastAPI, and PostgreSQL for machine inventory and role-based access control.</li>
+                    <li>Designed real-time maintenance KPI dashboards to monitor MTTR, MTBF, line downtime, and EWO resolution status.</li>
+                    <li>Engineered an MCDM-based decision support model to prioritize emergency work orders based on machine criticality and factory conditions.</li>
                   </ul>
-                  <div class="card-tech-chips">
-                    <span>React</span>
-                    <span>FastAPI</span>
-                    <span>PostgreSQL</span>
-                    <span>CMMS</span>
-                    <span>KPI Dashboards</span>
-                  </div>
                 </div>
-                <div class="card-bottom-tab">
-                  <span class="tab-title">SAMPOERNA KAYOE</span>
-                  <span class="tab-year-accent">2026 – 2027</span>
+                <div class="folder-photo-grid">
+                  <!-- GANTI FOTO: assets/images/internship/sampoerna-1.jpg | GANTI CAPTION & TAHUN di bawah -->
+                  <article class="folder-photo-card lightbox-trigger" data-img="assets/images/internship/sampoerna-1.jpg" data-title="CMMS Dashboard" data-desc="Sampoerna Kayoe internship archive."><img src="assets/images/internship/sampoerna-1.jpg" alt="CMMS Dashboard" onerror="this.style.opacity='0'" /><svg class="folder-photo-frame" viewBox="0 0 407 411" aria-hidden="true"><path class="frame-base" d="M8 .5h390.89a7.5 7.5 0 0 1 7.5 7.5v356.983a7.5 7.5 0 0 1-7.5 7.5H263.329a23.502 23.502 0 0 0-18.375 8.849l-16.499 20.695a22.502 22.502 0 0 1-17.593 8.473H8A7.5 7.5 0 0 1 .5 403V8A7.5 7.5 0 0 1 8 .5Z" /><path class="frame-overlay" d="M8 1h390.89a7 7 0 0 1 7 7v356.983a7 7 0 0 1-7 7H263.329a23.999 23.999 0 0 0-18.766 9.038l-16.499 20.694A21.999 21.999 0 0 1 210.862 410H8a7 7 0 0 1-7-7V8a7 7 0 0 1 7-7Z" /></svg><div class="folder-photo-caption"><span>CMMS Dashboard</span><span>2026</span></div></article>
+                  <!-- GANTI FOTO: assets/images/internship/sampoerna-2.jpg | GANTI CAPTION & TAHUN di bawah -->
+                  <article class="folder-photo-card lightbox-trigger" data-img="assets/images/internship/sampoerna-2.jpg" data-title="EWO Workflow" data-desc="Sampoerna Kayoe internship archive."><img src="assets/images/internship/sampoerna-2.jpg" alt="EWO Workflow" onerror="this.style.opacity='0'" /><svg class="folder-photo-frame" viewBox="0 0 407 411" aria-hidden="true"><path class="frame-base" d="M8 .5h390.89a7.5 7.5 0 0 1 7.5 7.5v356.983a7.5 7.5 0 0 1-7.5 7.5H263.329a23.502 23.502 0 0 0-18.375 8.849l-16.499 20.695a22.502 22.502 0 0 1-17.593 8.473H8A7.5 7.5 0 0 1 .5 403V8A7.5 7.5 0 0 1 8 .5Z" /><path class="frame-overlay" d="M8 1h390.89a7 7 0 0 1 7 7v356.983a7 7 0 0 1-7 7H263.329a23.999 23.999 0 0 0-18.766 9.038l-16.499 20.694A21.999 21.999 0 0 1 210.862 410H8a7 7 0 0 1-7-7V8a7 7 0 0 1 7-7Z" /></svg><div class="folder-photo-caption"><span>EWO Workflow</span><span>2026</span></div></article>
+                  <!-- GANTI FOTO: assets/images/internship/sampoerna-3.jpg | GANTI CAPTION & TAHUN di bawah -->
+                  <article class="folder-photo-card lightbox-trigger" data-img="assets/images/internship/sampoerna-3.jpg" data-title="Maintenance Meeting" data-desc="Sampoerna Kayoe internship archive."><img src="assets/images/internship/sampoerna-3.jpg" alt="Maintenance Meeting" onerror="this.style.opacity='0'" /><svg class="folder-photo-frame" viewBox="0 0 407 411" aria-hidden="true"><path class="frame-base" d="M8 .5h390.89a7.5 7.5 0 0 1 7.5 7.5v356.983a7.5 7.5 0 0 1-7.5 7.5H263.329a23.502 23.502 0 0 0-18.375 8.849l-16.499 20.695a22.502 22.502 0 0 1-17.593 8.473H8A7.5 7.5 0 0 1 .5 403V8A7.5 7.5 0 0 1 8 .5Z" /><path class="frame-overlay" d="M8 1h390.89a7 7 0 0 1 7 7v356.983a7 7 0 0 1-7 7H263.329a23.999 23.999 0 0 0-18.766 9.038l-16.499 20.694A21.999 21.999 0 0 1 210.862 410H8a7 7 0 0 1-7-7V8a7 7 0 0 1 7-7Z" /></svg><div class="folder-photo-caption"><span>Maintenance Meeting</span><span>2026</span></div></article>
+                  <!-- GANTI FOTO: assets/images/internship/sampoerna-4.jpg | GANTI CAPTION & TAHUN di bawah -->
+                  <article class="folder-photo-card lightbox-trigger" data-img="assets/images/internship/sampoerna-4.jpg" data-title="Plant Visit" data-desc="Sampoerna Kayoe internship archive."><img src="assets/images/internship/sampoerna-4.jpg" alt="Plant Visit" onerror="this.style.opacity='0'" /><svg class="folder-photo-frame" viewBox="0 0 407 411" aria-hidden="true"><path class="frame-base" d="M8 .5h390.89a7.5 7.5 0 0 1 7.5 7.5v356.983a7.5 7.5 0 0 1-7.5 7.5H263.329a23.502 23.502 0 0 0-18.375 8.849l-16.499 20.695a22.502 22.502 0 0 1-17.593 8.473H8A7.5 7.5 0 0 1 .5 403V8A7.5 7.5 0 0 1 8 .5Z" /><path class="frame-overlay" d="M8 1h390.89a7 7 0 0 1 7 7v356.983a7 7 0 0 1-7 7H263.329a23.999 23.999 0 0 0-18.766 9.038l-16.499 20.694A21.999 21.999 0 0 1 210.862 410H8a7 7 0 0 1-7-7V8a7 7 0 0 1 7-7Z" /></svg><div class="folder-photo-caption"><span>Plant Visit</span><span>2026</span></div></article>
+                  <!-- GANTI FOTO: assets/images/internship/sampoerna-5.jpg | GANTI CAPTION & TAHUN di bawah -->
+                  <article class="folder-photo-card lightbox-trigger" data-img="assets/images/internship/sampoerna-5.jpg" data-title="Team Session" data-desc="Sampoerna Kayoe internship archive."><img src="assets/images/internship/sampoerna-5.jpg" alt="Team Session" onerror="this.style.opacity='0'" /><svg class="folder-photo-frame" viewBox="0 0 407 411" aria-hidden="true"><path class="frame-base" d="M8 .5h390.89a7.5 7.5 0 0 1 7.5 7.5v356.983a7.5 7.5 0 0 1-7.5 7.5H263.329a23.502 23.502 0 0 0-18.375 8.849l-16.499 20.695a22.502 22.502 0 0 1-17.593 8.473H8A7.5 7.5 0 0 1 .5 403V8A7.5 7.5 0 0 1 8 .5Z" /><path class="frame-overlay" d="M8 1h390.89a7 7 0 0 1 7 7v356.983a7 7 0 0 1-7 7H263.329a23.999 23.999 0 0 0-18.766 9.038l-16.499 20.694A21.999 21.999 0 0 1 210.862 410H8a7 7 0 0 1-7-7V8a7 7 0 0 1 7-7Z" /></svg><div class="folder-photo-caption"><span>Team Session</span><span>2026</span></div></article>
                 </div>
               </div>
 
-              <!-- Right: Indoprima Gemilang -->
-              <div class="editorial-card internship-card">
-                <div class="card-inner">
-                  <div class="internship-header-row">
-                    <div class="company-logo-container">
-                      <img src="assets/images/logo_indoprima.png" alt="PT Indoprima Gemilang Logo"
-                        class="company-logo" />
-                    </div>
-                    <span class="internship-badge-loc">Surabaya, Indonesia</span>
-                  </div>
+              <div class="folder-panel" id="folderPanelIndoprima" data-folder-panel="indoprima" aria-hidden="true">
+                <div class="folder-panel-info">
+                  <button class="folder-close" type="button" aria-label="Close folder"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 15 12 9 18 15" /></svg></button>
                   <span class="editorial-index-num">02 // INDUSTRIAL INTERNSHIP</span>
+                  <div class="company-logo-container"><img src="assets/images/logo_indoprima.png" alt="PT Indoprima Gemilang Logo" class="company-logo" /></div>
                   <h3 class="internship-company-title">PT. Indoprima Gemilang</h3>
                   <p class="internship-unit">(Indoprima Group)</p>
-                  <p class="internship-role-title">Industrial IoT &amp; Automation Engineering Intern</p>
+                  <p class="internship-role-title">Industrial IoT &amp; Automation Engineering Intern · Surabaya, Indonesia · 2026</p>
                   <ul class="internship-bullets">
-                    <li>Developed Industrial IoT solutions using ESP32, MQTT, Node-RED, MySQL, and SQL Server for
-                      real-time production monitoring.</li>
-                    <li>Designed and tested three-phase electrical Energy Monitoring systems utilizing PZEM sensors,
-                      multiplexing logic, and custom Grafana dashboards.</li>
-                    <li>Conducted maintenance, electrical troubleshooting, and firmware improvements on IoT-enabled
-                      manufacturing devices (hot presses, weighing systems).</li>
-                    <li>Executed hardware assembly, PCB integration, panel wiring, and on-site field deployment for
-                      manufacturing equipment.</li>
-                    <li>Implemented Over-The-Air (OTA) firmware updating to ensure seamless remote maintenance with zero
-                      production halt.</li>
+                    <li>Developed Industrial IoT solutions using ESP32, MQTT, Node-RED, MySQL, and SQL Server for real-time production monitoring.</li>
+                    <li>Designed and tested three-phase electrical Energy Monitoring systems utilizing PZEM sensors, multiplexing logic, and custom Grafana dashboards.</li>
+                    <li>Conducted maintenance, electrical troubleshooting, and firmware improvements on IoT-enabled manufacturing devices (hot presses, weighing systems).</li>
+                    <li>Executed hardware assembly, PCB integration, panel wiring, and on-site field deployment for manufacturing equipment.</li>
+                    <li>Implemented Over-The-Air (OTA) firmware updating to ensure seamless remote maintenance with zero production halt.</li>
                   </ul>
-                  <div class="card-tech-chips">
-                    <span>ESP32</span>
-                    <span>PZEM Sensors</span>
-                    <span>Modbus RTU</span>
-                    <span>Node-RED</span>
-                    <span>MySQL</span>
-                  </div>
                 </div>
-                <div class="card-bottom-tab">
-                  <span class="tab-title">INDOPRIMA GEMILANG</span>
-                  <span class="tab-year-accent">2026</span>
+                <div class="folder-photo-grid">
+                  <!-- GANTI FOTO: assets/images/internship/indoprima-1.jpg | GANTI CAPTION & TAHUN di bawah -->
+                  <article class="folder-photo-card lightbox-trigger" data-img="assets/images/internship/indoprima-1.jpg" data-title="Hot Press Deployment" data-desc="Indoprima Gemilang internship archive."><img src="assets/images/internship/indoprima-1.jpg" alt="Hot Press Deployment" onerror="this.style.opacity='0'" /><svg class="folder-photo-frame" viewBox="0 0 407 411" aria-hidden="true"><path class="frame-base" d="M8 .5h390.89a7.5 7.5 0 0 1 7.5 7.5v356.983a7.5 7.5 0 0 1-7.5 7.5H263.329a23.502 23.502 0 0 0-18.375 8.849l-16.499 20.695a22.502 22.502 0 0 1-17.593 8.473H8A7.5 7.5 0 0 1 .5 403V8A7.5 7.5 0 0 1 8 .5Z" /><path class="frame-overlay" d="M8 1h390.89a7 7 0 0 1 7 7v356.983a7 7 0 0 1-7 7H263.329a23.999 23.999 0 0 0-18.766 9.038l-16.499 20.694A21.999 21.999 0 0 1 210.862 410H8a7 7 0 0 1-7-7V8a7 7 0 0 1 7-7Z" /></svg><div class="folder-photo-caption"><span>Hot Press Deployment</span><span>2026</span></div></article>
+                  <!-- GANTI FOTO: assets/images/internship/indoprima-2.jpg | GANTI CAPTION & TAHUN di bawah -->
+                  <article class="folder-photo-card lightbox-trigger" data-img="assets/images/internship/indoprima-2.jpg" data-title="Energy Monitoring Panel" data-desc="Indoprima Gemilang internship archive."><img src="assets/images/internship/indoprima-2.jpg" alt="Energy Monitoring Panel" onerror="this.style.opacity='0'" /><svg class="folder-photo-frame" viewBox="0 0 407 411" aria-hidden="true"><path class="frame-base" d="M8 .5h390.89a7.5 7.5 0 0 1 7.5 7.5v356.983a7.5 7.5 0 0 1-7.5 7.5H263.329a23.502 23.502 0 0 0-18.375 8.849l-16.499 20.695a22.502 22.502 0 0 1-17.593 8.473H8A7.5 7.5 0 0 1 .5 403V8A7.5 7.5 0 0 1 8 .5Z" /><path class="frame-overlay" d="M8 1h390.89a7 7 0 0 1 7 7v356.983a7 7 0 0 1-7 7H263.329a23.999 23.999 0 0 0-18.766 9.038l-16.499 20.694A21.999 21.999 0 0 1 210.862 410H8a7 7 0 0 1-7-7V8a7 7 0 0 1 7-7Z" /></svg><div class="folder-photo-caption"><span>Energy Monitoring Panel</span><span>2026</span></div></article>
+                  <!-- GANTI FOTO: assets/images/internship/indoprima-3.jpg | GANTI CAPTION & TAHUN di bawah -->
+                  <article class="folder-photo-card lightbox-trigger" data-img="assets/images/internship/indoprima-3.jpg" data-title="OTA Firmware Update" data-desc="Indoprima Gemilang internship archive."><img src="assets/images/internship/indoprima-3.jpg" alt="OTA Firmware Update" onerror="this.style.opacity='0'" /><svg class="folder-photo-frame" viewBox="0 0 407 411" aria-hidden="true"><path class="frame-base" d="M8 .5h390.89a7.5 7.5 0 0 1 7.5 7.5v356.983a7.5 7.5 0 0 1-7.5 7.5H263.329a23.502 23.502 0 0 0-18.375 8.849l-16.499 20.695a22.502 22.502 0 0 1-17.593 8.473H8A7.5 7.5 0 0 1 .5 403V8A7.5 7.5 0 0 1 8 .5Z" /><path class="frame-overlay" d="M8 1h390.89a7 7 0 0 1 7 7v356.983a7 7 0 0 1-7 7H263.329a23.999 23.999 0 0 0-18.766 9.038l-16.499 20.694A21.999 21.999 0 0 1 210.862 410H8a7 7 0 0 1-7-7V8a7 7 0 0 1 7-7Z" /></svg><div class="folder-photo-caption"><span>OTA Firmware Update</span><span>2026</span></div></article>
+                  <!-- GANTI FOTO: assets/images/internship/indoprima-4.jpg | GANTI CAPTION & TAHUN di bawah -->
+                  <article class="folder-photo-card lightbox-trigger" data-img="assets/images/internship/indoprima-4.jpg" data-title="Panel Wiring" data-desc="Indoprima Gemilang internship archive."><img src="assets/images/internship/indoprima-4.jpg" alt="Panel Wiring" onerror="this.style.opacity='0'" /><svg class="folder-photo-frame" viewBox="0 0 407 411" aria-hidden="true"><path class="frame-base" d="M8 .5h390.89a7.5 7.5 0 0 1 7.5 7.5v356.983a7.5 7.5 0 0 1-7.5 7.5H263.329a23.502 23.502 0 0 0-18.375 8.849l-16.499 20.695a22.502 22.502 0 0 1-17.593 8.473H8A7.5 7.5 0 0 1 .5 403V8A7.5 7.5 0 0 1 8 .5Z" /><path class="frame-overlay" d="M8 1h390.89a7 7 0 0 1 7 7v356.983a7 7 0 0 1-7 7H263.329a23.999 23.999 0 0 1-18.766 9.038l-16.499 20.694A21.999 21.999 0 0 1 210.862 410H8a7 7 0 0 1-7-7V8a7 7 0 0 1 7-7Z" /></svg><div class="folder-photo-caption"><span>Panel Wiring</span><span>2026</span></div></article>
+                  <!-- GANTI FOTO: assets/images/internship/indoprima-5.jpg | GANTI CAPTION & TAHUN di bawah -->
+                  <article class="folder-photo-card lightbox-trigger" data-img="assets/images/internship/indoprima-5.jpg" data-title="Field Troubleshooting" data-desc="Indoprima Gemilang internship archive."><img src="assets/images/internship/indoprima-5.jpg" alt="Field Troubleshooting" onerror="this.style.opacity='0'" /><svg class="folder-photo-frame" viewBox="0 0 407 411" aria-hidden="true"><path class="frame-base" d="M8 .5h390.89a7.5 7.5 0 0 1 7.5 7.5v356.983a7.5 7.5 0 0 1-7.5 7.5H263.329a23.502 23.502 0 0 0-18.375 8.849l-16.499 20.695a22.502 22.502 0 0 1-17.593 8.473H8A7.5 7.5 0 0 1 .5 403V8A7.5 7.5 0 0 1 8 .5Z" /><path class="frame-overlay" d="M8 1h390.89a7 7 0 0 1 7 7v356.983a7 7 0 0 1-7 7H263.329a23.999 23.999 0 0 0-18.766 9.038l-16.499 20.694A21.999 21.999 0 0 1 210.862 410H8a7 7 0 0 1-7-7V8a7 7 0 0 1 7-7Z" /></svg><div class="folder-photo-caption"><span>Field Troubleshooting</span><span>2026</span></div></article>
                 </div>
               </div>
-
             </div>
           </div>
 
@@ -1125,7 +1157,11 @@
             <span class="section-tag-draco">04 // GET IN TOUCH</span>
             <h2 class="contact-mega-title">
               LET'S WORK<br />
-              <span class="text-gradient-draco">TOGETHER ✦</span>
+              <span class="text-gradient-draco">TOGETHER
+                <svg class="inline-spark-svg" width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:inline-block; vertical-align:middle; margin-left: 4px;">
+                  <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/>
+                </svg>
+              </span>
             </h2>
             <p class="contact-intro-editorial">
               Open to collaboration, internship opportunities, and industrial automation projects.
