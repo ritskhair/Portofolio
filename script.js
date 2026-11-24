@@ -211,7 +211,7 @@
 
           // Center ON TRACK text block
           ototTl.from('.otot-block.is-ontrack', {
-            y: -30,
+            y: -120,
             opacity: 0,
             ease: 'power2.out',
             duration: 0.8,
@@ -227,7 +227,7 @@
 
           // Center OFF TRACK text block
           ototTl.from('.otot-block.is-offtrack', {
-            y: 30,
+            y: 120,
             opacity: 0,
             ease: 'power2.out',
             duration: 0.8,
@@ -254,62 +254,51 @@
   }
 
   // ------------------------------------------------------------------------
-  // 3. EDITORIAL TOP-RIGHT MENU & FULLSCREEN DRAWER OVERLAY
+  // 3. EDITORIAL TOP-RIGHT RAIL NAVIGATION
   // ------------------------------------------------------------------------
   const menuToggle = document.getElementById('menuToggle');
   const navDrawer = document.getElementById('navDrawer');
-  const drawerClose = document.getElementById('drawerClose');
-  const drawerBackdrop = document.getElementById('drawerBackdrop');
   const drawerLinks = document.querySelectorAll('.drawer-link');
 
   function openDrawer() {
     if (!navDrawer) return;
     navDrawer.classList.add('open');
     navDrawer.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
-    if (lenis) lenis.stop();
+    if (menuToggle) menuToggle.setAttribute('aria-expanded', 'true');
   }
 
   function closeDrawer() {
     if (!navDrawer) return;
     navDrawer.classList.remove('open');
     navDrawer.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
-    if (lenis) lenis.start();
+    if (menuToggle) menuToggle.setAttribute('aria-expanded', 'false');
   }
-
-  let isMenuSpinning = false;
 
   if (menuToggle) {
     menuToggle.addEventListener('click', function (e) {
       e.preventDefault();
-      if (isMenuSpinning) return;
-      isMenuSpinning = true;
-
       const dracoIcon = menuToggle.querySelector('.draco-menu-icon');
       if (dracoIcon) {
-        dracoIcon.classList.remove('is-spinning');
-        void dracoIcon.offsetWidth; // Force DOM reflow to restart animation reliably
-        dracoIcon.classList.add('is-spinning');
+        dracoIcon.classList.remove('is-pressed');
+        void dracoIcon.offsetWidth;
+        dracoIcon.classList.add('is-pressed');
+        setTimeout(() => dracoIcon.classList.remove('is-pressed'), 450);
       }
 
-      setTimeout(() => {
+      if (navDrawer && navDrawer.classList.contains('open')) {
+        closeDrawer();
+      } else {
         openDrawer();
-        isMenuSpinning = false;
-        if (dracoIcon) {
-          dracoIcon.classList.remove('is-spinning');
-        }
-      }, 440);
+      }
     });
   }
 
-  if (drawerClose) {
-    drawerClose.addEventListener('click', closeDrawer);
-  }
-
-  if (drawerBackdrop) {
-    drawerBackdrop.addEventListener('click', closeDrawer);
-  }
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && navDrawer && navDrawer.classList.contains('open')) {
+      closeDrawer();
+      if (menuToggle) menuToggle.focus();
+    }
+  });
 
   drawerLinks.forEach((link) => {
     link.addEventListener('click', function (e) {
@@ -332,11 +321,6 @@
     });
   });
 
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && navDrawer && navDrawer.classList.contains('open')) {
-      closeDrawer();
-    }
-  });
 
   // ------------------------------------------------------------------------
   // 4. INTERACTIVE TAB SWITCHER (Section: Experience)

@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Featured Games — Asymmetric Slanted Gallery</title>
+
+  <!-- Google Fonts: Barlow Condensed (Display Sport/Gaming) & Inter (UI Clean) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,800;1,800;1,900&family=Inter:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#0E131D',
+            'navy-light': '#141B29',
+            skeleton: '#1A2232',
+            accent: '#3898EC',
+            'accent-hover': '#54A9F5',
+          },
+          fontFamily: {
+            display: ['"Barlow Condensed"', 'sans-serif'],
+            sans: ['Inter', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    /* Pengaturan dasar halaman */
+    html {
+      scroll-behavior: smooth;
+      background-color: #0E131D;
+    }
+
+    /* Bentuk bingkai trapesium / jajar genjang miring dinamis */
+    .trapezoid-frame {
+      clip-path: polygon(6% 0%, 100% 0%, 94% 100%, 0% 100%);
+      transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+                  filter 0.35s ease;
+    }
+
+    /* Variasi kemiringan sedikit lebih tajam pada beberapa kartu untuk dinamika visual */
+    .trapezoid-frame-sharp {
+      clip-path: polygon(7.5% 0%, 100% 0%, 92.5% 100%, 0% 100%);
+      transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+                  filter 0.35s ease;
+    }
+
+    /* Efek hover halus pada kartu */
+    .game-card:hover .trapezoid-frame,
+    .game-card:hover .trapezoid-frame-sharp {
+      transform: translateY(-4px) scale(1.012);
+    }
+
+    /* Tombol & garis aksen dengan potongan miring yang selaras */
+    .slanted-btn {
+      clip-path: polygon(6% 0%, 100% 0%, 94% 100%, 0% 100%);
+    }
+
+    .slanted-accent-bar {
+      clip-path: polygon(12% 0%, 100% 0%, 88% 100%, 0% 100%);
+    }
+
+    /* Animasi kilau halus (Shimmer Effect) di atas dasar abu-abu gelap #1A2232 */
+    .skeleton-shimmer {
+      position: relative;
+      overflow: hidden;
+      background-color: #1A2232;
+    }
+
+    .skeleton-shimmer::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      transform: translateX(-100%);
+      background: linear-gradient(
+        108deg,
+        rgba(26, 34, 50, 0) 15%,
+        rgba(56, 152, 236, 0.09) 42%,
+        rgba(255, 255, 255, 0.08) 50%,
+        rgba(56, 152, 236, 0.06) 58%,
+        rgba(26, 34, 50, 0) 85%
+      );
+      animation: shimmerSlide 2.4s infinite cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Variasi jeda animasi agar 8 kartu berkilau secara bergelombang & alami */
+    .shimmer-delay-1::after { animation-delay: 0.15s; }
+    .shimmer-delay-2::after { animation-delay: 0.35s; }
+    .shimmer-delay-3::after { animation-delay: 0.55s; }
+    .shimmer-delay-4::after { animation-delay: 0.75s; }
+    .shimmer-delay-5::after { animation-delay: 0.95s; }
+    .shimmer-delay-6::after { animation-delay: 1.15s; }
+    .shimmer-delay-7::after { animation-delay: 1.35s; }
+
+    @keyframes shimmerSlide {
+      0% {
+        transform: translateX(-100%);
+      }
+      100% {
+        transform: translateX(100%);
+      }
+    }
+
+    /* Efek sorotan saat tombol "I FEEL LUCKY" memilih kartu acak */
+    .lucky-highlight .card-glow-wrap {
+      filter: drop-shadow(0 0 22px rgba(56, 152, 236, 0.55));
+    }
+
+    .lucky-highlight .trapezoid-frame,
+    .lucky-highlight .trapezoid-frame-sharp {
+      transform: translateY(-6px) scale(1.02);
+    }
+
+    /* Transisi modal */
+    .modal-backdrop {
+      transition: opacity 0.25s ease;
+    }
+  </style>
+</head>
+
+<body class="bg-navy text-white font-sans antialiased selection:bg-accent selection:text-white min-h-screen">
+
+  <!-- ===================================================================== -->
+  <!-- SECTION: FEATURED GAMES (Compact 4-Card Laptop Viewport Fit)          -->
+  <!-- ===================================================================== -->
+  <section
+    id="featured-games"
+    class="relative w-full bg-navy py-8 sm:py-10 lg:py-12 px-5 sm:px-8 lg:px-12 overflow-x-clip"
+  >
+    <!-- Pencahayaan latar belakang halus agar tidak terlalu datar -->
+    <div
+      aria-hidden="true"
+      class="pointer-events-none absolute -top-24 right-0 w-[28rem] h-[28rem] bg-accent/5 blur-[120px] rounded-full"
+    ></div>
+    <div
+      aria-hidden="true"
+      class="pointer-events-none absolute bottom-10 -left-24 w-[24rem] h-[24rem] bg-accent/5 blur-[110px] rounded-full"
+    ></div>
+
+    <div class="relative max-w-6xl mx-auto">
+      <!--
+        TATA LETAK ASIMETRIS 8 ITEM (PROPORSIONAL UNTUK 1 FRAME LAPTOP):
+        - Desktop/Laptop (md+): 2 kolom bertingkat (staggered) dengan jarak horizontal lebih lega
+          sehingga kolom kiri & kanan bergeser ke luar tanpa terasa mepet.
+        - Mobile (< md): 1 kolom penuh yang responsif.
+      -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-y-8 md:gap-x-16 lg:gap-x-24 xl:gap-x-28 items-start">
+
+        <!-- ======================= KOLOM KIRI ======================= -->
+        <div class="flex flex-col gap-7 lg:gap-8 md:pr-2 lg:pr-4">
+
+          <!-- HEADER BAGIAN -->
+          <header class="pt-1 pb-1 pl-1">
+            <h2 class="font-display italic font-black uppercase text-white text-3xl sm:text-4xl lg:text-[2.65rem] leading-[0.88] tracking-tight">
+              <span class="block">FEATURED</span>
+              <span class="inline-flex items-center gap-3 mt-1">
+                <span>GAMES</span>
+                <!-- Garis aksen pendek biru muda (#3898EC) -->
+                <span
+                  aria-hidden="true"
+                  class="slanted-accent-bar inline-block w-11 sm:w-14 h-2 bg-accent translate-y-0.5"
+                ></span>
+              </span>
+            </h2>
+
+            <!-- Tombol Aksi: ALL GAMES & I FEEL LUCKY -->
+            <div class="mt-4 sm:mt-5 flex flex-wrap items-center gap-5 sm:gap-6">
+              <button
+                id="btn-all-games"
+                type="button"
+                class="slanted-btn bg-accent hover:bg-accent-hover active:scale-95 text-white font-bold uppercase text-[11px] sm:text-xs tracking-[0.14em] px-6 py-2.5 transition-all duration-200 shadow-lg shadow-accent/20 cursor-pointer"
+              >
+                ALL GAMES
+              </button>
+
+              <button
+                id="btn-lucky"
+                type="button"
+                class="group inline-flex items-center gap-2 text-white/90 hover:text-accent font-bold italic uppercase text-[11px] sm:text-xs tracking-[0.14em] py-1.5 transition-colors duration-200 cursor-pointer"
+              >
+                <span class="border-b border-transparent group-hover:border-accent pb-0.5 transition-colors">
+                  I FEEL LUCKY
+                </span>
+              </button>
+            </div>
+          </header>
+
+          <!-- KARTU 2 (Kolom Kiri #1) -->
+          <article class="game-card group" data-game-index="2">
+            <div class="card-glow-wrap transition-all duration-300">
+              <div class="trapezoid-frame skeleton-shimmer shimmer-delay-1 w-full aspect-[16/8] animate-pulse relative">
+                <div class="absolute inset-0 bg-gradient-to-tr from-black/25 via-transparent to-white/[0.03]"></div>
+              </div>
+            </div>
+            <!-- Baris Keterangan di Bawah Bingkai -->
+            <div class="mt-2.5 px-2.5 sm:px-3.5 flex items-center justify-between gap-3 uppercase">
+              <div class="skeleton-shimmer shimmer-delay-1 h-2.5 w-24 sm:w-28 rounded-sm animate-pulse"></div>
+              <button
+                type="button"
+                class="trailer-trigger inline-flex items-center gap-1 text-accent hover:text-white text-[10px] sm:text-[11px] font-bold tracking-[0.12em] uppercase transition-colors duration-200 cursor-pointer py-0.5"
+                data-slot="FEATURED SLOT #02"
+              >
+                <span>WATCH TRAILER</span>
+                <span class="text-xs leading-none transition-transform duration-200 group-hover:translate-x-0.5">&#9656;</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- KARTU 4 (Kolom Kiri #2) -->
+          <article class="game-card group" data-game-index="4">
+            <div class="card-glow-wrap transition-all duration-300">
+              <div class="trapezoid-frame-sharp skeleton-shimmer shimmer-delay-3 w-full aspect-[16/8] animate-pulse relative">
+                <div class="absolute inset-0 bg-gradient-to-tr from-black/25 via-transparent to-white/[0.03]"></div>
+              </div>
+            </div>
+            <div class="mt-2.5 px-2.5 sm:px-3.5 flex items-center justify-between gap-3 uppercase">
+              <div class="skeleton-shimmer shimmer-delay-3 h-2.5 w-28 sm:w-32 rounded-sm animate-pulse"></div>
+              <button
+                type="button"
+                class="trailer-trigger inline-flex items-center gap-1 text-accent hover:text-white text-[10px] sm:text-[11px] font-bold tracking-[0.12em] uppercase transition-colors duration-200 cursor-pointer py-0.5"
+                data-slot="FEATURED SLOT #04"
+              >
+                <span>WATCH TRAILER</span>
+                <span class="text-xs leading-none transition-transform duration-200 group-hover:translate-x-0.5">&#9656;</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- KARTU 6 (Kolom Kiri #3) -->
+          <article class="game-card group" data-game-index="6">
+            <div class="card-glow-wrap transition-all duration-300">
+              <div class="trapezoid-frame skeleton-shimmer shimmer-delay-5 w-full aspect-[16/8] animate-pulse relative">
+                <div class="absolute inset-0 bg-gradient-to-tr from-black/25 via-transparent to-white/[0.03]"></div>
+              </div>
+            </div>
+            <div class="mt-2.5 px-2.5 sm:px-3.5 flex items-center justify-between gap-3 uppercase">
+              <div class="skeleton-shimmer shimmer-delay-5 h-2.5 w-20 sm:w-28 rounded-sm animate-pulse"></div>
+              <button
+                type="button"
+                class="trailer-trigger inline-flex items-center gap-1 text-accent hover:text-white text-[10px] sm:text-[11px] font-bold tracking-[0.12em] uppercase transition-colors duration-200 cursor-pointer py-0.5"
+                data-slot="FEATURED SLOT #06"
+              >
+                <span>WATCH TRAILER</span>
+                <span class="text-xs leading-none transition-transform duration-200 group-hover:translate-x-0.5">&#9656;</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- KARTU 8 (Kolom Kiri #4) -->
+          <article class="game-card group" data-game-index="8">
+            <div class="card-glow-wrap transition-all duration-300">
+              <div class="trapezoid-frame-sharp skeleton-shimmer shimmer-delay-7 w-full aspect-[16/8] animate-pulse relative">
+                <div class="absolute inset-0 bg-gradient-to-tr from-black/25 via-transparent to-white/[0.03]"></div>
+              </div>
+            </div>
+            <div class="mt-2.5 px-2.5 sm:px-3.5 flex items-center justify-between gap-3 uppercase">
+              <div class="skeleton-shimmer shimmer-delay-7 h-2.5 w-28 sm:w-32 rounded-sm animate-pulse"></div>
+              <button
+                type="button"
+                class="trailer-trigger inline-flex items-center gap-1 text-accent hover:text-white text-[10px] sm:text-[11px] font-bold tracking-[0.12em] uppercase transition-colors duration-200 cursor-pointer py-0.5"
+                data-slot="FEATURED SLOT #08"
+              >
+                <span>WATCH TRAILER</span>
+                <span class="text-xs leading-none transition-transform duration-200 group-hover:translate-x-0.5">&#9656;</span>
+              </button>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- ======================= KOLOM KANAN (STAGGERED) ======================= -->
+        <div class="flex flex-col gap-7 lg:gap-8 md:mt-8 lg:mt-10 md:pl-2 lg:pl-4">
+
+          <!-- KARTU 1 (Kolom Kanan #1 — Sorotan Utama di Samping Header) -->
+          <article class="game-card group" data-game-index="1">
+            <div class="card-glow-wrap transition-all duration-300">
+              <div class="trapezoid-frame skeleton-shimmer w-full aspect-[16/8] animate-pulse relative">
+                <div class="absolute inset-0 bg-gradient-to-tr from-black/25 via-transparent to-white/[0.04]"></div>
+              </div>
+            </div>
+            <div class="mt-2.5 px-2.5 sm:px-3.5 flex items-center justify-between gap-3 uppercase">
+              <div class="skeleton-shimmer h-2.5 w-24 sm:w-28 rounded-sm animate-pulse"></div>
+              <button
+                type="button"
+                class="trailer-trigger inline-flex items-center gap-1 text-accent hover:text-white text-[10px] sm:text-[11px] font-bold tracking-[0.12em] uppercase transition-colors duration-200 cursor-pointer py-0.5"
+                data-slot="FEATURED SLOT #01"
+              >
+                <span>WATCH TRAILER</span>
+                <span class="text-xs leading-none transition-transform duration-200 group-hover:translate-x-0.5">&#9656;</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- KARTU 3 (Kolom Kanan #2 — Posisi Bertingkat di Bawah Kartu 1) -->
+          <article class="game-card group md:mt-1" data-game-index="3">
+            <div class="card-glow-wrap transition-all duration-300">
+              <div class="trapezoid-frame-sharp skeleton-shimmer shimmer-delay-2 w-full aspect-[16/8] animate-pulse relative">
+                <div class="absolute inset-0 bg-gradient-to-tr from-black/25 via-transparent to-white/[0.03]"></div>
+              </div>
+            </div>
+            <div class="mt-2.5 px-2.5 sm:px-3.5 flex items-center justify-between gap-3 uppercase">
+              <div class="skeleton-shimmer shimmer-delay-2 h-2.5 w-28 sm:w-32 rounded-sm animate-pulse"></div>
+              <button
+                type="button"
+                class="trailer-trigger inline-flex items-center gap-1 text-accent hover:text-white text-[10px] sm:text-[11px] font-bold tracking-[0.12em] uppercase transition-colors duration-200 cursor-pointer py-0.5"
+                data-slot="FEATURED SLOT #03"
+              >
+                <span>WATCH TRAILER</span>
+                <span class="text-xs leading-none transition-transform duration-200 group-hover:translate-x-0.5">&#9656;</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- KARTU 5 (Kolom Kanan #3) -->
+          <article class="game-card group md:mt-1" data-game-index="5">
+            <div class="card-glow-wrap transition-all duration-300">
+              <div class="trapezoid-frame skeleton-shimmer shimmer-delay-4 w-full aspect-[16/8] animate-pulse relative">
+                <div class="absolute inset-0 bg-gradient-to-tr from-black/25 via-transparent to-white/[0.03]"></div>
+              </div>
+            </div>
+            <div class="mt-2.5 px-2.5 sm:px-3.5 flex items-center justify-between gap-3 uppercase">
+              <div class="skeleton-shimmer shimmer-delay-4 h-2.5 w-24 sm:w-28 rounded-sm animate-pulse"></div>
+              <button
+                type="button"
+                class="trailer-trigger inline-flex items-center gap-1 text-accent hover:text-white text-[10px] sm:text-[11px] font-bold tracking-[0.12em] uppercase transition-colors duration-200 cursor-pointer py-0.5"
+                data-slot="FEATURED SLOT #05"
+              >
+                <span>WATCH TRAILER</span>
+                <span class="text-xs leading-none transition-transform duration-200 group-hover:translate-x-0.5">&#9656;</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- KARTU 7 (Kolom Kanan #4) -->
+          <article class="game-card group md:mt-1" data-game-index="7">
+            <div class="card-glow-wrap transition-all duration-300">
+              <div class="trapezoid-frame-sharp skeleton-shimmer shimmer-delay-6 w-full aspect-[16/8] animate-pulse relative">
+                <div class="absolute inset-0 bg-gradient-to-tr from-black/25 via-transparent to-white/[0.03]"></div>
+              </div>
+            </div>
+            <div class="mt-2.5 px-2.5 sm:px-3.5 flex items-center justify-between gap-3 uppercase">
+              <div class="skeleton-shimmer shimmer-delay-6 h-2.5 w-24 sm:w-32 rounded-sm animate-pulse"></div>
+              <button
+                type="button"
+                class="trailer-trigger inline-flex items-center gap-1 text-accent hover:text-white text-[10px] sm:text-[11px] font-bold tracking-[0.12em] uppercase transition-colors duration-200 cursor-pointer py-0.5"
+                data-slot="FEATURED SLOT #07"
+              >
+                <span>WATCH TRAILER</span>
+                <span class="text-xs leading-none transition-transform duration-200 group-hover:translate-x-0.5">&#9656;</span>
+              </button>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- MODAL PRATINJAU TRAILER (Skeleton Mode — Pengganti alert())           -->
+  <!-- ===================================================================== -->
+  <div
+    id="trailer-modal"
+    class="modal-backdrop fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modal-title"
+  >
+    <div class="relative w-full max-w-2xl bg-navy-light border border-white/10 p-6 sm:p-8 shadow-2xl">
+      <div class="flex items-center justify-between gap-4 mb-5">
+        <div class="flex items-center gap-3">
+          <span class="slanted-accent-bar inline-block w-6 h-2 bg-accent"></span>
+          <h3 id="modal-title" class="font-display italic font-extrabold uppercase text-2xl tracking-wide text-white">
+            TRAILER PREVIEW
+          </h3>
+        </div>
+        <button
+          id="close-modal"
+          type="button"
+          class="text-white/60 hover:text-white text-xs font-bold uppercase tracking-widest px-3 py-1.5 border border-white/10 hover:border-accent transition-colors cursor-pointer"
+        >
+          CLOSE &times;
+        </button>
+      </div>
+
+      <!-- Area Video Skeleton -->
+      <div class="trapezoid-frame skeleton-shimmer w-full aspect-video flex flex-col items-center justify-center gap-3 animate-pulse">
+        <div class="w-14 h-14 flex items-center justify-center border-2 border-accent/60 text-accent text-xl pl-1">
+          &#9656;
+        </div>
+        <span class="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/45">
+          TRAILER SKELETON PLACEHOLDER
+        </span>
+      </div>
+
+      <div class="mt-5 flex items-center justify-between text-xs text-white/50 uppercase tracking-wider">
+        <span id="modal-slot-label">FEATURED SLOT #01</span>
+        <span class="text-accent font-semibold">READY TO EMBED</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notifikasi Ringan -->
+  <div
+    id="toast-banner"
+    class="fixed bottom-6 right-6 z-40 translate-y-4 opacity-0 pointer-events-none transition-all duration-300 bg-navy-light border-l-4 border-accent px-5 py-3.5 shadow-xl"
+  >
+    <p id="toast-message" class="text-xs font-bold uppercase tracking-[0.12em] text-white"></p>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- INTERAKSI RINGAN (I FEEL LUCKY, ALL GAMES & TRAILER MODAL)            -->
+  <!-- ===================================================================== -->
+  <script>
+    (function () {
+      const cards = Array.from(document.querySelectorAll('.game-card'));
+      const btnLucky = document.getElementById('btn-lucky');
+      const btnAllGames = document.getElementById('btn-all-games');
+      const trailerButtons = document.querySelectorAll('.trailer-trigger');
+
+      const modal = document.getElementById('trailer-modal');
+      const modalSlotLabel = document.getElementById('modal-slot-label');
+      const closeModalBtn = document.getElementById('close-modal');
+
+      const toastBanner = document.getElementById('toast-banner');
+      const toastMessage = document.getElementById('toast-message');
+      let toastTimer = null;
+      let luckyTimer = null;
+
+      /**
+       * Menampilkan notifikasi toast singkat di pojok kanan bawah
+       */
+      function showToast(message) {
+        if (!toastBanner || !toastMessage) return;
+        toastMessage.textContent = message;
+        toastBanner.classList.remove('translate-y-4', 'opacity-0');
+        toastBanner.classList.add('translate-y-0', 'opacity-100');
+
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => {
+          toastBanner.classList.remove('translate-y-0', 'opacity-100');
+          toastBanner.classList.add('translate-y-4', 'opacity-0');
+        }, 2400);
+      }
+
+      /**
+       * Membuka modal pratinjau trailer skeleton
+       */
+      function openModal(slotName) {
+        if (!modal) return;
+        if (modalSlotLabel) modalSlotLabel.textContent = slotName;
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      }
+
+      /**
+       * Menutup modal pratinjau trailer
+       */
+      function closeModal() {
+        if (!modal) return;
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }
+
+      // Event tombol "I FEEL LUCKY": memilih 1 dari 8 kartu secara acak lalu menyorotnya
+      if (btnLucky) {
+        btnLucky.addEventListener('click', () => {
+          if (!cards.length) return;
+          cards.forEach((c) => c.classList.remove('lucky-highlight'));
+
+          const randomCard = cards[Math.floor(Math.random() * cards.length)];
+          const idx = randomCard.getAttribute('data-game-index') || '?';
+
+          randomCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          randomCard.classList.add('lucky-highlight');
+          showToast('LUCKY PICK: FEATURED SLOT #0' + idx);
+
+          clearTimeout(luckyTimer);
+          luckyTimer = setTimeout(() => {
+            randomCard.classList.remove('lucky-highlight');
+          }, 2600);
+        });
+      }
+
+      // Event tombol "ALL GAMES"
+      if (btnAllGames) {
+        btnAllGames.addEventListener('click', () => {
+          showToast('MENAMPILKAN 8 SLOT FEATURED GAMES');
+        });
+      }
+
+      // Event setiap tombol "WATCH TRAILER ▸"
+      trailerButtons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const slot = btn.getAttribute('data-slot') || 'FEATURED SLOT';
+          openModal(slot);
+        });
+      });
+
+      // Tutup modal lewat tombol close, klik backdrop, atau tombol Escape
+      if (closeModalBtn) {
+        closeModalBtn.addEventListener('click', closeModal);
+      }
+      if (modal) {
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) closeModal();
+        });
+      }
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeModal();
+      });
+    })();
+  </script>
+</body>
+</html>
